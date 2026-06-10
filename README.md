@@ -355,7 +355,7 @@ Marcas Atendidas
 <div class="brands">
 
 <div class="brand"><img src="img/marcas/intelbras.svg"></div>
-<div class="brand"><img src="img/marcas/yale.svg"></div>
+<div class="brand"><img src="img/yale.png"></div>
 <div class="brand"><img src="img/marcas/papaiz.svg"></div>
 <div class="brand"><img src="img/marcas/pado.svg"></div>
 <div class="brand"><img src="img/marcas/elsys.svg"></div>
