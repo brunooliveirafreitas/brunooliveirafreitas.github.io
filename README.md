@@ -386,7 +386,7 @@ Falar no WhatsApp </a>
 
 <footer>
 
-© 2026 ACESSO CASA • Curitiba e Região Metropolitana
+© 2026 ACESSO CASA • Fechaduras Eletrônicas em Curitiba
 
 </footer>
 
