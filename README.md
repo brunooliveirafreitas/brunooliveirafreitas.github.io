@@ -34,7 +34,8 @@ footer{text-align:center;padding:30px;color:#aaa}
 
 <section class="hero container">
 <h1>Instalação de <span class="gold">Fechaduras Eletrônicas</span><br>em Curitiba</h1>
-<p>Mais segurança, praticidade e tecnologia para sua casa ou empresa. Atendimento em Curitiba e Região Metropolitana.</p>
+<p>Mais segurança, praticidade e tecnologia para sua casa ou empresa. 
+  Atendimento em Curitiba e Região Metropolitana.</p>
 <a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20eletrônica.">Solicitar Orçamento</a>
 </section>
 
