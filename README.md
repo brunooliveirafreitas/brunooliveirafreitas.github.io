@@ -1,87 +1,398 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Acesso Casa | Instalação de Fechaduras Eletrônicas em Curitiba</title>
-<meta name="description" content="Instalação de fechaduras eletrônicas em Curitiba e Região Metropolitana. Atendimento profissional, configuração completa e orçamento gratuito.">
+
+<meta name="description" content="Instalação profissional de fechaduras eletrônicas em Curitiba e Região Metropolitana. Atendimento rápido, configuração completa e orçamento gratuito.">
+
+<meta property="og:title" content="Acesso Casa">
+<meta property="og:description" content="Instalação de Fechaduras Eletrônicas em Curitiba">
+<meta property="og:type" content="website">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Montserrat,sans-serif}
-body{background:#0B1220;color:#fff}
-.container{width:90%;max-width:1200px;margin:auto}
-header{background:#0B1220;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.logo{font-size:32px;font-weight:800;color:#D4AF37}
-.hero{padding:80px 0;text-align:center}
-.hero h1{font-size:3rem;margin-bottom:20px}
-.gold{color:#D4AF37}
-.hero p{max-width:700px;margin:auto auto 30px;color:#d1d5db}
-.btn{display:inline-block;background:#D4AF37;color:#0B1220;padding:16px 28px;border-radius:40px;text-decoration:none;font-weight:700}
-.section{padding:60px 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#111827;padding:25px;border-radius:15px}
-h2{text-align:center;margin-bottom:25px}
-ul{padding-left:20px}
-footer{text-align:center;padding:30px;color:#aaa}
+
+:root{
+--dark:#0F172A;
+--gold:#D4AF37;
+--white:#FFFFFF;
+--gray:#F3F4F6;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff;
+color:#222;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:999;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:var(--gold);
+}
+
+.hero{
+background:
+linear-gradient(rgba(15,23,42,.85),
+rgba(15,23,42,.85)),
+url('img/hero-fechadura.jpg');
+background-size:cover;
+background-position:center;
+min-height:100vh;
+display:flex;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero-content{
+width:100%;
+}
+
+.hero h1{
+font-size:3.5rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+background:var(--gold);
+color:var(--dark);
+padding:18px 32px;
+font-weight:700;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:2.2rem;
+color:var(--dark);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card h3{
+margin-bottom:10px;
+color:var(--dark);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+}
+
+.brands{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:25px;
+align-items:center;
+}
+
+.brand{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.brand img{
+max-width:100%;
+height:50px;
+object-fit:contain;
+}
+
+.cta{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+
+.cta h2{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+footer{
+background:#0F172A;
+color:#aaa;
+text-align:center;
+padding:30px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.section-title{
+font-size:1.8rem;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
+
 <header>
-<div class="container">
+<div class="container nav">
 <div class="logo">ACESSO CASA</div>
+<div style="color:white">@acesso_casa</div>
 </div>
 </header>
 
-<section class="hero container">
-<h1>Instalação de <span class="gold">Fechaduras Eletrônicas</span><br>em Curitiba</h1>
-<p>Mais segurança, praticidade e tecnologia para sua casa ou empresa. 
-  Atendimento em Curitiba e Região Metropolitana.</p>
-<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20eletrônica.">Solicitar Orçamento</a>
-</section>
+<section class="hero">
+<div class="container hero-content">
 
-<section class="section container">
-<h2>Nossos Serviços</h2>
-<div class="cards">
-<div class="card">Instalação de fechaduras eletrônicas</div>
-<div class="card">Configuração de biometria e senhas</div>
-<div class="card">Integração com aplicativo</div>
-<div class="card">Ajustes e manutenção</div>
+<h1>Instalação de Fechaduras Eletrônicas em Curitiba</h1>
+
+<p>
+Mais segurança, praticidade e tecnologia para sua casa.
+Atendimento em Curitiba e Região Metropolitana.
+</p>
+
+<a class="btn"
+href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
+Solicitar Orçamento </a>
+
 </div>
 </section>
 
-<section class="section container">
-<h2>Marcas Atendidas</h2>
-<div class="cards">
-<div class="card">Intelbras</div>
-<div class="card">Yale</div>
-<div class="card">Papaiz</div>
-<div class="card">Pado</div>
-<div class="card">Elsys</div>
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Por que escolher a Acesso Casa?
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🔒 Mais Segurança</h3>
+<p>Proteção moderna para sua residência.</p>
 </div>
-</section>
 
-<section class="section container">
-<h2>Como Funciona</h2>
-<div class="cards">
-<div class="card">1. Envie uma foto da sua porta</div>
-<div class="card">2. Receba uma avaliação gratuita</div>
-<div class="card">3. Agende sua instalação</div>
+<div class="card">
+<h3>📱 Mais Praticidade</h3>
+<p>Senha, biometria e aplicativo.</p>
 </div>
+
+<div class="card">
+<h3>⚡ Instalação Rápida</h3>
+<p>Atendimento profissional e eficiente.</p>
+</div>
+
+<div class="card">
+<h3>🛡 Garantia</h3>
+<p>Instalação realizada com qualidade.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section container">
-<h2>Área de Atendimento</h2>
-<p style="text-align:center">Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Fazenda Rio Grande.</p>
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Soluções Modernas para sua Casa
+</h2>
+
+<div class="gallery">
+
+<img src="img/fechadura1.jpg">
+
+<img src="img/fechadura2.jpg">
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section container" style="text-align:center">
-<h2>Solicite seu orçamento</h2>
-<p>Envie uma foto da porta pelo WhatsApp e receba uma avaliação sem compromisso.</p><br>
-<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20eletrônica.">WhatsApp (41) 99746-9076</a>
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Como Funciona
+</h2>
+
+<div class="grid">
+
+<div class="card">
+1️⃣ Envie uma foto da porta
+</div>
+
+<div class="card">
+2️⃣ Receba uma avaliação gratuita
+</div>
+
+<div class="card">
+3️⃣ Agende a instalação
+</div>
+
+<div class="card">
+4️⃣ Aproveite sua fechadura funcionando
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Marcas Atendidas
+</h2>
+
+<div class="brands">
+
+<div class="brand"><img src="img/marcas/intelbras.svg"></div>
+<div class="brand"><img src="img/marcas/yale.svg"></div>
+<div class="brand"><img src="img/marcas/papaiz.svg"></div>
+<div class="brand"><img src="img/marcas/pado.svg"></div>
+<div class="brand"><img src="img/marcas/elsys.svg"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+Envie uma foto da sua porta agora mesmo
+</h2>
+
+<p>
+Receba uma avaliação gratuita pelo WhatsApp.
+</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
+Falar no WhatsApp </a>
+
 </section>
 
 <footer>
-© 2026 ACESSO CASA • Fechaduras Eletrônicas • Curitiba e Região Metropolitana
+
+© 2026 ACESSO CASA • Curitiba e Região Metropolitana
+
 </footer>
+
+<a class="whatsapp"
+href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
+💬 </a>
+
 </body>
 </html>
