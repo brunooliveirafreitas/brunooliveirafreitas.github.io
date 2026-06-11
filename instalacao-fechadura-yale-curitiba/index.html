@@ -183,6 +183,42 @@ height:50px;
 
 }
 
+.models{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.model-card{
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+text-decoration:none;
+text-align:center;
+transition:.3s;
+border:1px solid #eee;
+}
+
+.model-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 35px rgba(0,0,0,.15);
+border-color:#D4AF37;
+}
+
+.model-name{
+font-size:20px;
+font-weight:700;
+color:#0F172A;
+margin-bottom:10px;
+}
+
+.model-buy{
+font-size:14px;
+font-weight:600;
+color:#16a34a;
+}
+
 </style>
 
 </head>
