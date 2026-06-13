@@ -1,1 +1,6 @@
 
+User-agent: *
+
+Allow: /
+
+Sitemap: https://acessocasa.com.br/sitemap.xml
