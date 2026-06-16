@@ -1,605 +1,341 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Instalação de Fechadura Yale em Curitiba | Acesso Casa</title>
-
-<meta name="description"
-content="Instalação profissional de fechaduras Yale em Curitiba e Região Metropolitana. Configuração completa, orientação de uso e instalação especializada.">
-
-<link rel="icon" type="image/png" href="../favicon.png">
-
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="description" content="Instalação profissional de fechaduras Yale em Curitiba e Região Metropolitana. Instalamos YMC 420W, YDF 40A, YRD 256, YDD 120, YMF 40A. Atendimento rápido e orçamento gratuito.">
+<meta property="og:title" content="Acesso Casa | Instalação de Fechaduras Yale">
+<meta property="og:description" content="Instalação profissional de fechaduras Yale em Curitiba e Região Metropolitana.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/logo-acesso-casa.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-
-:root{
---dark:#0F172A;
---gold:#D4AF37;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
-
-body{
-line-height:1.6;
-color:#222;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-header{
-background:#0F172A;
-padding:15px 0;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo img{
-height:65px;
-}
-
-.hero{
-background:
-linear-gradient(rgba(15,23,42,.90),
-rgba(15,23,42,.90)),
-url('../hero-fechadura.png');
-
-background-size:cover;
-background-position:center;
-padding:120px 20px;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.2rem;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-background:var(--gold);
-color:#0F172A;
-padding:18px 35px;
-border-radius:50px;
-font-weight:700;
-text-decoration:none;
-}
-
-.section{
-padding:80px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:2rem;
-margin-bottom:50px;
-color:#0F172A;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-background:white;
-}
-
-.models{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.model{
-padding:20px;
-text-align:center;
-background:#f5f5f5;
-border-radius:15px;
-font-weight:600;
-}
-
-.faq{
-max-width:900px;
-margin:auto;
-}
-
-.faq-item{
-margin-bottom:25px;
-padding:20px;
-background:#f5f5f5;
-border-radius:15px;
-}
-
-.cta{
-background:#0F172A;
-color:white;
-padding:80px 20px;
-text-align:center;
-}
-
-footer{
-background:#0F172A;
-color:#ccc;
-text-align:center;
-padding:25px;
-}
-
-.whatsapp{
-position:fixed;
-right:25px;
-bottom:25px;
-width:65px;
-height:65px;
-background:#25D366;
-color:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-}
-
+:root{--dark:#0F172A;--gold:#D4AF37;--white:#FFFFFF;--gray:#F3F4F6}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
+body{background:#fff;color:#222;line-height:1.6}
+.container{width:90%;max-width:1200px;margin:auto}
+header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95);backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.logo img{height:70px;display:block}
+.social{color:white;font-size:14px;font-weight:500;text-align:right}
+.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('/hero-fechadura.png');background-size:cover;background-position:center;min-height:700px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:80px;text-align:center;color:white}
+.hero-content{max-width:800px}
+.hero h1{font-size:2.8rem;line-height:1.15;margin-bottom:15px;font-weight:800}
+.hero p{font-size:1.2rem;margin-bottom:35px;color:#e5e7eb}
+.btn{display:inline-block;background:var(--gold);color:var(--dark);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:700;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
+.section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:50px;font-size:2.2rem;color:var(--dark)}
+.section-subtitle{text-align:center;margin-bottom:50px;font-size:1.1rem;color:#555;max-width:700px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center}
+.card h3{margin-bottom:10px}
+a.card:hover,.city-card:hover{background:#D4AF37;color:#0F172A;transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.card-link{text-decoration:none;color:inherit;display:block}
+.bg-gray{background:#f8fafc}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;counter-reset:step}
+.step-card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center;position:relative}
+.step-card::before{counter-increment:step;content:counter(step);position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-weight:800;font-size:1.1rem;width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-card h3{margin-bottom:8px;font-size:1.05rem}
+.step-card p{color:#555;font-size:.9rem}
+.brands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;max-width:900px;margin:auto}
+.brand{background:#fff;padding:15px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);display:flex;justify-content:center;align-items:center;height:90px;text-decoration:none;transition:.3s}
+.brand:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.brand img{max-width:110px;max-height:45px;object-fit:contain}
+.cta{background:var(--dark);color:white;text-align:center;padding:100px 20px}
+.cta h2{font-size:2.5rem;margin-bottom:20px}
+.cta p{font-size:1.1rem;color:#ccc;margin-bottom:10px}
+footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
+.footer-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px 60px;max-width:1000px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s;line-height:1.5}
+.footer-grid a:hover{color:var(--gold)}
+.footer-copy{color:#555;font-size:.75rem;padding:0 20px}
+.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.instagram-btn{display:flex;align-items:center;gap:10px;padding:12px 24px;background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);color:white;text-decoration:none;font-weight:700;font-size:14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);transition:.3s}
+.instagram-btn:hover{transform:translateY(-2px) scale(1.03)}
+.instagram-btn i{font-size:20px;color:white}
+.faq{max-width:900px;margin:auto}
+.faq-item{padding:20px;margin-bottom:20px;background:#f5f5f5;border-radius:15px}
+.faq-item strong{display:block;margin-bottom:5px}
+.model-card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center;text-decoration:none;color:inherit;display:block;transition:.3s}
+.model-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.model-card{padding:15px}
+.model-card img{width:100%;height:120px;object-fit:contain;margin-bottom:10px;border-radius:8px;background:#f9f9f9}
+.models-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+@media(max-width:992px){.models-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.models-grid{grid-template-columns:repeat(2,1fr)}}
+.model-card h3{margin-bottom:8px;font-size:1.05rem}
+.model-card p{font-size:.8rem;color:#555}
+.model-card .model-price{color:var(--gold);font-weight:700;font-size:.9rem;margin-top:10px;background:var(--dark);color:white;padding:10px 15px;border-radius:50px;display:inline-block;transition:.3s}
+.model-card:hover .model-price{background:var(--gold);color:var(--dark)}
+.model-card .model-price i{margin-right:5px}
 @media(max-width:768px){
-
-.hero h1{
-font-size:2rem;
+.logo img{height:55px}
+.social{display:none}
+.hero{min-height:600px;padding-top:110px}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:1.8rem}
+.cta h2{font-size:2rem}
 }
-
-.logo img{
-height:50px;
-}
-
-}
-
-.models{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.model-card{
-background:#fff;
-padding:25px;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-text-decoration:none;
-text-align:center;
-transition:.3s;
-border:1px solid #eee;
-}
-
-.model-card:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 35px rgba(0,0,0,.15);
-border-color:#D4AF37;
-}
-
-.model-name{
-font-size:20px;
-font-weight:700;
-color:#0F172A;
-margin-bottom:10px;
-}
-
-.model-buy{
-font-size:14px;
-font-weight:600;
-color:#16a34a;
-}
-
 </style>
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"Instalação de Fechadura Yale em Curitiba",
-  "serviceType":"Instalação de Fechaduras Yale",
-  "provider":{
-    "@type":"LocalBusiness",
-    "name":"Acesso Casa",
-    "url":"https://acessocasa.com.br"
-  },
-  "brand":{
-    "@type":"Brand",
-    "name":"Yale"
-  },
-  "areaServed":"Curitiba",
-  "url":"https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"LocalBusiness",
-  "@id":"https://acessocasa.com.br/#business",
   "name":"Acesso Casa",
   "url":"https://acessocasa.com.br",
   "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
   "image":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "description":"Instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
   "telephone":"+55 41 99746-9076",
   "priceRange":"$$",
+  "description":"Instalação profissional de fechaduras Yale em Curitiba e Região Metropolitana. Atendimento rápido, configuração completa e orçamento gratuito.",
   "areaServed":[
-    {
-      "@type":"City",
-      "name":"Curitiba"
-    },
-    {
-      "@type":"City",
-      "name":"São José dos Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Colombo"
-    },
-    {
-      "@type":"City",
-      "name":"Araucária"
-    },
-    {
-      "@type":"City",
-      "name":"Campo Largo"
-    }
+    {"@type":"City","name":"Curitiba"},
+    {"@type":"City","name":"São José dos Pinhais"},
+    {"@type":"City","name":"Pinhais"},
+    {"@type":"City","name":"Colombo"},
+    {"@type":"City","name":"Araucária"},
+    {"@type":"City","name":"Campo Largo"}
   ],
-  "sameAs":[
-    "https://www.instagram.com/acessocasafechaduras"
-  ],
-  "contactPoint":{
-    "@type":"ContactPoint",
-    "telephone":"+55 41 99746-9076",
-    "contactType":"customer service",
-    "areaServed":"BR",
-    "availableLanguage":"Portuguese"
-  }
+  "address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+  "contactPoint":{"@type":"ContactPoint","telephone":"+55 41 99746-9076","contactType":"customer service","areaServed":"BR","availableLanguage":"Portuguese"},
+  "sameAs":["https://www.instagram.com/acessocasafechaduras"]
 }
 </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://acessocasa.com.br/#localbusiness",
-
-  "name": "Acesso Casa",
-
-  "url": "https://acessocasa.com.br",
-
-  "telephone": "+55 41 99746-9076",
-
-  "description": "Especializada em instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-
-  "logo": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "image": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "priceRange": "$$",
-
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Curitiba"
-    },
-    {
-      "@type": "City",
-      "name": "São José dos Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Colombo"
-    },
-    {
-      "@type": "City",
-      "name": "Araucária"
-    },
-    {
-      "@type": "City",
-      "name": "Campo Largo"
-    }
-  ],
-
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55 41 99746-9076",
-    "contactType": "customer service",
-    "availableLanguage": "Portuguese"
-  },
-
-  "sameAs": [
-    "https://www.instagram.com/acessocasafechaduras",
-    "https://share.google/OCYBh0tPAsarT598l"
-  ]
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Instalação de Fechaduras Yale",
+  "provider":{"@type":"LocalBusiness","name":"Acesso Casa"},
+  "areaServed":["Curitiba","São José dos Pinhais","Pinhais","Colombo","Araucária","Campo Largo"],
+  "serviceType":"Instalação de Fechadura Eletrônica",
+  "brand":{"@type":"Brand","name":"Yale"}
 }
 </script>
-
-  
 </head>
-
 <body>
 
 <header>
-
 <div class="container nav">
-
 <div class="logo">
     <a href="/">
         <img src="/logo-acesso-casa.png" alt="Acesso Casa">
     </a>
 </div>
-
-<a href="https://acessocasa.com.br"
-style="color:white;text-decoration:none;">
-Voltar ao site </a>
-
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
+</a>
 </div>
-
+</div>
 </header>
 
 <section class="hero">
-
-<div class="container">
-
-<h1>
-Instalação de Fechaduras Yale em Curitiba
-</h1>
-
-<p>
-Especialistas na instalação dos principais modelos Yale.
-Atendimento em Curitiba e Região Metropolitana.
-</p>
-
-<a class="btn"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
-
+<div class="container hero-content">
+<h1>Instalação de Fechaduras Yale em Curitiba</h1>
+<p>Especialistas na instalação dos principais modelos Yale. Atendimento em Curitiba e Região Metropolitana.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
 <i class="fab fa-whatsapp"></i>
-Solicitar Orçamento
-
+ Solicitar Orçamento
 </a>
-
 </div>
-
 </section>
 
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Como Funciona</h2>
+<p class="section-subtitle">Do orçamento à instalação funcionando — tudo em poucos passos.</p>
+<div class="steps">
+<div class="step-card">
+<h3>Envie uma foto da porta</h3>
+<p>Fotografe a porta de frente e a lateral da fechadura atual.</p>
+</div>
+<div class="step-card">
+<h3>Receba a avaliação</h3>
+<p>Analisamos a compatibilidade e indicamos o modelo ideal.</p>
+</div>
+<div class="step-card">
+<h3>Agende a instalação</h3>
+<p>Escolha o melhor horário — atendemos em até 24h.</p>
+</div>
+<div class="step-card">
+<h3>Aproveite sua fechadura</h3>
+<p>Instalação, configuração e orientação de uso completas.</p>
+</div>
+</div>
+</div>
+</section>
 
 <section class="section">
-
 <div class="container">
-
-<h2 class="section-title">
-Modelos Yale que Recomendamos
-</h2>
-
-<div class="models">
-
-<a href="https://meli.la/1E6P6mh"
-target="_blank"
-rel="nofollow sponsored"
-class="model-card">
-
-<div class="model-name">
-Yale YMC 420W
-</div>
-
-<div class="model-buy">
-🛒 Indicação de Compra
-</div>
-
+<h2 class="section-title">Modelos Yale que Recomendamos</h2>
+<div class="models-grid">
+<a href="https://meli.la/1E6P6mh" target="_blank" rel="nofollow" class="model-card">
+<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-ymc-420w-preto-fosco-abre-por-biometria-senha-cartao-e-chave-73278/258917-1.jpg?w=647&h=647&v=202603311446" alt="Yale YMC 420W">
+<h3>Yale YMC 420W</h3>
+<p>Fechadura digital inteligente com Wi-Fi integrado.</p>
+<div class="model-price"><i class="fas fa-shopping-cart"></i> Ver preço</div>
 </a>
-
-<a href="https://meli.la/2bqZkC8"
-target="_blank"
-rel="nofollow sponsored"
-class="model-card">
-
-<div class="model-name">
-Yale YDF 40A
-</div>
-
-<div class="model-buy">
-🛒 Indicação de Compra
-</div>
-
+<a href="https://meli.la/2bqZkC8" target="_blank" rel="nofollow" class="model-card">
+<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-ydf-40a-com-biometria-e-senha-trinco-lingueta-tubular-70101/256583-1.jpg?w=400&h=400" alt="Yale YDF 40A">
+<h3>Yale YDF 40A</h3>
+<p>Fechadura digital com biometria e senha.</p>
+<div class="model-price"><i class="fas fa-shopping-cart"></i> Ver preço</div>
 </a>
-
-<a href="https://meli.la/13cjjQ6"
-target="_blank"
-rel="nofollow sponsored"
-class="model-card">
-
-<div class="model-name">
-Yale YRD 256
-</div>
-
-<div class="model-buy">
-🛒 Indicação de Compra
-</div>
-
+<a href="https://meli.la/13cjjQ6" target="_blank" rel="nofollow" class="model-card">
+<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-yrd-256-preta-com-senha-yale-73372/259012-1.jpg?w=647&h=647&v=202510151329" alt="Yale YRD 256">
+<h3>Yale YRD 256</h3>
+<p>Fechadura residencial com teclado tátil.</p>
+<div class="model-price"><i class="fas fa-shopping-cart"></i> Ver preço</div>
 </a>
-
-<a href="https://meli.la/1QaGuNt"
-target="_blank"
-rel="nofollow sponsored"
-class="model-card">
-
-<div class="model-name">
-Yale YDD 120
-</div>
-
-<div class="model-buy">
-🛒 Indicação de Compra
-</div>
-
+<a href="https://meli.la/1QaGuNt" target="_blank" rel="nofollow" class="model-card">
+<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-ydd-120-para-porta-externa-com-senha-e-chave-trinco-lingueta-tubular-70185/256665-1.jpg?w=647&h=647&v=202603181614" alt="Yale YDD 120">
+<h3>Yale YDD 120</h3>
+<p>Fechadura digital com design compacto e senha.</p>
+<div class="model-price"><i class="fas fa-shopping-cart"></i> Ver preço</div>
 </a>
-
-<a href="https://meli.la/13yruYS"
-target="_blank"
-rel="nofollow sponsored"
-class="model-card">
-
-<div class="model-name">
-Yale YMF 40A
-</div>
-
-<div class="model-buy">
-🛒 Indicação de Compra
-</div>
-
+<a href="https://meli.la/13yruYS" target="_blank" rel="nofollow" class="model-card">
+<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-ymf-40a-abre-com-biometria-e-senha-trinco-lingueta-e-reversivel-70099/256581-1.jpg?w=420&h=420&v=202511141157" alt="Yale YMF 40A">
+<h3>Yale YMF 40A</h3>
+<p>Fechadura digital multimétodo com biometria.</p>
+<div class="model-price"><i class="fas fa-shopping-cart"></i> Ver preço</div>
 </a>
-
 </div>
-
 </div>
-
 </section>
 
-  <section class="section">
-
+<section class="section bg-gray">
 <div class="container">
-
-<h2 class="section-title">
-Por que instalar uma fechadura Yale?
-</h2>
-
+<h2 class="section-title">Por que instalar uma fechadura Yale?</h2>
 <div class="grid">
-
 <div class="card">
 <h3>🔒 Segurança Reconhecida</h3>
 <p>Uma das marcas mais tradicionais e confiáveis do mercado mundial.</p>
 </div>
-
 <div class="card">
 <h3>📱 Tecnologia Inteligente</h3>
 <p>Modelos com biometria, senha, cartão e integração com aplicativos.</p>
 </div>
-
 <div class="card">
 <h3>⚡ Instalação Profissional</h3>
 <p>Montagem, configuração e orientação de uso completas.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
 <section class="section">
-
 <div class="container">
+<h2 class="section-title">Quem Atendemos</h2>
+<div class="grid">
+<a href="/instalacao-fechadura-inteligente-residencial/" class="card card-link">
+<h3>🏠 Residências</h3>
+<p>Casas, sobrados e apartamentos.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-condominios/" class="card card-link">
+<h3>🏢 Condomínios</h3>
+<p>Instalações para moradores e áreas comuns.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/" class="card card-link">
+<h3>🏗️ Construtoras</h3>
+<p>Empreendimentos novos e imóveis em fase de entrega.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-empresas/" class="card card-link">
+<h3>🏬 Empresas</h3>
+<p>Escritórios, clínicas e estabelecimentos comerciais.</p>
+</a>
+</div>
+</div>
+</section>
 
-<h2 class="section-title">
-Perguntas Frequentes
-</h2>
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Marcas Atendidas</h2>
+<div class="brands-grid">
+<a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
+<img src="/intelbras.png" alt="Intelbras">
+</a>
+<a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
+<img src="/papaiz.png" alt="Papaiz">
+</a>
+<a href="/instalacao-fechadura-pado-curitiba" class="brand">
+<img src="/pado.png" alt="Pado">
+</a>
+<a href="/instalacao-fechadura-elsys-curitiba" class="brand">
+<img src="/elsys.png" alt="Elsys">
+</a>
+</div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
+<h2 class="section-title">Perguntas Frequentes</h2>
 <div class="faq">
-
-<div class="faq-item">
-<strong>Vocês vendem fechaduras Yale?</strong><br>
-Não. Realizamos apenas a instalação e configuração.
+<div class="faq-item"><strong>Vocês vendem fechaduras Yale?</strong><br>Não. Realizamos apenas a instalação e configuração.</div>
+<div class="faq-item"><strong>Posso comprar minha Yale e contratar apenas a instalação?</strong><br>Sim. Instalamos equipamentos adquiridos pelo cliente.</div>
+<div class="faq-item"><strong>Vocês configuram biometria e senhas?</strong><br>Sim. A instalação inclui configuração inicial e orientação de uso.</div>
+<div class="faq-item"><strong>Atendem Curitiba inteira?</strong><br>Sim. Curitiba e toda a Região Metropolitana.</div>
 </div>
-
-<div class="faq-item">
-<strong>Posso comprar minha Yale e contratar apenas a instalação?</strong><br>
-Sim. Instalamos equipamentos adquiridos pelo cliente.
 </div>
-
-<div class="faq-item">
-<strong>Vocês configuram biometria e senhas?</strong><br>
-Sim. A instalação inclui configuração inicial e orientação de uso.
-</div>
-
-<div class="faq-item">
-<strong>Atendem Curitiba inteira?</strong><br>
-Sim. Curitiba e toda a Região Metropolitana.
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <section class="cta">
-
-<h2>
-Receba uma Avaliação Gratuita
-</h2>
-
-<p>
-Envie uma foto da sua porta pelo WhatsApp.
-</p>
-
+<h2>Receba uma Avaliação Gratuita</h2>
+<p>Envie uma foto da sua porta pelo WhatsApp.</p>
 <br>
-
-<a class="btn"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
-
+<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
 <i class="fab fa-whatsapp"></i>
-Falar no WhatsApp
-
+ Falar no WhatsApp
 </a>
-
 </section>
 
 <footer>
-
-Instalação de Fechaduras Yale em Curitiba,
-São José dos Pinhais,
-Pinhais,
-Colombo,
-Araucária,
-Campo Largo e Região Metropolitana.
-
+<div class="footer-grid">
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+</div>
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Yale em Curitiba e Região Metropolitana.</p>
+<p style="margin-top:8px;"><a href="/politica-privacidade/">Política de Privacidade</a></p>
+</div>
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
-
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Yale">
 <i class="fab fa-whatsapp"></i>
-
 </a>
 
 </body>
-
 </html>
