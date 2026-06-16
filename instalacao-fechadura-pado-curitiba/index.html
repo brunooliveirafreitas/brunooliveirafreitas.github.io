@@ -1,540 +1,311 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Instalação de Fechadura Pado em Curitiba | Acesso Casa</title>
-
-<meta name="description"
-content="Instalação profissional de fechaduras eletrônicas Pado em Curitiba e Região Metropolitana. Configuração completa, biometria, senhas e orientação de uso.">
-
-<link rel="icon" type="image/png" href="../favicon.png">
-
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Instalação profissional de fechaduras Pado em Curitiba e Região Metropolitana. Instalamos FDE-101, FDE-201, FDE-300W, FDS-50, FDS-10. Atendimento rápido e orçamento gratuito.">
+<meta property="og:title" content="Acesso Casa | Instalação de Fechaduras Pado">
+<meta property="og:description" content="Instalação profissional de fechaduras Pado em Curitiba e Região Metropolitana.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/logo-acesso-casa.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-
-:root{
---dark:#0F172A;
---gold:#D4AF37;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
-
-body{
-line-height:1.6;
-color:#222;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-header{
-background:#0F172A;
-padding:15px 0;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo img{
-height:65px;
-}
-
-.hero{
-background:
-linear-gradient(rgba(15,23,42,.92),
-rgba(15,23,42,.92)),
-url('../hero-fechadura.png');
-
-background-size:cover;
-background-position:center;
-padding:120px 20px;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.2rem;
-margin-bottom:30px;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.btn{
-display:inline-block;
-background:var(--gold);
-color:#0F172A;
-padding:18px 35px;
-border-radius:50px;
-font-weight:700;
-text-decoration:none;
-}
-
-.section{
-padding:80px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:2rem;
-margin-bottom:50px;
-color:#0F172A;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-background:white;
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-.models{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.model{
-padding:20px;
-text-align:center;
-background:#f5f5f5;
-border-radius:15px;
-font-weight:600;
-}
-
-.faq{
-max-width:900px;
-margin:auto;
-}
-
-.faq-item{
-margin-bottom:25px;
-padding:20px;
-background:#f5f5f5;
-border-radius:15px;
-}
-
-.cta{
-background:#0F172A;
-color:white;
-padding:80px 20px;
-text-align:center;
-}
-
-footer{
-background:#0F172A;
-color:#ccc;
-text-align:center;
-padding:25px;
-}
-
-.whatsapp{
-position:fixed;
-right:25px;
-bottom:25px;
-width:65px;
-height:65px;
-background:#25D366;
-color:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-}
-
+:root{--dark:#0F172A;--gold:#D4AF37;--white:#FFFFFF;--gray:#F3F4F6}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
+body{background:#fff;color:#222;line-height:1.6}
+.container{width:90%;max-width:1200px;margin:auto}
+header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95);backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.logo img{height:70px;display:block}
+.social{color:white;font-size:14px;font-weight:500;text-align:right}
+.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('hero-fechadura.png');background-size:cover;background-position:center;min-height:700px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:80px;text-align:center;color:white}
+.hero-content{max-width:800px}
+.hero h1{font-size:2.8rem;line-height:1.15;margin-bottom:15px;font-weight:800}
+.hero p{font-size:1.2rem;margin-bottom:35px;color:#e5e7eb}
+.btn{display:inline-block;background:var(--gold);color:var(--dark);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:700;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
+.section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:50px;font-size:2.2rem;color:var(--dark)}
+.section-subtitle{text-align:center;margin-bottom:50px;font-size:1.1rem;color:#555;max-width:700px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center}
+.card h3{margin-bottom:10px}
+a.card:hover,.city-card:hover{background:#D4AF37;color:#0F172A;transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.card-link{text-decoration:none;color:inherit;display:block}
+.bg-gray{background:#f8fafc}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;counter-reset:step}
+.step-card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center;position:relative}
+.step-card::before{counter-increment:step;content:counter(step);position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-weight:800;font-size:1.1rem;width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.step-card h3{margin-bottom:8px;font-size:1.05rem}
+.step-card p{color:#555;font-size:.9rem}
+.brands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;max-width:900px;margin:auto}
+.brand{background:#fff;padding:15px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.08);display:flex;justify-content:center;align-items:center;height:90px;text-decoration:none;transition:.3s}
+.brand:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.brand img{max-width:110px;max-height:45px;object-fit:contain}
+.cta{background:var(--dark);color:white;text-align:center;padding:100px 20px}
+.cta h2{font-size:2.5rem;margin-bottom:20px}
+.cta p{font-size:1.1rem;color:#ccc;margin-bottom:10px}
+footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
+.footer-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px 60px;max-width:1000px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s;line-height:1.5}
+.footer-grid a:hover{color:var(--gold)}
+.footer-copy{color:#555;font-size:.75rem;padding:0 20px}
+.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.instagram-btn{display:flex;align-items:center;gap:10px;padding:12px 24px;background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);color:white;text-decoration:none;font-weight:700;font-size:14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);transition:.3s}
+.instagram-btn:hover{transform:translateY(-2px) scale(1.03)}
+.instagram-btn i{font-size:20px;color:white}
+.faq{max-width:900px;margin:auto}
+.faq-item{padding:20px;margin-bottom:20px;background:#f5f5f5;border-radius:15px}
+.faq-item strong{display:block;margin-bottom:5px}
+.model-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.model-list li{background:#f8fafc;padding:16px 20px;border-radius:12px;text-align:center;font-weight:600;color:#333}
 @media(max-width:768px){
-
-.hero h1{
-font-size:2rem;
+.logo img{height:55px}
+.social{display:none}
+.hero{min-height:600px;padding-top:110px}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:1.8rem}
+.cta h2{font-size:2rem}
 }
-
-.logo img{
-height:50px;
-}
-
-}
-
 </style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"Instalação de Fechadura Pado em Curitiba",
-  "serviceType":"Instalação de Fechaduras Pado",
-  "provider":{
-    "@type":"LocalBusiness",
-    "name":"Acesso Casa",
-    "url":"https://acessocasa.com.br"
-  },
-  "brand":{
-    "@type":"Brand",
-    "name":"Pado"
-  },
-  "areaServed":"Curitiba",
-  "url":"https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/"
-}
-</script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"LocalBusiness",
-  "@id":"https://acessocasa.com.br/#business",
   "name":"Acesso Casa",
   "url":"https://acessocasa.com.br",
   "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
   "image":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "description":"Instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
   "telephone":"+55 41 99746-9076",
   "priceRange":"$$",
+  "description":"Instalação profissional de fechaduras Pado em Curitiba e Região Metropolitana. Atendimento rápido, configuração completa e orçamento gratuito.",
   "areaServed":[
-    {
-      "@type":"City",
-      "name":"Curitiba"
-    },
-    {
-      "@type":"City",
-      "name":"São José dos Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Colombo"
-    },
-    {
-      "@type":"City",
-      "name":"Araucária"
-    },
-    {
-      "@type":"City",
-      "name":"Campo Largo"
-    }
+    {"@type":"City","name":"Curitiba"},
+    {"@type":"City","name":"São José dos Pinhais"},
+    {"@type":"City","name":"Pinhais"},
+    {"@type":"City","name":"Colombo"},
+    {"@type":"City","name":"Araucária"},
+    {"@type":"City","name":"Campo Largo"}
   ],
-  "sameAs":[
-    "https://www.instagram.com/acessocasafechaduras"
-  ],
-  "contactPoint":{
-    "@type":"ContactPoint",
-    "telephone":"+55 41 99746-9076",
-    "contactType":"customer service",
-    "areaServed":"BR",
-    "availableLanguage":"Portuguese"
-  }
+  "address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+  "contactPoint":{"@type":"ContactPoint","telephone":"+55 41 99746-9076","contactType":"customer service","areaServed":"BR","availableLanguage":"Portuguese"},
+  "sameAs":["https://www.instagram.com/acessocasafechaduras"]
 }
 </script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://acessocasa.com.br/#localbusiness",
-
-  "name": "Acesso Casa",
-
-  "url": "https://acessocasa.com.br",
-
-  "telephone": "+55 41 99746-9076",
-
-  "description": "Especializada em instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-
-  "logo": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "image": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "priceRange": "$$",
-
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Curitiba"
-    },
-    {
-      "@type": "City",
-      "name": "São José dos Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Colombo"
-    },
-    {
-      "@type": "City",
-      "name": "Araucária"
-    },
-    {
-      "@type": "City",
-      "name": "Campo Largo"
-    }
-  ],
-
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55 41 99746-9076",
-    "contactType": "customer service",
-    "availableLanguage": "Portuguese"
-  },
-
-  "sameAs": [
-    "https://www.instagram.com/acessocasafechaduras",
-    "https://share.google/OCYBh0tPAsarT598l"
-  ]
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Instalação de Fechaduras Pado",
+  "provider":{"@type":"LocalBusiness","name":"Acesso Casa"},
+  "areaServed":["Curitiba","São José dos Pinhais","Pinhais","Colombo","Araucária","Campo Largo"],
+  "serviceType":"Instalação de Fechadura Eletrônica",
+  "brand":{"@type":"Brand","name":"Pado"}
 }
 </script>
-
-
 </head>
-
 <body>
 
 <header>
-
 <div class="container nav">
-
 <div class="logo">
     <a href="/">
-        <img src="/logo-acesso-casa.png" alt="Acesso Casa">
+        <img src="logo-acesso-casa.png" alt="Acesso Casa">
     </a>
 </div>
-
-<a href="https://acessocasa.com.br"
-style="color:white;text-decoration:none;">
-Voltar ao site
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
 </a>
-
 </div>
-
+</div>
 </header>
 
 <section class="hero">
-
-<div class="container">
-
-<h1>
-Instalação de Fechaduras Pado em Curitiba
-</h1>
-
-<p>
-Especialistas na instalação de fechaduras eletrônicas Pado. Realizamos instalação, configuração e orientação completa para que você aproveite todos os recursos do equipamento com segurança.
-</p>
-
-<a class="btn"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
-
+<div class="container hero-content">
+<h1>Instalação de Fechaduras Pado em Curitiba</h1>
+<p>Especialistas na instalação de fechaduras eletrônicas Pado. Realizamos instalação, configuração e orientação completa para que você aproveite todos os recursos do equipamento com segurança.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
 <i class="fab fa-whatsapp"></i>
  Solicitar Orçamento
-
 </a>
-
 </div>
+</section>
 
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Como Funciona</h2>
+<p class="section-subtitle">Do orçamento à instalação funcionando — tudo em poucos passos.</p>
+<div class="steps">
+<div class="step-card">
+<h3>Envie uma foto da porta</h3>
+<p>Fotografe a porta de frente e a lateral da fechadura atual.</p>
+</div>
+<div class="step-card">
+<h3>Receba a avaliação</h3>
+<p>Analisamos a compatibilidade e indicamos o modelo ideal.</p>
+</div>
+<div class="step-card">
+<h3>Agende a instalação</h3>
+<p>Escolha o melhor horário — atendemos em até 24h.</p>
+</div>
+<div class="step-card">
+<h3>Aproveite sua fechadura</h3>
+<p>Instalação, configuração e orientação de uso completas.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="section">
-
 <div class="container">
+<h2 class="section-title">Modelos Pado que Instalamos</h2>
+<ul class="model-list">
+<li>Pado FDE-101</li>
+<li>Pado FDE-201</li>
+<li>Pado FDE-300W</li>
+<li>Pado FDS-50</li>
+<li>Pado FDS-10</li>
+<li>Outros modelos Pado</li>
+</ul>
+</div>
+</section>
 
-<h2 class="section-title">
-Por que escolher uma fechadura Pado?
-</h2>
-
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Por que escolher uma fechadura Pado?</h2>
 <div class="grid">
-
 <div class="card">
 <h3>✨ Design Moderno</h3>
 <p>Modelos com acabamento sofisticado que valorizam a entrada da residência.</p>
 </div>
-
 <div class="card">
 <h3>🔐 Segurança Inteligente</h3>
 <p>Controle de acesso por senha, biometria e outros recursos avançados.</p>
 </div>
-
 <div class="card">
 <h3>🏠 Ideal para Residências</h3>
 <p>Soluções desenvolvidas para proporcionar praticidade e proteção no dia a dia.</p>
 </div>
-
 <div class="card">
 <h3>🛠 Instalação Especializada</h3>
 <p>Instalação realizada por profissionais experientes em fechaduras eletrônicas.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
 <section class="section">
-
 <div class="container">
-
-<h2 class="section-title">
-Modelos Pado que Instalamos
-</h2>
-
-<div class="models">
-
-<div class="model">Pado FDE-101</div>
-<div class="model">Pado FDE-201</div>
-<div class="model">Pado FDE-300W</div>
-<div class="model">Pado FDS-50</div>
-<div class="model">Pado FDS-10</div>
-<div class="model">Outros modelos Pado</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Atendimento em Curitiba e Região Metropolitana
-</h2>
-
+<h2 class="section-title">Quem Atendemos</h2>
 <div class="grid">
-
-<div class="card">
-<h3>📍 Curitiba</h3>
-<p>Atendimento residencial em todos os bairros da cidade.</p>
+<a href="/instalacao-fechadura-inteligente-residencial/" class="card card-link">
+<h3>🏠 Residências</h3>
+<p>Casas, sobrados e apartamentos.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-condominios/" class="card card-link">
+<h3>🏢 Condomínios</h3>
+<p>Instalações para moradores e áreas comuns.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/" class="card card-link">
+<h3>🏗️ Construtoras</h3>
+<p>Empreendimentos novos e imóveis em fase de entrega.</p>
+</a>
+<a href="/instalacao-fechadura-inteligente-empresas/" class="card card-link">
+<h3>🏬 Empresas</h3>
+<p>Escritórios, clínicas e estabelecimentos comerciais.</p>
+</a>
 </div>
-
-<div class="card">
-<h3>🚗 Região Metropolitana</h3>
-<p>São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e região.</p>
 </div>
+</section>
 
-<div class="card">
-<h3>⚡ Avaliação Rápida</h3>
-<p>Envie uma foto da porta e receba orientação inicial pelo WhatsApp.</p>
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Marcas Atendidas</h2>
+<div class="brands-grid">
+<a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
+<img src="intelbras.png" alt="Intelbras">
+</a>
+<a href="/instalacao-fechadura-yale-curitiba" class="brand">
+<img src="yale.png" alt="Yale">
+</a>
+<a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
+<img src="papaiz.png" alt="Papaiz">
+</a>
+<a href="/instalacao-fechadura-elsys-curitiba" class="brand">
+<img src="elsys.png" alt="Elsys">
+</a>
 </div>
-
 </div>
-
-</div>
-
 </section>
 
 <section class="section">
-
 <div class="container">
-
-<h2 class="section-title">
-Perguntas Frequentes
-</h2>
-
+<h2 class="section-title">Perguntas Frequentes</h2>
 <div class="faq">
-
-<div class="faq-item">
-<strong>Vocês vendem fechaduras Pado?</strong><br>
-Não. Trabalhamos exclusivamente com instalação e configuração.
+<div class="faq-item"><strong>Vocês vendem fechaduras Pado?</strong><br>Não. Trabalhamos exclusivamente com instalação e configuração.</div>
+<div class="faq-item"><strong>Posso comprar a fechadura e contratar somente a instalação?</strong><br>Sim. Instalamos equipamentos adquiridos pelo próprio cliente.</div>
+<div class="faq-item"><strong>Vocês configuram senhas e biometria?</strong><br>Sim. A configuração inicial faz parte do serviço.</div>
+<div class="faq-item"><strong>Qual o tempo médio de instalação?</strong><br>Normalmente entre 30 e 90 minutos dependendo da porta e do modelo.</div>
+<div class="faq-item"><strong>Vocês atendem condomínios?</strong><br>Sim. Atendemos residências, apartamentos e condomínios em toda a região.</div>
 </div>
-
-<div class="faq-item">
-<strong>Posso comprar a fechadura e contratar somente a instalação?</strong><br>
-Sim. Instalamos equipamentos adquiridos pelo próprio cliente.
 </div>
-
-<div class="faq-item">
-<strong>Vocês configuram senhas e biometria?</strong><br>
-Sim. A configuração inicial faz parte do serviço.
-</div>
-
-<div class="faq-item">
-<strong>Qual o tempo médio de instalação?</strong><br>
-Normalmente entre 30 e 90 minutos dependendo da porta e do modelo.
-</div>
-
-<div class="faq-item">
-<strong>Vocês atendem condomínios?</strong><br>
-Sim. Atendemos residências, apartamentos e condomínios em toda a região.
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 <section class="cta">
-
-<h2>
-Receba uma Avaliação Gratuita
-</h2>
-
-<p>
-Envie uma foto da sua porta e receba orientação sem compromisso.
-</p>
-
+<h2>Receba uma Avaliação Gratuita</h2>
+<p>Envie uma foto da sua porta e receba orientação sem compromisso.</p>
 <br>
-
-<a class="btn"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
-
+<a class="btn" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
 <i class="fab fa-whatsapp"></i>
  Falar no WhatsApp
-
 </a>
-
 </section>
 
 <footer>
-
-Instalação de Fechaduras Pado em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Região Metropolitana.
-
+<div class="footer-grid">
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+</div>
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Pado em Curitiba e Região Metropolitana.</p>
+<p style="margin-top:8px;"><a href="/politica-privacidade/">Política de Privacidade</a></p>
+</div>
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
-
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20instalação%20de%20fechadura%20Pado">
 <i class="fab fa-whatsapp"></i>
-
 </a>
 
 </body>
