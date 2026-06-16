@@ -1,1 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalação de Fechaduras Inteligentes para Construtoras em Curitiba | Acesso Casa</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Instalação profissional de fechaduras inteligentes para construtoras em Curitiba e Região Metropolitana. Parceiro para instalação em empreendimentos novos e imóveis em fase de entrega.">
+<meta property="og:title" content="Acesso Casa - Fechaduras Inteligentes para Construtoras">
+<meta property="og:description" content="Instalação de Fechaduras Inteligentes para construtoras em Curitiba">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/logo-acesso-casa.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+--dark:#0F172A;
+--gold:#D4AF37;
+--white:#FFFFFF;
+--gray:#F3F4F6;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+body{
+background:#fff;
+color:#222;
+line-height:1.6;
+}
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:999;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+.logo img{
+height:70px;
+display:block;
+}
+.social{
+color:white;
+font-size:14px;
+font-weight:500;
+text-align:right;
+}
+.hero{
+background:
+linear-gradient(rgba(15,23,42,.88),
+rgba(15,23,42,.88)),
+url('/hero-fechadura.png');
+background-size:cover;
+background-position:center;
+min-height:700px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:120px;
+padding-bottom:80px;
+text-align:center;
+color:white;
+}
+.hero-content{
+max-width:800px;
+}
+.hero h1{
+font-size:2.8rem;
+line-height:1.15;
+margin-bottom:15px;
+font-weight:800;
+}
+.hero p{
+font-size:1.2rem;
+margin-bottom:35px;
+color:#e5e7eb;
+}
+.btn{
+display:inline-block;
+background:var(--gold);
+color:var(--dark);
+padding:18px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-3px);
+}
+.section{
+padding:90px 0;
+}
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:2.2rem;
+color:var(--dark);
+}
+.section-subtitle{
+text-align:center;
+margin-bottom:50px;
+font-size:1.1rem;
+color:#555;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.grid-3{
+grid-template-columns:repeat(3,1fr);
+}
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+.card h3{
+margin-bottom:10px;
+font-size:1.1rem;
+}
+.card p{
+color:#555;
+font-size:.95rem;
+}
+.card-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+a.card-link:hover{
+background:#D4AF37;
+color:#0F172A;
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+.cta{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+.cta h2{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+.cta p{
+font-size:1.15rem;
+color:#ccc;
+margin-bottom:30px;
+}
+footer{
+background:#0F172A;
+color:#aaa;
+text-align:center;
+padding:30px 0 20px;
+}
+.footer-grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px 60px;
+max-width:1000px;
+margin:auto;
+padding:0 20px 20px;
+border-bottom:1px solid rgba(255,255,255,.08);
+margin-bottom:20px;
+}
+.footer-grid h4{
+color:var(--gold);
+font-size:.85rem;
+margin-bottom:10px;
+font-weight:700;
+letter-spacing:.5px;
+}
+.footer-grid a{
+display:block;
+color:#888;
+text-decoration:none;
+font-size:.8rem;
+margin-bottom:5px;
+transition:.2s;
+line-height:1.5;
+}
+.footer-grid a:hover{
+color:var(--gold);
+}
+.footer-copy{
+color:#555;
+font-size:.75rem;
+padding:0 20px;
+}
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+.instagram-btn{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 24px;
+background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:14px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);
+transition:.3s;
+}
+.instagram-btn:hover{
+transform:translateY(-2px) scale(1.03);
+}
+.instagram-btn i{
+font-size:20px;
+color:white;
+}
+.bg-gray{
+background:#f8fafc;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+counter-reset:step;
+}
+.step-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+position:relative;
+}
+.step-card::before{
+counter-increment:step;
+content:counter(step);
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:var(--dark);
+font-weight:800;
+font-size:1.1rem;
+width:35px;
+height:35px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.step-card h3{
+margin-bottom:8px;
+font-size:1.05rem;
+}
+.step-card p{
+color:#555;
+font-size:.9rem;
+}
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+margin:auto;
+}
+.brand{
+background:#fff;
+padding:15px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+display:flex;
+justify-content:center;
+align-items:center;
+height:90px;
+text-decoration:none;
+transition:.3s;
+}
+.brand:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.brand img{
+max-width:110px;
+max-height:45px;
+object-fit:contain;
+}
+@media(max-width:1024px){
+.grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.logo img{height:55px}
+.social{display:none}
+.hero{min-height:600px;padding-top:110px}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:1.8rem}
+.grid-3{grid-template-columns:1fr}
+.cta h2{font-size:2rem}
+.cta p{font-size:1rem}
+}
+</style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Acesso Casa",
+"url":"https://acessocasa.com.br",
+"logo":"https://acessocasa.com.br/logo-acesso-casa.png",
+"image":"https://acessocasa.com.br/logo-acesso-casa.png",
+"telephone":"+55 41 99746-9076",
+"priceRange":"$$",
+"description":"Instalação de fechaduras inteligentes para construtoras em Curitiba e Região Metropolitana.",
+"areaServed":["Curitiba","São José dos Pinhais","Pinhais","Colombo","Araucária","Campo Largo"],
+"address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+"contactPoint":{"@type":"ContactPoint","telephone":"+55 41 99746-9076","contactType":"customer service","areaServed":"BR","availableLanguage":"Portuguese"},
+"sameAs":["https://www.instagram.com/acessocasafechaduras/"]
+}
+</script>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">
+<a href="/">
+<img src="/logo-acesso-casa.png" alt="Acesso Casa">
+</a>
+</div>
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
+</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-content">
+<h1>Instalação de Fechaduras Inteligentes<br>para Construtoras</h1>
+<p>Parceiro de instalação para empreendimentos novos em Curitiba e Região Metropolitana.<br>Agilidade na entrega de imóveis com tecnologia de acesso inteligente.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20para%20construtora">
+<i class="fab fa-whatsapp"></i> Solicitar Orçamento
+</a>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Benefícios para Construtoras</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🏗️ Agilidade na Entrega</h3>
+<p>Instalação rápida sem atrasar o cronograma da obra.</p>
+</div>
+<div class="card">
+<h3>🔧 Instalação em Lote</h3>
+<p>Atendimento programado para múltiplas unidades com desconto progressivo.</p>
+</div>
+<div class="card">
+<h3>📱 Diferencial de Venda</h3>
+<p>Imóvel com fechadura inteligente agrega valor e destaca o empreendimento.</p>
+</div>
+<div class="card">
+<h3>🔒 Pronto para Entregar</h3>
+<p>Fechadura configurada e funcionando — o comprador só precisa trocar a senha.</p>
+</div>
+<div class="card">
+<h3>📋 Padronização</h3>
+<p>Mesmo modelo em todas as unidades — facilita manutenção e reposição.</p>
+</div>
+<div class="card">
+<h3>✅ Garantia Inclusa</h3>
+<p>Instalação com garantia e suporte pós-entrega.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Como Funciona a Parceria</h2>
+<p class="section-subtitle">Processo integrado ao cronograma da obra — do projeto à entrega das chaves.</p>
+<div class="steps">
+<div class="step-card">
+<h3>Contato e briefing</h3>
+<p>Entendemos o empreendimento, modelo de fechadura e prazo de entrega.</p>
+</div>
+<div class="step-card">
+<h3>Proposta para o empreendimento</h3>
+<p>Orçamento personalizado por unidade com condições especiais para construtoras.</p>
+</div>
+<div class="step-card">
+<h3>Instalação programada</h3>
+<p>Agendamento conforme o cronograma da obra — instalamos todas as unidades.</p>
+</div>
+<div class="step-card">
+<h3>Entrega técnica</h3>
+<p>Fechaduras instaladas, configuradas e prontas para o comprador usar.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">O Que Está Incluso</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🔧 Instalação Completa</h3>
+<p>Montagem profissional em portas de madeira, ferro ou alumínio.</p>
+</div>
+<div class="card">
+<h3>⚙️ Configuração Inicial</h3>
+<p>Senha mestra e configuração básica para entrega ao comprador.</p>
+</div>
+<div class="card">
+<h3>📲 App Pareado</h3>
+<p>Aplicativo instalado e vinculado à fechadura para demonstração.</p>
+</div>
+<div class="card">
+<h3>✅ Testes Individuais</h3>
+<p>Verificação completa em cada unidade instalada.</p>
+</div>
+<div class="card">
+<h3>📖 Manual do Comprador</h3>
+<p>Orientação de uso para entrega junto com as chaves.</p>
+</div>
+<div class="card">
+<h3>🛡 Suporte Pós-Instalação</h3>
+<p>Suporte técnico para moradores após a entrega do imóvel.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Tipos de Empreendimentos</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🏢 Edifícios Residenciais</h3>
+<p>Apartamentos e coberturas com padronização de fechaduras.</p>
+</div>
+<div class="card">
+<h3>🏡 Loteamentos Fechados</h3>
+<p>Casas em condomínio com fechadura inteligente de fábrica.</p>
+</div>
+<div class="card">
+<h3>💼 Edifícios Comerciais</h3>
+<p>Salas comerciais e lajes corporativas com controle de acesso.</p>
+</div>
+<div class="card">
+<h3>🏘️ Condomínios de Casas</h3>
+<p>Padronização para todas as unidades do empreendimento.</p>
+</div>
+<div class="card">
+<h3>🏗️ Obras Verticais</h3>
+<p>Instalação andar por andar conforme o avanço da obra.</p>
+</div>
+<div class="card">
+<h3>🔑 Imóveis na Planta</h3>
+<p>Parceria desde o lançamento — fechadura já no memorial descritivo.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Por Que Fechar Parceria com a Acesso Casa?</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>📅 Pontualidade</h3>
+<p>Respeitamos o cronograma da obra sem retrabalho.</p>
+</div>
+<div class="card">
+<h3>📦 Instalação em Grande Escala</h3>
+<p>Capacidade para instalar dezenas de unidades por semana.</p>
+</div>
+<div class="card">
+<h3>🏆 Qualidade Padronizada</h3>
+<p>Mesmo padrão de instalação em todas as unidades.</p>
+</div>
+<div class="card">
+<h3>💰 Custo Competitivo</h3>
+<p>Condições especiais para construtoras com volume.</p>
+</div>
+<div class="card">
+<h3>🔧 Suporte ao Comprador</h3>
+<p>Atendimento direto ao morador sem sobrecarregar a construtora.</p>
+</div>
+<div class="card">
+<h3>📄 Nota Fiscal</h3>
+<p>Serviço com emissão de NF para prestação de contas.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Marcas Atendidas</h2>
+<div class="brands-grid">
+<a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
+<img src="/intelbras.png" alt="Intelbras">
+</a>
+<a href="/instalacao-fechadura-yale-curitiba" class="brand">
+<img src="/yale.png" alt="Yale">
+</a>
+<a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
+<img src="/papaiz.png" alt="Papaiz">
+</a>
+<a href="/instalacao-fechadura-pado-curitiba" class="brand">
+<img src="/pado.png" alt="Pado">
+</a>
+<a href="/instalacao-fechadura-elsys-curitiba" class="brand">
+<img src="/elsys.png" alt="Elsys">
+</a>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<h2>Seja Nosso Parceiro</h2>
+<p>Solicite uma proposta personalizada para sua construtora em Curitiba e Região Metropolitana.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20para%20construtora">
+<i class="fab fa-whatsapp"></i> Falar no WhatsApp
+</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+</div>
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Inteligentes para Construtoras em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
+<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20para%20construtora">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
 
