@@ -16,6 +16,7 @@ content="Instalação profissional de fechaduras digitais em Curitiba e Região 
 <meta property="og:title" content="Acesso Casa">
 <meta property="og:description" content="Instalação de Fechaduras Digitais em Curitiba">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/logo-acesso-casa.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -161,16 +162,17 @@ text-align:center;
 margin-bottom:10px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:20px;
+a.card:hover, .city-card:hover{
+background:#D4AF37;
+color:#0F172A;
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
-.gallery img{
-width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+.card-link{
+text-decoration:none;
+color:inherit;
+display:block;
 }
 
 .brands{
@@ -197,7 +199,42 @@ footer{
 background:#0F172A;
 color:#aaa;
 text-align:center;
-padding:30px;
+padding:30px 0 20px;
+}
+.footer-grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px 60px;
+max-width:1000px;
+margin:auto;
+padding:0 20px 20px;
+border-bottom:1px solid rgba(255,255,255,.08);
+margin-bottom:20px;
+}
+.footer-grid h4{
+color:var(--gold);
+font-size:.85rem;
+margin-bottom:10px;
+font-weight:700;
+letter-spacing:.5px;
+}
+.footer-grid a{
+display:block;
+color:#888;
+text-decoration:none;
+font-size:.8rem;
+margin-bottom:5px;
+transition:.2s;
+line-height:1.5;
+}
+.footer-grid a:hover{
+color:var(--gold);
+}
+.footer-copy{
+color:#555;
+font-size:.75rem;
+padding:0 20px;
 }
 
 .whatsapp{
@@ -249,6 +286,58 @@ max-width:110px;
 max-height:45px;
 object-fit:contain;
 }
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+counter-reset:step;
+}
+.step-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+position:relative;
+}
+.step-card::before{
+counter-increment:step;
+content:counter(step);
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:var(--dark);
+font-weight:800;
+font-size:1.1rem;
+width:35px;
+height:35px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.step-card h3{
+margin-bottom:8px;
+font-size:1.05rem;
+}
+.step-card p{
+color:#555;
+font-size:.9rem;
+}
+.section-subtitle{
+text-align:center;
+margin-bottom:50px;
+font-size:1.1rem;
+color:#555;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+.bg-gray{
+background:#f8fafc;
+}
 
 @media(max-width:768px){
 
@@ -275,10 +364,6 @@ font-size:1rem;
 
 .section-title{
 font-size:1.8rem;
-}
-
-.gallery{
-grid-template-columns:1fr;
 }
 
 .cta h2{
@@ -331,28 +416,16 @@ font-size:20px;
 color:white;
 }
 
-  .city-card{
+.city-card{
 text-decoration:none;
 color:#222;
 font-weight:600;
 transition:.3s;
 cursor:pointer;
 }
-
-.city-card:hover{
-background:#D4AF37;
-color:#0F172A;
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-}
   
 </style>
 
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -363,135 +436,18 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   "image":"https://acessocasa.com.br/logo-acesso-casa.png",
   "telephone":"+55 41 99746-9076",
   "priceRange":"$$",
-  "description":"Instalação de fechaduras digitais em Curitiba e Região Metropolitana.",
+  "description":"Instalação profissional de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana. Atendimento rápido, configuração completa e orçamento gratuito.",
   "areaServed":[
-    "Curitiba",
-    "São José dos Pinhais",
-    "Pinhais",
-    "Colombo",
-    "Araucária",
-    "Campo Largo"
+    {"@type":"City","name":"Curitiba"},
+    {"@type":"City","name":"São José dos Pinhais"},
+    {"@type":"City","name":"Pinhais"},
+    {"@type":"City","name":"Colombo"},
+    {"@type":"City","name":"Araucária"},
+    {"@type":"City","name":"Campo Largo"}
   ],
-  "address":{
-    "@type":"PostalAddress",
-    "addressLocality":"Curitiba",
-    "addressRegion":"PR",
-    "addressCountry":"BR"
-  },
-  "sameAs":[
-    "https://www.instagram.com/acessocasafechaduras/"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://acessocasa.com.br/#business",
-  "name":"Acesso Casa",
-  "url":"https://acessocasa.com.br",
-  "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "image":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "description":"Instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-  "telephone":"+55 41 99746-9076",
-  "priceRange":"$$",
-  "areaServed":[
-    {
-      "@type":"City",
-      "name":"Curitiba"
-    },
-    {
-      "@type":"City",
-      "name":"São José dos Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Colombo"
-    },
-    {
-      "@type":"City",
-      "name":"Araucária"
-    },
-    {
-      "@type":"City",
-      "name":"Campo Largo"
-    }
-  ],
-  "sameAs":[
-    "https://www.instagram.com/acessocasafechaduras"
-  ],
-  "contactPoint":{
-    "@type":"ContactPoint",
-    "telephone":"+55 41 99746-9076",
-    "contactType":"customer service",
-    "areaServed":"BR",
-    "availableLanguage":"Portuguese"
-  }
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://acessocasa.com.br/#localbusiness",
-
-  "name": "Acesso Casa",
-
-  "url": "https://acessocasa.com.br",
-
-  "telephone": "+55 41 99746-9076",
-
-  "description": "Especializada em instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-
-  "logo": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "image": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "priceRange": "$$",
-
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Curitiba"
-    },
-    {
-      "@type": "City",
-      "name": "São José dos Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Colombo"
-    },
-    {
-      "@type": "City",
-      "name": "Araucária"
-    },
-    {
-      "@type": "City",
-      "name": "Campo Largo"
-    }
-  ],
-
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55 41 99746-9076",
-    "contactType": "customer service",
-    "availableLanguage": "Portuguese"
-  },
-
-  "sameAs": [
-    "https://www.instagram.com/acessocasafechaduras",
-    "https://share.google/OCYBh0tPAsarT598l"
-  ]
+  "address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+  "contactPoint":{"@type":"ContactPoint","telephone":"+55 41 99746-9076","contactType":"customer service","areaServed":"BR","availableLanguage":"Portuguese"},
+  "sameAs":["https://www.instagram.com/acessocasafechaduras"]
 }
 </script>
 
@@ -552,7 +508,7 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 
 </section>
 
-<section style="padding:50px 0;background:#f8fafc;">
+<section class="section bg-gray">
 
 <div class="container" style="text-align:center;">
 
@@ -608,29 +564,42 @@ Por que escolher a Acesso Casa?
 
 </section>
 
-<section class="section bg-gray">
+<section class="section">
+
 <div class="container">
-<h2 class="section-title">Como Funciona</h2>
+
+<h2 class="section-title">
+Como Funciona
+</h2>
+
 <p class="section-subtitle">Do orçamento à instalação funcionando — tudo em poucos passos.</p>
+
 <div class="steps">
+
 <div class="step-card">
 <h3>Envie uma foto da porta</h3>
 <p>Fotografe a porta de frente e a lateral da fechadura atual.</p>
 </div>
+
 <div class="step-card">
 <h3>Receba a avaliação</h3>
 <p>Analisamos a compatibilidade e indicamos o modelo ideal.</p>
 </div>
+
 <div class="step-card">
 <h3>Agende a instalação</h3>
 <p>Escolha o melhor horário — atendemos em até 24h.</p>
 </div>
+
 <div class="step-card">
-<h3>Instalamos e configuramos</h3>
-<p>Instalação, cadastro de senhas/biometria e orientação de uso.</p>
+<h3>Aproveite sua fechadura</h3>
+<p>Instalação, configuração e orientação de uso completas.</p>
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 <section class="section">
@@ -677,25 +646,25 @@ Quem Atendemos
 
 <div class="grid">
 
-<div class="card">
+<a href="/instalacao-fechadura-inteligente-residencial/" class="card card-link">
 <h3>🏠 Residências</h3>
 <p>Casas, sobrados e apartamentos.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/instalacao-fechadura-inteligente-condominios/" class="card card-link">
 <h3>🏢 Condomínios</h3>
 <p>Instalações para moradores e áreas comuns.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/instalacao-fechadura-inteligente-construtoras/" class="card card-link">
 <h3>🏗️ Construtoras</h3>
 <p>Empreendimentos novos e imóveis em fase de entrega.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/instalacao-fechadura-inteligente-empresas/" class="card card-link">
 <h3>🏬 Empresas</h3>
 <p>Escritórios, clínicas e estabelecimentos comerciais.</p>
-</div>
+</a>
 
 </div>
 
@@ -775,8 +744,43 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 
 <footer>
 
-© 2026 ACESSO CASA • Instalação de Fechaduras Digitais em Curitiba, 
-  São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.
+<div class="footer-grid">
+
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+
+</div>
+
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Digitais em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
+<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
+</div>
 
 </footer>
 
@@ -788,10 +792,5 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 </a>
 
 
-});
-
-});
-</script>
-  
 </body>
 </html>
