@@ -244,6 +244,38 @@ font-size:1.05rem;
 color:#555;
 font-size:.9rem;
 }
+
+    .brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+margin:auto;
+}
+
+.brand{
+background:#fff;
+padding:15px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+display:flex;
+justify-content:center;
+align-items:center;
+height:90px;
+text-decoration:none;
+transition:.3s;
+}
+
+.brand:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.brand img{
+max-width:110px;
+max-height:45px;
+object-fit:contain;
+}
 @media(max-width:768px){
 .logo img{height:55px}
 .social{display:none}
