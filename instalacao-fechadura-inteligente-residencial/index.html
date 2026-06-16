@@ -4,27 +4,298 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instalação de Fechaduras Inteligentes Residenciais em Curitiba | Acesso Casa</title>
-<meta name="description" content="Instalação de fechaduras inteligentes residenciais em Curitiba e Região Metropolitana. Atendimento para casas, apartamentos, sobrados e condomínios residenciais.">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Instalação profissional de fechaduras inteligentes residenciais em Curitiba e Região Metropolitana. Atendimento para casas, apartamentos, sobrados e condomínios residenciais.">
+<meta property="og:title" content="Acesso Casa - Fechaduras Inteligentes Residenciais">
+<meta property="og:description" content="Instalação de Fechaduras Inteligentes para sua casa em Curitiba">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-body{font-family:Montserrat,sans-serif;margin:0;line-height:1.6}
-.container{width:90%;max-width:1200px;margin:auto}
-.hero{background:#0F172A;color:#fff;padding:140px 20px 100px;text-align:center}
-.section{padding:80px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{padding:25px;border-radius:16px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
-.section-title{text-align:center;margin-bottom:40px}
-.btn{background:#D4AF37;color:#111;padding:14px 28px;border-radius:40px;text-decoration:none;font-weight:bold}
-.cta{background:#0F172A;color:#fff;text-align:center;padding:80px 20px}
+:root{
+--dark:#0F172A;
+--gold:#D4AF37;
+--white:#FFFFFF;
+--gray:#F3F4F6;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+body{
+background:#fff;
+color:#222;
+line-height:1.6;
+}
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:999;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+.logo img{
+height:70px;
+display:block;
+}
+.social{
+color:white;
+font-size:14px;
+font-weight:500;
+text-align:right;
+}
+.hero{
+background:
+linear-gradient(rgba(15,23,42,.88),
+rgba(15,23,42,.88)),
+url('hero-fechadura.png');
+background-size:cover;
+background-position:center;
+min-height:700px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:120px;
+padding-bottom:80px;
+text-align:center;
+color:white;
+}
+.hero-content{
+max-width:800px;
+}
+.hero h1{
+font-size:2.8rem;
+line-height:1.15;
+margin-bottom:15px;
+font-weight:800;
+}
+.hero p{
+font-size:1.2rem;
+margin-bottom:35px;
+color:#e5e7eb;
+}
+.btn{
+display:inline-block;
+background:var(--gold);
+color:var(--dark);
+padding:18px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-3px);
+}
+.section{
+padding:90px 0;
+}
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:2.2rem;
+color:var(--dark);
+}
+.section-subtitle{
+text-align:center;
+margin-bottom:50px;
+font-size:1.1rem;
+color:#555;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+.card h3{
+margin-bottom:10px;
+font-size:1.1rem;
+}
+.card p{
+color:#555;
+font-size:.95rem;
+}
+.cta{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+.cta h2{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+.cta p{
+font-size:1.15rem;
+color:#ccc;
+margin-bottom:30px;
+}
+footer{
+background:#0F172A;
+color:#aaa;
+text-align:center;
+padding:30px;
+font-size:.85rem;
+}
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+.instagram-btn{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 24px;
+background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:14px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);
+transition:.3s;
+}
+.instagram-btn:hover{
+transform:translateY(-2px) scale(1.03);
+}
+.instagram-btn i{
+font-size:20px;
+color:white;
+}
+.bg-gray{
+background:#f8fafc;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+counter-reset:step;
+}
+.step-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+position:relative;
+}
+.step-card::before{
+counter-increment:step;
+content:counter(step);
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:var(--dark);
+font-weight:800;
+font-size:1.1rem;
+width:35px;
+height:35px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.step-card h3{
+margin-bottom:8px;
+font-size:1.05rem;
+}
+.step-card p{
+color:#555;
+font-size:.9rem;
+}
+@media(max-width:768px){
+.logo img{height:55px}
+.social{display:none}
+.hero{min-height:600px;padding-top:110px}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:1.8rem}
+.cta h2{font-size:2rem}
+.cta p{font-size:1rem}
+}
 </style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Acesso Casa",
+"url":"https://acessocasa.com.br",
+"logo":"https://acessocasa.com.br/logo-acesso-casa.png",
+"telephone":"+55 41 99746-9076",
+"priceRange":"$$",
+"description":"Instalação de fechaduras inteligentes residenciais em Curitiba e Região Metropolitana.",
+"areaServed":["Curitiba","São José dos Pinhais","Pinhais","Colombo","Araucária","Campo Largo"],
+"address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+"sameAs":["https://www.instagram.com/acessocasafechaduras/"]
+}
+</script>
 </head>
 <body>
 
+<header>
+<div class="container nav">
+<div class="logo">
+<a href="/">
+<img src="logo-acesso-casa.png" alt="Acesso Casa">
+</a>
+</div>
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
+</a>
+</div>
+</div>
+</header>
+
 <section class="hero">
-<div class="container">
-<h1>Instalação de Fechaduras Inteligentes Residenciais em Curitiba</h1>
-<p>Mais segurança, praticidade e controle de acesso para casas, apartamentos e sobrados.</p>
-<a class="btn" href="https://wa.me/5541997469076">Solicitar Orçamento</a>
+<div class="container hero-content">
+<h1>Instalação de Fechaduras Inteligentes<br>para Sua Residência</h1>
+<p>Casas, apartamentos, sobrados e condomínios em Curitiba e Região Metropolitana.<br>Segurança inteligente com instalação profissional.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20residencial">
+<i class="fab fa-whatsapp"></i> Solicitar Orçamento
+</a>
 </div>
 </section>
 
@@ -32,51 +303,119 @@ body{font-family:Montserrat,sans-serif;margin:0;line-height:1.6}
 <div class="container">
 <h2 class="section-title">Benefícios para Sua Residência</h2>
 <div class="grid">
-<div class="card">🔒 Mais Segurança</div>
-<div class="card">📱 Controle de Acesso</div>
-<div class="card">🔑 Menos Dependência de Chaves</div>
-<div class="card">👨‍👩‍👧‍👦 Senhas Individuais</div>
-<div class="card">⚡ Acesso Mais Rápido</div>
-<div class="card">🏠 Valorização do Imóvel</div>
+<div class="card">
+<h3>🔒 Mais Segurança</h3>
+<p>Proteção moderna contra arrombamentos e cópias de chave.</p>
+</div>
+<div class="card">
+<h3>📱 Controle por App</h3>
+<p>Libere acesso direto do celular, de qualquer lugar.</p>
+</div>
+<div class="card">
+<h3>🔑 Menos Dependência de Chaves</h3>
+<p>Senhas, biometria e cartão de proximidade.</p>
+</div>
+<div class="card">
+<h3>👨‍👩‍👧‍👦 Senhas Individuais</h3>
+<p>Cada morador com sua própria senha. Saiba quem entrou.</p>
+</div>
+<div class="card">
+<h3>⚡ Acesso Mais Rápido</h3>
+<p>Entre sem precisar procurar chaves na bolsa ou bolso.</p>
+</div>
+<div class="card">
+<h3>🏠 Valorização do Imóvel</h3>
+<p>Uma fechadura inteligente agrega valor ao seu imóvel.</p>
+</div>
 </div>
 </div>
 </section>
 
-<section class="section">
+<section class="section bg-gray">
 <div class="container">
 <h2 class="section-title">Como Funciona</h2>
-<div class="grid">
-<div class="card">1️⃣ Envie uma foto da porta</div>
-<div class="card">2️⃣ Avaliamos a compatibilidade</div>
-<div class="card">3️⃣ Agendamos a instalação</div>
-<div class="card">4️⃣ Instalamos e configuramos</div>
+<p class="section-subtitle">Do orçamento à instalação funcionando — tudo em poucos passos.</p>
+<div class="steps">
+<div class="step-card">
+<h3>Envie uma foto da porta</h3>
+<p>Fotografe a porta de frente e a lateral da fechadura atual.</p>
+</div>
+<div class="step-card">
+<h3>Receba a avaliação</h3>
+<p>Analisamos a compatibilidade e indicamos o modelo ideal.</p>
+</div>
+<div class="step-card">
+<h3>Agende a instalação</h3>
+<p>Escolha o melhor horário — atendemos em até 24h.</p>
+</div>
+<div class="step-card">
+<h3>Instalamos e configuramos</h3>
+<p>Instalação, cadastro de senhas/biometria e orientação de uso.</p>
+</div>
 </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<h2 class="section-title">O Que Está Incluso</h2>
+<h2 class="section-title">O Que Está Incluso na Instalação</h2>
 <div class="grid">
-<div class="card">Instalação da fechadura</div>
-<div class="card">Cadastro de senhas</div>
-<div class="card">Cadastro biométrico</div>
-<div class="card">Configuração de aplicativo</div>
-<div class="card">Testes de funcionamento</div>
-<div class="card">Orientação de uso</div>
+<div class="card">
+<h3>🔧 Instalação Completa</h3>
+<p>Montagem e fixação profissional da fechadura na porta.</p>
+</div>
+<div class="card">
+<h3>🔢 Cadastro de Senhas</h3>
+<p>Configuração de senhas individuais para cada morador.</p>
+</div>
+<div class="card">
+<h3>🖐️ Cadastro Biométrico</h3>
+<p>Registro de digitais para liberação por impressão digital.</p>
+</div>
+<div class="card">
+<h3>📲 Configuração do App</h3>
+<p>Instalação e pareamento com o aplicativo no celular.</p>
+</div>
+<div class="card">
+<h3>✅ Testes de Funcionamento</h3>
+<p>Verificação de abertura, travamento e sensores.</p>
+</div>
+<div class="card">
+<h3>📖 Orientação de Uso</h3>
+<p>Explicação completa para todos os moradores.</p>
+</div>
 </div>
 </div>
 </section>
 
-<section class="section">
+<section class="section bg-gray">
 <div class="container">
 <h2 class="section-title">Tipos de Residências Atendidas</h2>
 <div class="grid">
-<div class="card">🏠 Casas</div>
-<div class="card">🏢 Apartamentos</div>
-<div class="card">🏡 Sobrados</div>
-<div class="card">🏘️ Condomínios</div>
-<div class="card">🔑 Imóveis para locação</div>
+<div class="card">
+<h3>🏠 Casas</h3>
+<p>Portas sociais, de serviço e laterais.</p>
+</div>
+<div class="card">
+<h3>🏢 Apartamentos</h3>
+<p>Porta de entrada e portas internas.</p>
+</div>
+<div class="card">
+<h3>🏡 Sobrados</h3>
+<p>Portão, porta social e garagem.</p>
+</div>
+<div class="card">
+<h3>🏘️ Condomínios</h3>
+<p>Áreas comuns, salão de festas e portarias.</p>
+</div>
+<div class="card">
+<h3>🔑 Imóveis para Locação</h3>
+<p>Controle remoto de acesso sem necessidade de chaves físicas.</p>
+</div>
+<div class="card">
+<h3>🏗️ Imóveis Novos</h3>
+<p>Instalação antes da mudança — sem obras extras.</p>
+</div>
 </div>
 </div>
 </section>
@@ -85,20 +424,49 @@ body{font-family:Montserrat,sans-serif;margin:0;line-height:1.6}
 <div class="container">
 <h2 class="section-title">Quando Vale a Pena Instalar</h2>
 <div class="grid">
-<div class="card">Perde chaves com frequência</div>
-<div class="card">Muitos moradores</div>
-<div class="card">Recebe entregas</div>
-<div class="card">Airbnb e temporada</div>
-<div class="card">Idosos na residência</div>
-<div class="card">Mais segurança para crianças</div>
+<div class="card">
+<h3>🔑 Perde chaves com frequência</h3>
+<p>Nunca mais precise fazer cópias ou chamar chaveiro.</p>
+</div>
+<div class="card">
+<h3>👨‍👩‍👧‍👦 Muitos moradores</h3>
+<p>Cada um com sua senha — sem depender de quem tem a chave.</p>
+</div>
+<div class="card">
+<h3>📦 Recebe entregas</h3>
+<p>Libere acesso temporário para entregadores pelo app.</p>
+</div>
+<div class="card">
+<h3>🏠 Airbnb e temporada</h3>
+<p>Senhas temporárias para cada hóspede. Controle total.</p>
+</div>
+<div class="card">
+<h3>👴 Idosos na residência</h3>
+<p>Sem preocupação com chaves. Acesso mais simples e seguro.</p>
+</div>
+<div class="card">
+<h3>👶 Crianças em casa</h3>
+<p>Senhas individuais e monitoramento de entrada e saída.</p>
+</div>
 </div>
 </div>
 </section>
 
 <section class="cta">
 <h2>Descubra Qual Fechadura Inteligente é Ideal para Sua Residência</h2>
-<p>Envie uma foto da sua porta e receba uma avaliação gratuita.</p>
+<p>Envie uma foto da sua porta pelo WhatsApp e receba uma avaliação gratuita em poucos minutos.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20residencial">
+<i class="fab fa-whatsapp"></i> Falar no WhatsApp
+</a>
 </section>
+
+<footer>
+&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Inteligentes Residenciais em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20residencial">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
