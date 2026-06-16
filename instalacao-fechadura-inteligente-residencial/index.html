@@ -125,6 +125,9 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
+.grid-3{
+grid-template-columns:repeat(3,1fr);
+}
 .card{
 background:white;
 padding:30px;
@@ -201,6 +204,34 @@ transform:translateY(-2px) scale(1.03);
 font-size:20px;
 color:white;
 }
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+margin:auto;
+}
+.brand{
+background:#fff;
+padding:15px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+display:flex;
+justify-content:center;
+align-items:center;
+height:90px;
+text-decoration:none;
+transition:.3s;
+}
+.brand:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.brand img{
+max-width:110px;
+max-height:45px;
+object-fit:contain;
+}
 .bg-gray{
 background:#f8fafc;
 }
@@ -244,37 +275,8 @@ font-size:1.05rem;
 color:#555;
 font-size:.9rem;
 }
-
-    .brands-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:18px;
-max-width:900px;
-margin:auto;
-}
-
-.brand{
-background:#fff;
-padding:15px;
-border-radius:16px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-display:flex;
-justify-content:center;
-align-items:center;
-height:90px;
-text-decoration:none;
-transition:.3s;
-}
-
-.brand:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.brand img{
-max-width:110px;
-max-height:45px;
-object-fit:contain;
+@media(max-width:1024px){
+.grid-3{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
 .logo img{height:55px}
@@ -283,6 +285,7 @@ object-fit:contain;
 .hero h1{font-size:2rem}
 .hero p{font-size:1rem}
 .section-title{font-size:1.8rem}
+.grid-3{grid-template-columns:1fr}
 .cta h2{font-size:2rem}
 .cta p{font-size:1rem}
 }
@@ -334,7 +337,7 @@ object-fit:contain;
 <section class="section">
 <div class="container">
 <h2 class="section-title">Benefícios para Sua Residência</h2>
-<div class="grid">
+<div class="grid grid-3">
 <div class="card">
 <h3>🔒 Mais Segurança</h3>
 <p>Proteção moderna contra arrombamentos e cópias de chave.</p>
@@ -378,7 +381,7 @@ object-fit:contain;
 </div>
 <div class="step-card">
 <h3>Agende a instalação</h3>
-<p>Escolha o melhor horário.</p>
+<p>Escolha o melhor horário — atendemos em até 24h.</p>
 </div>
 <div class="step-card">
 <h3>Instalamos e configuramos</h3>
@@ -391,7 +394,7 @@ object-fit:contain;
 <section class="section">
 <div class="container">
 <h2 class="section-title">O Que Está Incluso na Instalação</h2>
-<div class="grid">
+<div class="grid grid-3">
 <div class="card">
 <h3>🔧 Instalação Completa</h3>
 <p>Montagem e fixação profissional da fechadura na porta.</p>
@@ -423,7 +426,7 @@ object-fit:contain;
 <section class="section bg-gray">
 <div class="container">
 <h2 class="section-title">Tipos de Residências Atendidas</h2>
-<div class="grid">
+<div class="grid grid-3">
 <div class="card">
 <h3>🏠 Casas</h3>
 <p>Portas sociais, de serviço e laterais.</p>
@@ -452,46 +455,33 @@ object-fit:contain;
 </div>
 </section>
 
-  <section class="section">
-
+<section class="section">
 <div class="container">
-
-<h2 class="section-title">
-Marcas Atendidas
-</h2>
-
+<h2 class="section-title">Marcas Atendidas</h2>
 <div class="brands-grid">
-
 <a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
 <img src="/intelbras.png" alt="Intelbras">
 </a>
-
 <a href="/instalacao-fechadura-yale-curitiba" class="brand">
 <img src="/yale.png" alt="Yale">
 </a>
-
 <a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
 <img src="/papaiz.png" alt="Papaiz">
 </a>
-
 <a href="/instalacao-fechadura-pado-curitiba" class="brand">
 <img src="/pado.png" alt="Pado">
 </a>
-
 <a href="/instalacao-fechadura-elsys-curitiba" class="brand">
 <img src="/elsys.png" alt="Elsys">
 </a>
-
 </div>
-
 </div>
-
 </section>
 
 <section class="section">
 <div class="container">
 <h2 class="section-title">Quando Vale a Pena Instalar</h2>
-<div class="grid">
+<div class="grid grid-3">
 <div class="card">
 <h3>🔑 Perde chaves com frequência</h3>
 <p>Nunca mais precise fazer cópias ou chamar chaveiro.</p>
