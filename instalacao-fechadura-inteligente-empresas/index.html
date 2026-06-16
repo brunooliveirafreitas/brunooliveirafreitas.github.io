@@ -1,1 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalação de Fechaduras Inteligentes para Empresas em Curitiba | Acesso Casa</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Instalação profissional de fechaduras inteligentes para empresas em Curitiba e Região Metropolitana. Clínicas, consultórios, escritórios e comércios. Controle de acesso simplificado.">
+<meta property="og:title" content="Acesso Casa - Fechaduras Inteligentes para Empresas">
+<meta property="og:description" content="Instalação de Fechaduras Inteligentes para sua empresa em Curitiba">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+--dark:#0F172A;
+--gold:#D4AF37;
+--white:#FFFFFF;
+--gray:#F3F4F6;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+body{
+background:#fff;
+color:#222;
+line-height:1.6;
+}
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:999;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
+}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+.logo img{
+height:70px;
+display:block;
+}
+.social{
+color:white;
+font-size:14px;
+font-weight:500;
+text-align:right;
+}
+.hero{
+background:
+linear-gradient(rgba(15,23,42,.88),
+rgba(15,23,42,.88)),
+url('/hero-fechadura.png');
+background-size:cover;
+background-position:center;
+min-height:700px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:120px;
+padding-bottom:80px;
+text-align:center;
+color:white;
+}
+.hero-content{
+max-width:800px;
+}
+.hero h1{
+font-size:2.8rem;
+line-height:1.15;
+margin-bottom:15px;
+font-weight:800;
+}
+.hero p{
+font-size:1.2rem;
+margin-bottom:35px;
+color:#e5e7eb;
+}
+.btn{
+display:inline-block;
+background:var(--gold);
+color:var(--dark);
+padding:18px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+.btn:hover{
+transform:translateY(-3px);
+}
+.section{
+padding:90px 0;
+}
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:2.2rem;
+color:var(--dark);
+}
+.section-subtitle{
+text-align:center;
+margin-bottom:50px;
+font-size:1.1rem;
+color:#555;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.grid-3{
+grid-template-columns:repeat(3,1fr);
+}
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+.card h3{
+margin-bottom:10px;
+font-size:1.1rem;
+}
+.card p{
+color:#555;
+font-size:.95rem;
+}
+.cta{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+.cta h2{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+.cta p{
+font-size:1.15rem;
+color:#ccc;
+margin-bottom:30px;
+}
+footer{
+background:#0F172A;
+color:#aaa;
+text-align:center;
+padding:30px;
+font-size:.85rem;
+}
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+.instagram-btn{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 24px;
+background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);
+color:white;
+text-decoration:none;
+font-weight:700;
+font-size:14px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);
+transition:.3s;
+}
+.instagram-btn:hover{
+transform:translateY(-2px) scale(1.03);
+}
+.instagram-btn i{
+font-size:20px;
+color:white;
+}
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+margin:auto;
+}
+.brand{
+background:#fff;
+padding:15px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+display:flex;
+justify-content:center;
+align-items:center;
+height:90px;
+text-decoration:none;
+transition:.3s;
+}
+.brand:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.brand img{
+max-width:110px;
+max-height:45px;
+object-fit:contain;
+}
+.bg-gray{
+background:#f8fafc;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+counter-reset:step;
+}
+.step-card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+position:relative;
+}
+.step-card::before{
+counter-increment:step;
+content:counter(step);
+position:absolute;
+top:-15px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:var(--dark);
+font-weight:800;
+font-size:1.1rem;
+width:35px;
+height:35px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.step-card h3{
+margin-bottom:8px;
+font-size:1.05rem;
+}
+.step-card p{
+color:#555;
+font-size:.9rem;
+}
+@media(max-width:1024px){
+.grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.logo img{height:55px}
+.social{display:none}
+.hero{min-height:600px;padding-top:110px}
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+.section-title{font-size:1.8rem}
+.grid-3{grid-template-columns:1fr}
+.cta h2{font-size:2rem}
+.cta p{font-size:1rem}
+}
+</style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Acesso Casa",
+"url":"https://acessocasa.com.br",
+"logo":"https://acessocasa.com.br/logo-acesso-casa.png",
+"telephone":"+55 41 99746-9076",
+"priceRange":"$$",
+"description":"Instalação de fechaduras inteligentes para empresas em Curitiba e Região Metropolitana.",
+"areaServed":["Curitiba","São José dos Pinhais","Pinhais","Colombo","Araucária","Campo Largo"],
+"address":{"@type":"PostalAddress","addressLocality":"Curitiba","addressRegion":"PR","addressCountry":"BR"},
+"sameAs":["https://www.instagram.com/acessocasafechaduras/"]
+}
+</script>
+</head>
+<body>
 
+<header>
+<div class="container nav">
+<div class="logo">
+<a href="/">
+<img src="/logo-acesso-casa.png" alt="Acesso Casa">
+</a>
+</div>
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
+</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-content">
+<h1>Instalação de Fechaduras Inteligentes<br>para Empresas</h1>
+<p>Clínicas, consultórios, escritórios, comércios e indústrias em Curitiba e Região Metropolitana.<br>Controle de acesso profissional com instalação rápida.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20empresarial">
+<i class="fab fa-whatsapp"></i> Solicitar Orçamento
+</a>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Benefícios para Sua Empresa</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🔒 Segurança Reforçada</h3>
+<p>Proteção contra acessos não autorizados fora do horário comercial.</p>
+</div>
+<div class="card">
+<h3>📱 Controle Remoto</h3>
+<p>Libere acesso de funcionários e prestadores pelo celular, de qualquer lugar.</p>
+</div>
+<div class="card">
+<h3>👥 Senhas Individuais</h3>
+<p>Cada colaborador com senha única. Saiba exatamente quem entrou e em qual horário.</p>
+</div>
+<div class="card">
+<h3>⏰ Registro de Acesso</h3>
+<p>Histórico completo de entradas e saídas — ideal para controle de ponto.</p>
+</div>
+<div class="card">
+<h3>🔑 Sem Chaves Físicas</h3>
+<p>Nunca mais se preocupe com cópias perdidas, funcionários demitidos ou chaves extraviadas.</p>
+</div>
+<div class="card">
+<h3>⚡ Praticidade no Dia a Dia</h3>
+<p>Agilidade na abertura sem precisar de chaveiro ou portaria presencial.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Como Funciona</h2>
+<p class="section-subtitle">Da avaliação à instalação funcionando — processo rápido sem interromper seu negócio.</p>
+<div class="steps">
+<div class="step-card">
+<h3>Solicite um orçamento</h3>
+<p>Informe o tipo de empresa e quantidade de portas.</p>
+</div>
+<div class="step-card">
+<h3>Visita técnica</h3>
+<p>Avaliamos as portas e indicamos o modelo ideal para cada ambiente.</p>
+</div>
+<div class="step-card">
+<h3>Aprovação e agendamento</h3>
+<p>Instalamos em horário comercial ou fora do expediente, conforme sua preferência.</p>
+</div>
+<div class="step-card">
+<h3>Instalação e treinamento</h3>
+<p>Instalamos, configuramos e treinamos sua equipe para uso.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">O Que Está Incluso</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🔧 Instalação Completa</h3>
+<p>Montagem profissional em portas de madeira, ferro ou alumínio.</p>
+</div>
+<div class="card">
+<h3>👤 Cadastro de Usuários</h3>
+<p>Configuração de senhas individuais para cada colaborador.</p>
+</div>
+<div class="card">
+<h3>📲 Configuração do App</h3>
+<p>Aplicativo instalado e pareado com a fechadura.</p>
+</div>
+<div class="card">
+<h3>📋 Histórico de Acesso</h3>
+<p>Ativação do registro de entradas e saídas.</p>
+</div>
+<div class="card">
+<h3>✅ Testes e Verificação</h3>
+<p>Testes completos de funcionamento em todas as portas.</p>
+</div>
+<div class="card">
+<h3>📖 Treinamento da Equipe</h3>
+<p>Orientação prática para administradores e usuários.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
+<h2 class="section-title">Tipos de Empresas Atendidas</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🏥 Clínicas e Consultórios</h3>
+<p>Controle de acesso para recepção, salas e áreas restritas.</p>
+</div>
+<div class="card">
+<h3>💼 Escritórios e Salas Comerciais</h3>
+<p>Libere acesso apenas para funcionários e clientes agendados.</p>
+</div>
+<div class="card">
+<h3>🏪 Comércios e Lojas</h3>
+<p>Segurança para estoque, administrativo e entrada principal.</p>
+</div>
+<div class="card">
+<h3>🏭 Galpões e Indústrias</h3>
+<p>Fechaduras robustas para portas de acesso e almoxarifado.</p>
+</div>
+<div class="card">
+<h3>🏗️ Construtoras</h3>
+<p>Instalação em imóveis comerciais novos na fase de entrega.</p>
+</div>
+<div class="card">
+<h3>🔬 Laboratórios</h3>
+<p>Controle de acesso rigoroso para áreas controladas.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Marcas Atendidas</h2>
+<div class="brands-grid">
+<a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
+<img src="/intelbras.png" alt="Intelbras">
+</a>
+<a href="/instalacao-fechadura-yale-curitiba" class="brand">
+<img src="/yale.png" alt="Yale">
+</a>
+<a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
+<img src="/papaiz.png" alt="Papaiz">
+</a>
+<a href="/instalacao-fechadura-pado-curitiba" class="brand">
+<img src="/pado.png" alt="Pado">
+</a>
+<a href="/instalacao-fechadura-elsys-curitiba" class="brand">
+<img src="/elsys.png" alt="Elsys">
+</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Por Que Instalar Fechadura Inteligente no Comercial?</h2>
+<div class="grid grid-3">
+<div class="card">
+<h3>🔐 Controle de Acesso Efetivo</h3>
+<p>Saiba exatamente quem entrou e saiu, com data e horário.</p>
+</div>
+<div class="card">
+<h3>🚫 Bloqueio Imediato</h3>
+<p>Demitiu um funcionário? Remova a senha em segundos pelo app.</p>
+</div>
+<div class="card">
+<h3>📱 Acesso Temporário</h3>
+<p>Libere acesso para visitantes, prestadores e entregas com senhas temporárias.</p>
+</div>
+<div class="card">
+<h3>⏱️ Instalação Rápida</h3>
+<p>Sem quebra-quebra ou reformas. A instalação não interrompe seu negócio.</p>
+</div>
+<div class="card">
+<h3>🏢 Portaria Remota</h3>
+<p>Reduza custos com portaria presencial. Libere acesso à distância.</p>
+</div>
+<div class="card">
+<h3>📊 Relatórios de Acesso</h3>
+<p>Histórico completo para auditoria e segurança patrimonial.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<h2>Solicite uma Proposta para Sua Empresa</h2>
+<p>Solicite uma avaliação gratuita e descubra a solução ideal para seu negócio em Curitiba e Região Metropolitana.</p>
+<a class="btn" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20empresarial">
+<i class="fab fa-whatsapp"></i> Falar no WhatsApp
+</a>
+</section>
+
+<footer>
+&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Inteligentes para Empresas em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20empresarial">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
