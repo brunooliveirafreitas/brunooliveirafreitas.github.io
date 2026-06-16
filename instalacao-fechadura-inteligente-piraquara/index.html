@@ -219,66 +219,36 @@ z-index:9999;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-.brand-btn{
-display:inline-block;
-margin-top:15px;
-padding:10px 18px;
-background:#0F172A;
-color:white;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-border-radius:30px;
-transition:all .3s ease;
-}
-
-.brand-btn:hover{
-background:#D4AF37;
-color:#0F172A;
-transform:translateY(-2px);
-box-shadow:0 6px 15px rgba(0,0,0,.15);
-}
-
-.marcasSwiper{
-width:100%;
-overflow:hidden;
-padding:20px 0 60px;
-}
-
-.swiper-slide{
-display:flex;
-justify-content:center;
-align-items:center;
+.brands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+margin:auto;
 }
 
 .brand{
 background:#fff;
-padding:25px;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
+padding:15px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
 display:flex;
 justify-content:center;
 align-items:center;
-width:220px;
-height:120px;
+height:90px;
 text-decoration:none;
 transition:.3s;
 }
 
 .brand:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 35px rgba(0,0,0,.15);
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .brand img{
-max-width:100%;
-max-height:70px;
+max-width:110px;
+max-height:45px;
 object-fit:contain;
-}
-
-.swiper-pagination{
-position:relative !important;
-margin-top:20px;
 }
 
 @media(max-width:768px){
@@ -364,10 +334,7 @@ color:white;
   
 </style>
 
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+
 
 <script type="application/ld+json">
 {
@@ -669,53 +636,27 @@ Como Funciona
 Marcas Atendidas
 </h2>
 
-<div class="swiper marcasSwiper">
-
-<div class="swiper-wrapper">
-
-<div class="swiper-slide">
+<div class="brands-grid">
 
 <a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
 <img src="/intelbras.png" alt="Intelbras">
 </a>
 
-</div>
-
-<div class="swiper-slide">
-
 <a href="/instalacao-fechadura-yale-curitiba" class="brand">
 <img src="/yale.png" alt="Yale">
 </a>
-
-</div>
-
-<div class="swiper-slide">
 
 <a href="/instalacao-fechadura-papaiz-curitiba" class="brand">
 <img src="/papaiz.png" alt="Papaiz">
 </a>
 
-</div>
-
-<div class="swiper-slide">
-
 <a href="/instalacao-fechadura-pado-curitiba" class="brand">
 <img src="/pado.png" alt="Pado">
 </a>
 
-</div>
-
-<div class="swiper-slide">
-
 <a href="/instalacao-fechadura-elsys-curitiba" class="brand">
 <img src="/elsys.png" alt="Elsys">
 </a>
-
-</div>
-
-</div>
-
-<div class="swiper-pagination"></div>
 
 </div>
 
@@ -819,46 +760,8 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-const swiper = new Swiper(".marcasSwiper", {
-
-loop: true,
-
-speed: 800,
-
-autoplay: {
-delay: 2500,
-disableOnInteraction: false
-},
-
-slidesPerView: 1,
-spaceBetween: 20,
-
-breakpoints: {
-640: {
-slidesPerView: 2
-},
-768: {
-slidesPerView: 3
-},
-1024: {
-slidesPerView: 4
-}
-},
-
-pagination: {
-el: ".swiper-pagination",
-clickable: true
-}
-
-});
-
-});
-</script>
   
 </body>
 </html>
