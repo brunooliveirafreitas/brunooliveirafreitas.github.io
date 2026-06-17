@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://acessocasa.com.br/guia-7-erros/completo/">
+<title>Guia Completo: 7 Erros ao Escolher Fechadura Digital | Acesso Casa</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="description" content="Guia completo com os 7 erros mais comuns ao escolher uma fechadura digital. Evite prejuízos, incompatibilidade e instalação mal feita.">
+<meta property="og:title" content="Guia Completo: 7 Erros ao Escolher Fechadura Digital">
+<meta property="og:description" content="Evite os 7 erros mais comuns ao escolher sua fechadura digital. Guia completo e gratuito.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--dark:#0F172A;--gold:#D4AF37;--white:#FFFFFF;--gray:#F3F4F6;--light-bg:#f8fafc}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
+body{background:#fff;color:#222;line-height:1.7}
+.container{width:90%;max-width:800px;margin:auto}
+header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95);backdrop-filter:blur(10px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.logo img{height:65px;display:block}
+.social{color:white;font-size:14px;font-weight:500;text-align:right}
+.hero{background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);padding:130px 0 50px;text-align:center;color:white}
+.hero h1{font-size:2rem;font-weight:800;margin-bottom:10px}
+.hero p{font-size:.95rem;color:#94A3B8;max-width:600px;margin:0 auto}
+.hero .meta{color:#666;font-size:.8rem;margin-top:12px}
+.section{padding:50px 0}
+.error-card{padding:35px;margin-bottom:25px;background:white;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid #eee;position:relative}
+.error-card .error-num{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;background:var(--gold);color:var(--dark);font-weight:800;font-size:1rem;border-radius:50%;margin-bottom:12px}
+.error-card h2{font-size:1.15rem;color:var(--dark);margin-bottom:10px}
+.error-card p{font-size:.88rem;color:#555;margin-bottom:10px}
+.error-card .highlight{background:#fffef0;border-left:4px solid var(--gold);padding:12px 16px;border-radius:8px;font-size:.85rem;color:#444;margin:12px 0}
+.error-card .tip{background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 16px;border-radius:8px;font-size:.85rem;color:#444;margin:12px 0}
+.error-card .tip strong{color:#16a34a}
+.error-card .highlight strong{color:var(--dark)}
+.cta-section{background:var(--dark);color:white;text-align:center;padding:60px 20px}
+.cta-section h2{font-size:1.6rem;margin-bottom:12px}
+.cta-section p{color:#94A3B8;font-size:.9rem;margin-bottom:22px}
+.btn{display:inline-block;background:var(--gold);color:var(--dark);padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:700;transition:.3s;font-size:.9rem}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,175,55,.4)}
+.btn-wa{background:#25D366;color:white}
+.btn-wa:hover{box-shadow:0 8px 25px rgba(37,211,102,.4)}
+footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px;margin-top:0}
+.footer-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px 60px;max-width:1000px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s}
+.footer-grid a:hover{color:var(--gold)}
+.footer-copy{color:#555;font-size:.75rem;padding:0 20px}
+.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.instagram-btn{display:flex;align-items:center;gap:10px;padding:12px 24px;background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);color:white;text-decoration:none;font-weight:700;font-size:14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);transition:.3s}
+.instagram-btn:hover{transform:translateY(-2px) scale(1.03)}
+.instagram-btn i{font-size:20px;color:white}
+.toc{background:var(--light-bg);border-radius:16px;padding:25px;margin-bottom:35px}
+.toc h3{font-size:.95rem;color:var(--dark);margin-bottom:10px}
+.toc ol{padding-left:20px}
+.toc ol li{margin-bottom:6px;font-size:.85rem;color:#555}
+.toc ol li a{color:var(--dark);text-decoration:none}
+.toc ol li a:hover{color:var(--gold)}
+.intro-text{font-size:.9rem;color:#555;margin-bottom:30px;padding:0 0 20px;border-bottom:1px solid #eee}
+@media(max-width:768px){
+.logo img{height:50px}
+.social{display:none}
+.hero h1{font-size:1.4rem}
+.error-card{padding:22px}
+}
+@media print{header{position:relative}.whatsapp,.instagram-btn,.social,.cta-section{display:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">
+    <a href="/">
+        <img src="/logo-acesso-casa.png" alt="Acesso Casa">
+    </a>
+</div>
+<div class="social">
+<a href="https://instagram.com/acessocasafechaduras" target="_blank" class="instagram-btn">
+<i class="fab fa-instagram"></i>
+<span>Conheça mais</span>
+</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>7 Erros ao Escolher uma Fechadura Digital</h1>
+<p>Guia completo — aprenda com os erros mais comuns e escolha a fechadura certa para sua porta.</p>
+<div class="meta"><i class="fas fa-clock"></i> Leitura: 7 min &bull; <i class="fas fa-calendar"></i> Atualizado em Junho/2026</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="intro-text">
+Este guia foi criado pelos instaladores da <strong>Acesso Casa</strong> com base em dezenas de atendimentos reais em Curitiba e Região Metropolitana. Cada erro listado aqui foi visto pessoalmente por nós — e muitos poderiam ter sido evitados com uma informação simples antes da compra.
+</div>
+
+<div class="toc">
+<h3><i class="fas fa-list"></i> Neste guia</h3>
+<ol>
+<li><a href="#erro1">Escolher o modelo errado para o tipo de porta</a></li>
+<li><a href="#erro2">Ignorar a espessura da porta</a></li>
+<li><a href="#erro3">Confundir sobrepor com embutir</a></li>
+<li><a href="#erro4">Não verificar a alimentação de emergência</a></li>
+<li><a href="#erro5">Pagar por funções que não precisa</a></li>
+<li><a href="#erro6">Contratar instalador sem experiência</a></li>
+<li><a href="#erro7">Não verificar a compatibilidade com o sistema de travamento</a></li>
+</ol>
+</div>
+
+<div id="erro1" class="error-card">
+<span class="error-num">1</span>
+<h2>Escolher o modelo errado para o tipo de porta</h2>
+<p>Este é, de longe, o erro mais comum. Cada tipo de porta exige um modelo específico de fechadura digital, e a escolha errada pode inviabilizar a instalação.</p>
+<p><strong>Porta de madeira fina (25-35mm):</strong> Comum em apartamentos e quartos. Funciona bem com modelos de sobrepor como Intelbras FR 10, Papaiz SL120, Pado FDS-10 e Elsys Pop. Modelos de embutir não são recomendados.</p>
+<p><strong>Porta de madeira grossa (35-55mm):</strong> Portas principais de casas. Aceita tanto sobrepor quanto embutir. Ótimos modelos: Intelbras FR 201, Yale YMC 420W, Pado FDE-201, Elsys DE4000B.</p>
+<p><strong>Porta de metal:</strong> Requer modelos de sobrepor com adaptador. Intelbras FR 10 e Papaiz SL140 são boas opções. A instalação exige cuidado com o corte do metal.</p>
+<p><strong>Porta de vidro:</strong> Apenas modelos específicos com fixação especial (Yale YDD 120, Pado FDS-10).</p>
+<div class="highlight"><strong>💡 Importante:</strong> Sempre informe o material e a espessura da porta antes de comprar. Se já comprou, uma foto da porta enviada pelo WhatsApp já resolve — analisamos e dizemos se é compatível.</div>
+</div>
+
+<div id="erro2" class="error-card">
+<span class="error-num">2</span>
+<h2>Ignorar a espessura da porta</h2>
+<p>A espessura da porta é um dos fatores mais críticos e ignorados. Modelos de embutir (como a Pado FDE-201 ou Elsys DE4000B) exigem espessura mínima de 35mm para comportar o corpo da fechadura.</p>
+<p>Se sua porta tem menos de 35mm e você compra uma fechadura de embutir, duas coisas podem acontecer:</p>
+<p>1. O instalador precisa fresar além do limite, comprometendo a estrutura da porta.</p>
+<p>2. A instalação simplesmente não é possível, e você precisa trocar o modelo.</p>
+<p>Já vimos clientes comprarem uma fechadura de embutir para porta de apartamento de 30mm — a instalação danificou a porta e o cliente precisou comprar outro modelo.</p>
+<div class="tip"><strong>✅ Dica:</strong> Meça a espessura da sua porta na lateral (onde fica a fechadura atual) com uma régua. Se for menor que 35mm, escolha modelos de sobrepor.</div>
+</div>
+
+<div id="erro3" class="error-card">
+<span class="error-num">3</span>
+<h2>Confundir sobrepor com embutir</h2>
+<p>Sobrepor e embutir são sistemas diferentes de instalação, e cada um tem suas vantagens:</p>
+<p><strong>Sobrepor:</strong> A fechadura é parafusada por cima da porta, sem cortes. É mais rápida de instalar (30-50 min), funciona em qualquer espessura e é ideal para portas finas, de metal e para quem mora de aluguel (pode remover sem danos).</p>
+<p><strong>Embutir:</strong> A fechadura é instalada dentro de um corte na porta, ficando rente à superfície. O acabamento é mais bonito e a instalação é mais estável, mas exige porta com pelo menos 35mm e o serviço é mais demorado (60-90 min).</p>
+<p>Muita gente compra um modelo de embutir achando que é igual, e depois descobre que a porta não tem espessura suficiente. Ou compra um sobrepor e espera um acabamento "invisível" que só o embutir entrega.</p>
+<div class="highlight"><strong>💡 Regra prática:</strong> Porta fina + aluguel + rapidez = sobrepor. Porta grossa + casa própria + estética = embutir.</div>
+</div>
+
+<div id="erro4" class="error-card">
+<span class="error-num">4</span>
+<h2>Não verificar a alimentação de emergência</h2>
+<p>Toda fechadura digital funciona com pilhas. Quando elas acabam, a fechadura precisa de uma forma de ser alimentada para destravar a porta.</p>
+<p><strong>Alguns modelos têm entrada USB-C</strong> (Elsys Pop, Intelbras FR 201, Yale YMC 420W) — basta conectar um power bank e a fechadura libera a porta.</p>
+<p><strong>Outros usam bateria 9V</strong> (Papaiz SL140, Intelbras FR 10) — você encosta uma bateria 9V nos contatos e a fechadura abre.</p>
+<p><strong>Modelos mais básicos não têm alimentação de emergência</strong> — e aí a única alternativa é usar a chave física (se tiver) ou chamar um chaveiro.</p>
+<p>Já atendemos cliente que ficou trancado do lado de fora porque a fechadura não tinha emergência e ele perdeu a chave física. Não vale a economia.</p>
+<div class="tip"><strong>✅ Dica:</strong> Prefira modelos com USB-C (mais prático, todo mundo tem um cabo em casa). Se o modelo escolhido não tiver emergência, mantenha uma bateria 9V ou power bank sempre acessível.</div>
+</div>
+
+<div id="erro5" class="error-card">
+<span class="error-num">5</span>
+<h2>Pagar por funções que não precisa</h2>
+<p>Não compre uma fechadura com Wi-Fi se você só quer abrir a porta com senha. Não pague por biometria se todo mundo em casa vai usar TAG ou cartão.</p>
+<p>As fechaduras digitais têm níveis de funcionalidade bem definidos:</p>
+<p><strong>Básico (R$ 250-400):</strong> Senha + cartão/TAG. Ideal para portas de serviço, quartos, escritórios. Ex: Intelbras FR 10, Pado FDS-10, Papaiz SL120.</p>
+<p><strong>Intermediário (R$ 400-700):</strong> Senha + biometria + cartão. Para quem quer segurança extra sem pagar muito. Ex: Intelbras FR 101, Yale YDF 40A, Pado FDE-101.</p>
+<p><strong>Premium (R$ 700-1500):</strong> Wi-Fi + app + biometria + notificações. Para quem quer controle remoto, ver quem entrou e horários. Ex: Intelbras FR 201, Yale YMC 420W, Pado FDE-300W.</p>
+<p>Já instalamos FR 331 (topo de linha, ~R$ 1500) em porta de quarto de empregada. A cliente pagou por reconhecimento facial e câmera que ela nunca usou. Pergunte-se: <strong>"O que eu realmente preciso no meu dia a dia?"</strong></p>
+<div class="highlight"><strong>💡 Nosso conselho:</strong> Se você tem dúvida entre dois modelos, escolha o mais simples que atende suas necessidades. Fechadura não é status — é ferramenta. Invista a diferença na instalação profissional.</div>
+</div>
+
+<div id="erro6" class="error-card">
+<span class="error-num">6</span>
+<h2>Contratar instalador sem experiência em fechaduras digitais</h2>
+<p>Fechadura digital não é igual a fechadura comum. Um chaveiro ou eletricista pode até parafusar o equipamento na porta, mas:</p>
+<p>• Ele sabe configurar a rede Wi-Fi da fechadura?</p>
+<p>• Ele entende de compatibilidade entre modelos e tipos de porta?</p>
+<p>• Ele calibra corretamente o sensor de travamento?</p>
+<p>• Ele configura senhas, biometria e TAGs?</p>
+<p>• Ele testa a alimentação de emergência?</p>
+<p>Já refizemos instalações onde a fechadura foi montada torta (comprometendo a lingueta), o Wi-Fi não foi configurado (cliente achou que era defeito) e a biometria não foi cadastrada.</p>
+<p>Uma instalação mal feita pode danificar sua porta, queimar a fechadura (perda da garantia) e gerar retrabalho que sai mais caro que contratar um especialista de primeira.</p>
+<div class="tip"><strong>✅ Dica:</strong> Contrate uma empresa especializada apenas em fechaduras digitais. Pergunte: quantas instalações já fizeram? Quais marcas? Dão garantia no serviço?</div>
+</div>
+
+<div id="erro7" class="error-card">
+<span class="error-num">7</span>
+<h2>Não verificar a compatibilidade com o sistema de travamento</h2>
+<p>Nem toda porta tem o mesmo sistema de travamento. Alguns modelos de fechadura digital são compatíveis apenas com <strong>trinco-lingueta</strong> (portas que fecham sozinhas ao encostar), outros com <strong>lingueta tubular</strong> (portas que exigem chave para travar).</p>
+<p>Existem também fechaduras <strong>multiponto</strong> (travam em vários pontos da porta) — estas exigem modelos específicos como a Pado FDE-201.</p>
+<p>Além disso, portas com <strong>fechadura de embutir tradicional</strong> (aquelas retangulares) podem exigir adaptações ou simplesmente não serem compatíveis com certos modelos digitais.</p>
+<p>Já vimos cliente comprar uma fechadura digital que não encaixava no furo da porta existente. O resultado: teve que comprar outro modelo e pagar duas instalações.</p>
+<div class="highlight"><strong>💡 Importante:</strong> Fotografe a lateral da sua porta (onde fica a fechadura atual) de perto. Isso mostra o tipo de encaixe que já existe. Envie essa foto para o instalador antes de comprar qualquer modelo.</div>
+</div>
+
+<div style="background:var(--light-bg);border-radius:20px;padding:35px;text-align:center;margin:30px 0">
+<h2 style="font-size:1.3rem;color:var(--dark);margin-bottom:8px">Resumo: Antes de comprar</h2>
+<p style="font-size:.85rem;color:#555;margin-bottom:15px">Responda estas 4 perguntas e evite 90% dos erros:</p>
+<div style="text-align:left;max-width:450px;margin:0 auto">
+<p style="font-size:.85rem;color:#333;padding:6px 0">1. Minha porta é de madeira, metal ou vidro?</p>
+<p style="font-size:.85rem;color:#333;padding:6px 0">2. Qual a espessura da minha porta?</p>
+<p style="font-size:.85rem;color:#333;padding:6px 0">3. Eu realmente preciso de Wi-Fi / biometria?</p>
+<p style="font-size:.85rem;color:#333;padding:6px 0">4. Vou contratar instalador especializado?</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="cta-section">
+<h2>Ficou com dúvida sobre qual modelo escolher?</h2>
+<p>Mande uma foto da sua porta no WhatsApp. Analisamos grátis e indicamos o modelo ideal.</p>
+<a class="btn btn-wa" href="https://wa.me/5541997469076?text=Olá,%20li%20o%20Guia%20dos%207%20Erros%20e%20gostaria%20de%20saber%20qual%20fechadura%20é%20ideal%20para%20minha%20porta">
+<i class="fab fa-whatsapp"></i> Enviar Foto da Porta
+</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h4>Nossos Serviços</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
+<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
+</div>
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+</div>
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Digitais em Curitiba e Região Metropolitana.</p>
+<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Olá,%20li%20o%20Guia%20dos%207%20Erros%20e%20gostaria%20de%20saber%20qual%20fechadura%20é%20ideal%20para%20minha%20porta">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
