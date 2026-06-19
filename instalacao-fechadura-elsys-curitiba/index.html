@@ -372,10 +372,10 @@ var cores=unique(produtosMarca.map(function(p){return p.c}));
 var grupos=[
 {key:"tp",tit:"Tipo de Porta",vals:tipos},
 {key:"c",tit:"Cor",vals:cores},
-{key:"bio",tit:"Biometria",vals:["Sim","N�o"]},
-{key:"app",tit:"App",vals:["Sim","N�o"]},
-{key:"wifi",tit:"Wi-Fi",vals:["Sim","N�o"]},
-{key:"bt",tit:"Bluetooth",vals:["Sim","N�o"]}
+{key:"bio",tit:"Biometria",vals:["Sim","Não"]},
+{key:"app",tit:"App",vals:["Sim","Não"]},
+{key:"wifi",tit:"Wi-Fi",vals:["Sim","Não"]},
+{key:"bt",tit:"Bluetooth",vals:["Sim","Não"]}
 ];
 for(var g=0;g<grupos.length;g++){
 var div=document.createElement("div");div.className="filter-group";
@@ -406,10 +406,10 @@ function matchFilter(p){
 var s=getFilterState();
 if(s.tp&&s.tp.length&&s.tp.indexOf(p.tp)===-1)return false;
 if(s.c&&s.c.length&&s.c.indexOf(p.c)===-1)return false;
-if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==="Sim"&&p.bio===1)||(s.bio[i]==="N�o"&&p.bio===0)){ok=true;break}}if(!ok)return false}
-if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==="Sim"&&p.app===1)||(s.app[i]==="N�o"&&p.app===0)){ok=true;break}}if(!ok)return false}
-if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==="Sim"&&p.wifi===1)||(s.wifi[i]==="N�o"&&p.wifi===0)){ok=true;break}}if(!ok)return false}
-if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==="Sim"&&p.bt===1)||(s.bt[i]==="N�o"&&p.bt===0)){ok=true;break}}if(!ok)return false}
+if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==="Sim"&&p.bio===1)||(s.bio[i]==="Não"&&p.bio===0)){ok=true;break}}if(!ok)return false}
+if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==="Sim"&&p.app===1)||(s.app[i]==="Não"&&p.app===0)){ok=true;break}}if(!ok)return false}
+if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==="Sim"&&p.wifi===1)||(s.wifi[i]==="Não"&&p.wifi===0)){ok=true;break}}if(!ok)return false}
+if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==="Sim"&&p.bt===1)||(s.bt[i]==="Não"&&p.bt===0)){ok=true;break}}if(!ok)return false}
 return true;
 }
 
@@ -432,7 +432,7 @@ var cdot="<span style=\"display:inline-block;width:10px;height:10px;border-radiu
 var feats="<span class=\""+(p.bio?"on":"off")+"\" title=\"Biometria\"><i class=\"fas fa-fingerprint\"></i></span><span class=\""+(p.app?"on":"off")+"\" title=\"App\"><i class=\"fas fa-mobile-screen\"></i></span><span class=\""+(p.wifi?"on":"off")+"\" title=\"Wi-Fi\"><i class=\"fas fa-wifi\"></i></span><span class=\""+(p.bt?"on":"off")+"\" title=\"Bluetooth\"><i class=\"fab fa-bluetooth-b\"></i></span>";
 var imgHtml=ext.img?"<div class=\"p-img\"><img src=\""+ext.img+"\" alt=\""+p.mo+"\"></div>":"";
 var titHtml=ext.tit?"<div class=\"p-tit\">"+ext.tit+"</div>":"";
-div.innerHTML="<div class=\"p-brand\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px\"><img src=\"../elsys.png\" alt=\"Elsys\" style=\"max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75\"></span></div>"+imgHtml+"<div class=\"p-name\">"+p.mo+"</div>"+titHtml+"<div class=\"p-color\">"+cdot+" "+p.c+"</div><div class=\"p-feats\">"+feats+"</div><a href=\""+p.url+"\" target=\"_blank\" rel=\"nofollow\" class=\"p-compare\"><i class=\"fas fa-shopping-cart\"></i> Ver pre�o</a>";
+div.innerHTML="<div class=\"p-brand\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px\"><img src=\"../elsys.png\" alt=\"Elsys\" style=\"max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75\"></span></div>"+imgHtml+"<div class=\"p-name\">"+p.mo+"</div>"+titHtml+"<div class=\"p-color\">"+cdot+" "+p.c+"</div><div class=\"p-feats\">"+feats+"</div><a href=\""+p.url+"\" target=\"_blank\" rel=\"nofollow\" class=\"p-compare\"><i class=\"fas fa-shopping-cart\"></i> Ver preço</a>";
 prodGrid.appendChild(div);
 }
 }
