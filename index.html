@@ -484,7 +484,36 @@ transition:.3s;
 .comp-card .comp-btn{background:var(--dark);color:white;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.8rem;display:inline-block;transition:.3s}
 .comp-card:hover .comp-btn{background:var(--gold);color:var(--dark)}
 @media(max-width:992px){.comp-card{flex:0 0 calc(50% - 10px)}}
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+@media(max-width:992px){.comp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.comp-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.comp-card{flex:0 0 85%}}
+.prod-item{background:white;border-radius:16px;padding:18px 14px;text-align:center;border:1px solid #eee;transition:.3s}
+.prod-item:hover{border-color:var(--gold);box-shadow:0 4px 15px rgba(0,0,0,.07)}
+.prod-item .p-brand{font-size:.62rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.prod-item .p-name{font-size:.82rem;font-weight:600;margin:5px 0 3px;color:var(--dark)}
+.prod-item .p-color{font-size:.7rem;color:#666;margin-bottom:6px}
+.prod-item .p-feats{display:flex;justify-content:center;gap:8px;margin-bottom:10px}
+.prod-item .p-feats span{font-size:.8rem}
+.prod-item .p-feats .on{color:#2e7d32}
+.prod-item .p-feats .off{color:#ccc}
+.prod-item .p-img{width:100%;height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;background:#fafafa;border-radius:8px;overflow:hidden}
+.prod-item .p-img img{max-height:130px;max-width:90%;object-fit:contain}
+.prod-item .p-tit{font-size:.68rem;color:#666;margin-bottom:6px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prod-item .p-compare{background:var(--gold);color:var(--dark);border:none;padding:7px 16px;border-radius:50px;font-size:.7rem;font-weight:700;cursor:pointer;transition:.3s;font-family:inherit;text-decoration:none;display:inline-block}
+.prod-item .p-compare:hover{background:#c49a2e}
+.prod-carousel .prod-item{flex:0 0 200px;scroll-snap-align:start}
+.prod-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:40px}
+@media(max-width:768px){.prod-grid-5{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.prod-grid-5{grid-template-columns:1fr 1fr}}
+.comp-card-featured{border:2px solid var(--gold);position:relative;background:linear-gradient(135deg,#fffdf5,#fff8e7);border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center;text-decoration:none;color:inherit;transition:.3s}
+.comp-card-featured:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.15)}
+.comp-card-featured .featured-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:.6rem;font-weight:800;padding:3px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;z-index:2}
+.comp-card-featured .feat-icon{width:70px;height:70px;border-radius:50%;background:var(--gold);color:var(--dark);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.8rem}
+.comp-card-featured h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
+.comp-card-featured p{font-size:.78rem;color:#666;margin-bottom:12px;line-height:1.4}
+.comp-card-featured .comp-btn{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:800;font-size:.85rem;display:inline-block;transition:.3s}
+.comp-card-featured:hover .comp-btn{transform:scale(1.05)}
 </style>
 
 <script type="application/ld+json">
@@ -711,44 +740,7 @@ Produtos em Destaque
 
 <p class="section-subtitle">Modelos recomendados pelos nossos instaladores — clique e compre no Mercado Livre.</p>
 
-<div class="prod-carousel">
-
-<a href="https://meli.la/2FYSQK9" target="_blank" rel="nofollow" class="prod-card">
-<img src="https://intelbras.vteximg.com.br/arquivos/ids/167526-292-292/Foto-FR201-Frontal.png?v=638140543246000000" alt="Intelbras FR 201">
-<h3>Intelbras FR 201</h3>
-<p>Wi-Fi integrado, controle pelo app</p>
-<div class="prod-btn">Ver preço</div>
-</a>
-
-<a href="https://meli.la/1E6P6mh" target="_blank" rel="nofollow" class="prod-card">
-<img src="https://yale.fbitsstatic.net/img/p/fechadura-digital-ymc-420w-preto-fosco-abre-por-biometria-senha-cartao-e-chave-73278/258917-1.jpg?w=647&h=647&v=202603311446" alt="Yale YMC 420W">
-<h3>Yale YMC 420W</h3>
-<p>Wi-Fi, biometria e notificações</p>
-<div class="prod-btn">Ver preço</div>
-</a>
-
-<a href="https://meli.la/1fSiweA" target="_blank" rel="nofollow" class="prod-card">
-<img src="https://www.papaiz.com.br/adobe/assets/urn:aaid:aem:375a52e3-4e76-418c-9000-415bcf61a35a/as/fechadura-sl120---logo-papaiz-(alta).png" alt="Papaiz SL120">
-<h3>Papaiz SL120</h3>
-<p>Sobrepor, senha touchscreen</p>
-<div class="prod-btn">Ver preço</div>
-</a>
-
-<a href="https://meli.la/15We6xF" target="_blank" rel="nofollow" class="prod-card">
-<img src="https://http2.mlstatic.com/D_NQ_NP_2X_754045-MLB76684673554_062024-F.webp" alt="Pado FDE-201">
-<h3>Pado FDE-201</h3>
-<p>Embutir, biometria e multiponto</p>
-<div class="prod-btn">Ver preço</div>
-</a>
-
-<a href="https://meli.la/2GXm7JC" target="_blank" rel="nofollow" class="prod-card">
-<img src="https://elsys.vtexassets.com/arquivos/ids/163334/4000B_converted.webp?v=639040167949570000" alt="Elsys ESF-DE4000B">
-<h3>Elsys ESF-DE4000B</h3>
-<p>Wi-Fi, biometria e app</p>
-<div class="prod-btn">Ver preço</div>
-</a>
-
-</div>
+<div id="grid5x5" class="prod-grid-5"></div>
 
 <div style="text-align:center;margin-top:20px">
 <a href="/fechaduras-digitais-indicadas/" class="btn">Ver todos os modelos</a>
@@ -762,8 +754,14 @@ Produtos em Destaque
 <div class="container">
 <h2 class="section-title">Comparativos entre Modelos</h2>
 <p class="section-subtitle">Veja nossas análises lado a lado e descubra qual fechadura combina com você.</p>
-<div class="carousel-wrap">
-<div class="prod-carousel">
+<div class="comp-grid">
+<a href="/comparador-fechaduras/" class="comp-card-featured">
+<div class="featured-badge">COMPARE TODOS</div>
+<div class="feat-icon"><i class="fas fa-arrows-left-right"></i></div>
+<h3>Comparar todos os modelos</h3>
+<p>Use nosso comparador interativo para ver modelos lado a lado, filtrar por marca, tipo e funcionalidades.</p>
+<span class="comp-btn">Compara todos os modelos →</span>
+</a>
 <a href="/comparacao-intelbras-fr10-vs-papaiz-sl140/" class="comp-card">
 <div class="vs-badge">VS</div>
 <div class="comp-images">
@@ -797,8 +795,6 @@ Produtos em Destaque
 <p>Duas sobrepor compactas e acessíveis. Qual a melhor?</p>
 <span class="comp-btn">Ver Comparativo</span>
 </a>
-</div>
-</div>
 </div>
 </section>
 
@@ -1015,6 +1011,28 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 
 </a>
 
+<script src="comparador-fechaduras/dados.js"></script>
+<script>
+function extra(sku) { return prodExtra[sku] || {} }
+var logoMap = { Intelbras: 'intelbras.png', Yale: 'yale.png', Papaiz: 'papaiz.png', Pado: 'pado.png', Elsys: 'elsys.png' }
+function buildCard(p) {
+  var ext = extra(p.sku)
+  var cdot = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + (p.c === 'Preto' ? '#222' : '#ccc') + ';border:1px solid ' + (p.c === 'Preto' ? '#222' : '#bbb') + ';vertical-align:middle;margin-right:3px"></span>'
+  var feats = '<span class="' + (p.bio ? 'on' : 'off') + '" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="' + (p.app ? 'on' : 'off') + '" title="App"><i class="fas fa-mobile-screen"></i></span><span class="' + (p.wifi ? 'on' : 'off') + '" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="' + (p.bt ? 'on' : 'off') + '" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>'
+  var logo = '<div class="p-brand"><span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="' + logoMap[p.m] + '" alt="' + p.m + '" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span></div>'
+  var img = ext.img ? '<div class="p-img"><img src="' + ext.img + '" alt="' + p.mo + '"></div>' : ''
+  var tit = ext.tit ? '<div class="p-tit">' + ext.tit + '</div>' : ''
+  return '<div class="prod-item">' + logo + img + '<div class="p-name">' + p.mo + '</div>' + tit + '<div class="p-color">' + cdot + ' ' + p.c + '</div><div class="p-feats">' + feats + '</div><a href="' + p.url + '" target="_blank" rel="nofollow" class="p-compare"><i class="fas fa-shopping-cart"></i> Ver preço</a></div>'
+}
+var grid5Skus = [10013, 10007, 10005, 10024, 10026, 10034, 10053, 10047, 10061, 10074]
+var gHtml = ''
+for (var i = 0; i < grid5Skus.length; i++) {
+  for (var j = 0; j < produtos.length; j++) {
+    if (produtos[j].sku === grid5Skus[i]) { gHtml += buildCard(produtos[j]); break }
+  }
+}
+document.getElementById('grid5x5').innerHTML = gHtml
+</script>
 
 </body>
 </html>
