@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador de Fechaduras Digitais | Acesso Casa</title>
+<meta name="description" content="Compare modelos de fechaduras digitais lado a lado: biometria, app, Wi-Fi, tipo de porta e mais. Encontre a fechadura ideal para sua porta.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://acessocasa.com.br/og-image.svg">
+<meta property="og:title" content="Comparador de Fechaduras Digitais | Acesso Casa">
+<meta property="og:description" content="Compare modelos lado a lado: biometria, app, Wi-Fi, tipo de porta e mais.">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--dark:#0F172A;--gold:#D4AF37}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{line-height:1.6;color:#222;background:#f8f8f8}
+.container{width:90%;max-width:1200px;margin:auto}
+header{background:#0F172A;padding:15px 0}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo img{height:65px}
+.hero{background:linear-gradient(rgba(15,23,42,.92),rgba(15,23,42,.92)),url('../hero-fechadura.png');background-size:cover;background-position:center;padding:100px 20px;text-align:center;color:white}
+.hero h1{font-size:2.8rem;margin-bottom:15px}
+.hero p{font-size:1.15rem;max-width:750px;margin:auto;opacity:.85}
+.section{padding:70px 0}
+.section-title{font-size:2rem;color:var(--dark);margin-bottom:10px;text-align:center}
+.section-subtitle{text-align:center;color:#555;margin-bottom:40px;font-size:.95rem}
+
+.search-wrap{max-width:700px;margin:0 auto 50px;position:relative}
+.search-input{width:100%;padding:18px 20px 18px 55px;border:2px solid #ddd;border-radius:50px;font-size:1rem;outline:none;transition:.3s;background:white}
+.search-input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.15)}
+.search-wrap .search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#999;font-size:1.2rem}
+.autocomplete{position:absolute;top:calc(100% + 6px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.15);max-height:400px;overflow-y:auto;display:none;z-index:100}
+.autocomplete.show{display:block}
+.autocomplete a{display:block;padding:14px 20px;text-decoration:none;color:#222;transition:.1s;border-bottom:1px solid #f0f0f0}
+.autocomplete a:last-child{border:none}
+.autocomplete a:hover{background:#faf5e6}
+.autocomplete .match-brand{font-size:.7rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.autocomplete .match-name{font-size:.88rem;font-weight:500}
+.autocomplete .match-cat{font-size:.72rem;color:#888}
+
+.slots{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;max-width:800px;margin:0 auto 50px}
+.slot{background:white;border-radius:20px;padding:30px 20px;text-align:center;border:2px dashed #ddd;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.3s}
+.slot.filled{border-color:var(--gold);border-style:solid}
+.slot .slot-placeholder{color:#bbb;font-size:.9rem}
+.slot .slot-brand{font-size:.75rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.slot .slot-name{font-size:1.05rem;font-weight:600;margin:4px 0}
+.slot .slot-cat{font-size:.8rem;color:#555}
+.slot .slot-remove{display:inline-block;margin-top:10px;color:#e74c3c;font-size:.75rem;cursor:pointer;text-decoration:none;border:none;background:none}
+.slot .slot-remove:hover{text-decoration:underline}
+.vs-badge{font-size:1.3rem;font-weight:800;color:var(--gold);background:#0F172A;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+.comparison{display:none}
+.comparison.show{display:block}
+.comp-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.08);background:white}
+.comp-table th,.comp-table td{padding:16px 20px;text-align:center;font-size:.88rem}
+.comp-table th{background:var(--dark);color:white;font-weight:600}
+.comp-table th:first-child{text-align:left;width:180px}
+.comp-table td:first-child{text-align:left;font-weight:500;color:#555;background:#fafafa}
+.comp-table tr{border-bottom:1px solid #f0f0f0}
+.comp-table tr:last-child{border:none}
+.comp-table .tag{display:inline-block;padding:4px 14px;border-radius:50px;font-size:.75rem;font-weight:600}
+.comp-table .tag-yes{background:#e8f5e9;color:#2e7d32}
+.comp-table .tag-no{background:#fbe9e7;color:#c62828}
+.comp-table .yes-icon{color:#2e7d32;font-size:1.1rem}
+.comp-table .no-icon{color:#ccc;font-size:1.1rem}
+.comp-table .comp-btn{display:inline-block;background:var(--gold);color:var(--dark);padding:10px 25px;border-radius:50px;font-weight:700;text-decoration:none;font-size:.82rem;transition:.3s}
+.comp-table .comp-btn:hover{background:#c49a2e}
+
+.filters{background:white;border-radius:20px;padding:25px 30px;box-shadow:0 5px 20px rgba(0,0,0,.06);margin-bottom:20px}
+.filter-row{display:flex;flex-wrap:wrap;gap:15px}
+.filter-group{flex:1;min-width:140px}
+.filter-group h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:8px}
+.filter-group label{display:inline-block;margin:3px 5px 3px 0;padding:5px 12px;border-radius:50px;border:1.5px solid #ddd;font-size:.75rem;cursor:pointer;transition:.2s;user-select:none;color:#555}
+.filter-group label:hover{border-color:var(--gold)}
+.filter-group input{display:none}
+.filter-group input:checked+label{background:var(--dark);color:var(--gold);border-color:var(--dark)}
+
+.prod-count{font-size:.85rem;color:#888;margin-bottom:15px}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:40px}
+.prod-item{background:white;border-radius:16px;padding:18px 14px;text-align:center;border:1px solid #eee;transition:.3s}
+.prod-item:hover{border-color:var(--gold);box-shadow:0 4px 15px rgba(0,0,0,.07)}
+.prod-item .p-brand{font-size:.62rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.prod-item .p-name{font-size:.82rem;font-weight:600;margin:5px 0 3px;color:var(--dark)}
+.prod-item .p-color{font-size:.7rem;color:#666;margin-bottom:6px}
+.prod-item .p-feats{display:flex;justify-content:center;gap:8px;margin-bottom:10px}
+.prod-item .p-feats span{font-size:.8rem}
+.prod-item .p-feats .on{color:#2e7d32}
+.prod-item .p-feats .off{color:#ccc}
+.prod-item .p-compare{background:var(--gold);color:var(--dark);border:none;padding:7px 16px;border-radius:50px;font-size:.7rem;font-weight:700;cursor:pointer;transition:.3s;font-family:inherit}
+.prod-item .p-compare:hover{background:#c49a2e}
+.prod-item .p-compare.sel{background:#e74c3c;color:white}
+.prod-item .p-compare.sel:hover{background:#c0392b}
+
+@media(max-width:768px){
+.hero h1{font-size:1.8rem}
+.hero{padding:60px 20px}
+.section{padding:40px 0}
+.slots{grid-template-columns:1fr;gap:12px}
+.vs-badge{margin:auto}
+.comp-table th,.comp-table td{padding:10px 12px;font-size:.8rem}
+.comp-table th:first-child{width:100px}
+.filter-row{flex-direction:column}
+.prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+footer{background:var(--dark);color:#aaa;padding:50px 0 30px;font-size:.85rem}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-bottom:40px}
+.footer-grid h4{color:white;font-size:.85rem;margin-bottom:15px;text-transform:uppercase;letter-spacing:1px}
+.footer-grid a{display:block;color:#aaa;text-decoration:none;margin-bottom:8px;transition:.3s;font-size:.82rem}
+.footer-grid a:hover{color:var(--gold)}
+.footer-copy{text-align:center;padding-top:20px;border-top:1px solid #222;font-size:.75rem;color:#666}
+.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.whatsapp{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:.3s}
+.whatsapp:hover{transform:scale(1.1)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<div class="nav">
+<a href="/" class="logo"><img src="../logo-acesso-casa.png" alt="Acesso Casa"></a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Comparador de Fechaduras Digitais</h1>
+<p>Selecione dois modelos para comparar recursos lado a lado: biometria, aplicativo, Wi-Fi, tipo de porta e mais.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="search-wrap">
+<i class="fas fa-search search-icon"></i>
+<input class="search-input" type="text" id="searchInput" placeholder="Digite o nome da marca ou modelo... (ex: FR 101, Yale, Pado FDE-300W)" autocomplete="off">
+<div class="autocomplete" id="autocomplete"></div>
+</div>
+
+<div class="filters" id="filters">
+<div class="filter-row" id="filterRow"></div>
+</div>
+
+<div class="prod-count" id="prodCount"></div>
+<div class="prod-grid" id="prodGrid"></div>
+
+<div class="slots" id="slots">
+<div class="slot" id="slot1">
+<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1º modelo</div>
+</div>
+<div class="vs-badge">VS</div>
+<div class="slot" id="slot2">
+<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2º modelo</div>
+</div>
+</div>
+
+<div class="comparison" id="comparison">
+<h3 style="text-align:center;font-size:1.3rem;margin-bottom:20px;color:var(--dark)">Comparativo entre os Modelos</h3>
+<table class="comp-table">
+<thead><tr><th>Característica</th><th id="hdr1">Modelo 1</th><th id="hdr2">Modelo 2</th></tr></thead>
+<tbody id="compBody"></tbody>
+</table>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Nossos Serviços</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
+<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
+<a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
+<a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
+</div>
+<div>
+<h4>Cidades Atendidas</h4>
+<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
+</div>
+<div>
+<h4>Clientes Atendidos</h4>
+<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
+<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
+<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
+<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
+</div>
+<div>
+<h4>Marcas Atendidas</h4>
+<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
+<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
+</div>
+</div>
+<div class="footer-copy">
+<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Digitais em Curitiba e Região Metropolitana.</p>
+<p style="margin-top:8px"><a href="/politica-privacidade/">Política de Privacidade</a></p>
+</div>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+var produtos=[
+{sku:10001,m:"Intelbras",mo:"FR 101 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2Tcf4Pe"},
+{sku:10002,m:"Intelbras",mo:"FR 220 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1pt8tQ3"},
+{sku:10003,m:"Intelbras",mo:"FR 331 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1oyP6j7"},
+{sku:10004,m:"Intelbras",mo:"FR 620 Preto",c:"Preto",cat:"Biométrica",tp:"Push & Pull (Madeira)",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/18thyDR"},
+{sku:10005,m:"Intelbras",mo:"IFR 7000 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2HmRYbF"},
+{sku:10006,m:"Intelbras",mo:"FR 101 V Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,ind:"Portas de vidro",url:"https://meli.la/2S9ubDC"},
+{sku:10007,m:"Intelbras",mo:"FR 201 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2FYSQK9"},
+{sku:10008,m:"Intelbras",mo:"FR 201 V Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1p3Dehs"},
+{sku:10009,m:"Intelbras",mo:"FR 221 V Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1ugZUkG"},
+{sku:10010,m:"Intelbras",mo:"FR 330 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2cNWG7s"},
+{sku:10011,m:"Intelbras",mo:"FD 1000 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1LUWtDS"},
+{sku:10012,m:"Intelbras",mo:"FD 2000 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1acByc4"},
+{sku:10013,m:"Intelbras",mo:"FR 10 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2rd7uYP"},
+{sku:10014,m:"Intelbras",mo:"FR 210 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,ind:"Portas de correr",url:"https://meli.la/2hTF2j5"},
+{sku:10015,m:"Intelbras",mo:"FR 320 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2d4UWyz"},
+{sku:10016,m:"Intelbras",mo:"FR 400 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1bwtfTX"},
+{sku:10017,m:"Intelbras",mo:"IFR 7000 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2pmeeWg"},
+{sku:10018,m:"Intelbras",mo:"MFD 2020 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/2FG2wSf"},
+{sku:10019,m:"Intelbras",mo:"MFD 3000 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1C2aEfN"},
+{sku:10020,m:"Intelbras",mo:"MFD 3001 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/1626n1A"},
+{sku:10021,m:"Intelbras",mo:"MFR 2020 V Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,ind:"Casas e alto padrão",url:"https://meli.la/1JArGHe"},
+{sku:10022,m:"Intelbras",mo:"MFR 2040 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,ind:"Casas e alto padrão",url:"https://meli.la/2Wgq24h"},
+{sku:10023,m:"Intelbras",mo:"MFR 3001 V Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,ind:"Casas e alto padrão",url:"https://meli.la/1dB4qFA"},
+{sku:10024,m:"Intelbras",mo:"MFV 3000 Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/2XasUDW"},
+{sku:10025,m:"Yale",mo:"YDF 40A Preto",c:"Preto",cat:"Biométrica",tp:"Porta de Correr",bio:1,app:0,wifi:0,ind:"Portas de correr",url:"https://meli.la/2bqZkC8"},
+{sku:10026,m:"Yale",mo:"YDM 60 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,ind:"Casas e alto padrão",url:"https://meli.la/1FNvgxB"},
+{sku:10027,m:"Yale",mo:"YMC 420W Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:1,ind:"Residências",url:"https://meli.la/1E6P6mh"},
+{sku:10028,m:"Yale",mo:"YMF 40A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/13yruYS"},
+{sku:10029,m:"Yale",mo:"YRD 256 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,ind:"Portas de correr",url:"https://meli.la/12Han4H"},
+{sku:10030,m:"Yale",mo:"Gemini Mini Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1kGXbWB"},
+{sku:10031,m:"Yale",mo:"Reflecta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2Y43jHV"},
+{sku:10032,m:"Yale",mo:"YDL 120 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1PwVwNb"},
+{sku:10033,m:"Yale",mo:"YMI 70A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1vTtEEd"},
+{sku:10034,m:"Yale",mo:"Lia BP Preto",c:"Preto",cat:"Biométrica",tp:"Porta de Correr",bio:1,app:0,wifi:0,ind:"Portas de correr",url:"https://meli.la/1nEmsRc"},
+{sku:10035,m:"Yale",mo:"Solis Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2EyqLLp"},
+{sku:10036,m:"Yale",mo:"YBL 410B Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2yvzujG"},
+{sku:10037,m:"Yale",mo:"YDF 40A BP",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1dBymLv"},
+{sku:10038,m:"Yale",mo:"YDF 40A Connect Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2EiFiqx"},
+{sku:10039,m:"Yale",mo:"YDF 40A RL Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2nCvBJF"},
+{sku:10040,m:"Yale",mo:"YMC 420W Zigbee",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1nyx1kh"},
+{sku:10041,m:"Yale",mo:"YMF 40A RL Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1o8Eyri"},
+{sku:10042,m:"Yale",mo:"YRD 256 BP Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,ind:"Portas de correr",url:"https://meli.la/13cjjQ6"},
+{sku:10043,m:"Yale",mo:"YRD 256 RL Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1izaKEM"},
+{sku:10044,m:"Papaiz",mo:"SL125 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1jr6hRw"},
+{sku:10045,m:"Papaiz",mo:"SL140 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2rDiyks"},
+{sku:10046,m:"Papaiz",mo:"SL205 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2TWcga4"},
+{sku:10047,m:"Papaiz",mo:"SL200 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1ivfKN1"},
+{sku:10048,m:"Papaiz",mo:"SL150 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1MHkGzK"},
+{sku:10049,m:"Papaiz",mo:"SL125B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1S2EaMx"},
+{sku:10050,m:"Papaiz",mo:"SL205 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1aHGHRM"},
+{sku:10051,m:"Papaiz",mo:"SL140B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2mshghp"},
+{sku:10052,m:"Papaiz",mo:"SL140B Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2S1sLDt"},
+{sku:10053,m:"Papaiz",mo:"SL100 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1Q4VB8v"},
+{sku:10054,m:"Papaiz",mo:"SL120 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1fSiweA"},
+{sku:10055,m:"Papaiz",mo:"SL130 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2yEWSAG"},
+{sku:10056,m:"Papaiz",mo:"SL130 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/26pdwVD"},
+{sku:10057,m:"Papaiz",mo:"SL135 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2HK4iks"},
+{sku:10058,m:"Papaiz",mo:"SL135 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1qkTYui"},
+{sku:10059,m:"Papaiz",mo:"SL140 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/16WrNmf"},
+{sku:10060,m:"Pado",mo:"FDE-300W",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/29n3nf8"},
+{sku:10061,m:"Pado",mo:"FDE-101",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2FvjQkZ"},
+{sku:10062,m:"Pado",mo:"FDE-201",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/15We6xF"},
+{sku:10063,m:"Pado",mo:"FDS-10",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2HBP4eN"},
+{sku:10064,m:"Pado",mo:"FDS-50",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1vXdLkb"},
+{sku:10065,m:"Pado",mo:"FDE-101RM Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2FvjQkZ"},
+{sku:10066,m:"Pado",mo:"FDV-200 Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,ind:"Portas de vidro",url:"https://meli.la/2EQr7Bb"},
+{sku:10067,m:"Elsys",mo:"Blues ESF-DE4250I Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2MrGD1x"},
+{sku:10068,m:"Elsys",mo:"Blues ESF-DE4250I Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2tQRBwN"},
+{sku:10069,m:"Elsys",mo:"Dance Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/1dvyuem"},
+{sku:10070,m:"Elsys",mo:"Dance Preta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/16VKv12"},
+{sku:10071,m:"Elsys",mo:"ESF-DE2000B Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2tDMBJL"},
+{sku:10072,m:"Elsys",mo:"ESF-DE2000B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/19b9xKh"},
+{sku:10073,m:"Elsys",mo:"ESF-DE4000B Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1Kh2NoX"},
+{sku:10074,m:"Elsys",mo:"ESF-DE4000B Preta",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1ZjPCCz"},
+{sku:10075,m:"Elsys",mo:"ESF-DE4000B Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2GXm7JC"},
+{sku:10076,m:"Elsys",mo:"Pop Esf-ds1100v Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/133TkNW"},
+{sku:10077,m:"Elsys",mo:"Pop Esf-ds1100v Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2nQHGwb"},
+{sku:10078,m:"Elsys",mo:"Samba ESF-DE6100I Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2kSr7pt"},
+{sku:10079,m:"Elsys",mo:"Samba ESF-DE6100I Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2p6i4xF"},
+{sku:10080,m:"Elsys",mo:"SAX ESF-DE5100I Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2mBMnQK"},
+{sku:10081,m:"Elsys",mo:"SAX ESF-DE5100I Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/27tKrtt"},
+{sku:10082,m:"Elsys",mo:"SAX Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/2RpoEx4"},
+{sku:10083,m:"Elsys",mo:"SAX Preta",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,ind:"Casas e alto padrão",url:"https://meli.la/1rSW4u7"},
+{sku:10084,m:"Elsys",mo:"Tecno DS4100V Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/32yUaSp"},
+{sku:10085,m:"Elsys",mo:"Tecno DS4100V Preta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,ind:"Residências",url:"https://meli.la/2mL7jdg"}
+];
+
+var sel1=null,sel2=null;
+var input=document.getElementById('searchInput');
+var auto=document.getElementById('autocomplete');
+var slot1=document.getElementById('slot1');
+var slot2=document.getElementById('slot2');
+var comp=document.getElementById('comparison');
+var hdr1=document.getElementById('hdr1');
+var hdr2=document.getElementById('hdr2');
+var compBody=document.getElementById('compBody');
+
+var filterRow=document.getElementById('filterRow');
+var prodGrid=document.getElementById('prodGrid');
+var prodCount=document.getElementById('prodCount');
+
+function unique(arr){var r=[];for(var i=0;i<arr.length;i++){if(r.indexOf(arr[i])===-1)r.push(arr[i])}return r}
+
+function buildFilters(){
+var marcas=unique(produtos.map(function(p){return p.m}));
+var tipos=unique(produtos.map(function(p){return p.tp}));
+var cores=unique(produtos.map(function(p){return p.c}));
+var grupos=[
+{key:'m',tit:'Marca',vals:marcas},
+{key:'tp',tit:'Tipo de Porta',vals:tipos},
+{key:'c',tit:'Cor',vals:cores},
+{key:'bio',tit:'Biometria',vals:['Sim','Não']},
+{key:'app',tit:'App',vals:['Sim','Não']},
+{key:'wifi',tit:'Wi-Fi',vals:['Sim','Não']}
+];
+for(var g=0;g<grupos.length;g++){
+var div=document.createElement('div');div.className='filter-group';
+var h4=document.createElement('h4');h4.textContent=grupos[g].tit;div.appendChild(h4);
+for(var v=0;v<grupos[g].vals.length;v++){
+var val=grupos[g].vals[v];
+var id='flt_'+g+'_'+v;
+var ck=document.createElement('input');ck.type='checkbox';ck.id=id;ck.dataset.group=grupos[g].key;ck.dataset.val=val;ck.onchange=renderGrid;
+var lb=document.createElement('label');lb.htmlFor=id;lb.textContent=val;
+div.appendChild(ck);div.appendChild(lb);
+}
+filterRow.appendChild(div);
+}
+}
+
+function getFilterState(){
+var checks=document.querySelectorAll('#filterRow input[type=checkbox]');
+var state={};
+for(var i=0;i<checks.length;i++){
+var g=checks[i].dataset.group;
+if(!state[g])state[g]=[];
+if(checks[i].checked)state[g].push(checks[i].dataset.val);
+}
+return state;
+}
+
+function filtroAtivo(){
+var s=getFilterState();
+for(var k in s){if(s[k].length>0)return true}
+return false;
+}
+
+function matchFilter(p){
+var s=getFilterState();
+if(s.m&&s.m.length&&s.m.indexOf(p.m)===-1)return false;
+if(s.tp&&s.tp.length&&s.tp.indexOf(p.tp)===-1)return false;
+if(s.c&&s.c.length&&s.c.indexOf(p.c)===-1)return false;
+if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==='Sim'&&p.bio===1)||(s.bio[i]==='Não'&&p.bio===0)){ok=true;break}}if(!ok)return false}
+if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==='Sim'&&p.app===1)||(s.app[i]==='Não'&&p.app===0)){ok=true;break}}if(!ok)return false}
+if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==='Sim'&&p.wifi===1)||(s.wifi[i]==='Não'&&p.wifi===0)){ok=true;break}}if(!ok)return false}
+return true;
+}
+
+function jahSelecionado(p){return sel1&&sel1.sku===p.sku||sel2&&sel2.sku===p.sku}
+
+function renderGrid(){
+var r=[];
+for(var i=0;i<produtos.length;i++){
+if(matchFilter(produtos[i]))r.push(produtos[i]);
+}
+prodCount.textContent=r.length+' modelo'+(r.length!==1?'s':'')+' encontrado'+(r.length!==1?'s':'');
+if(r.length===0){
+prodGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem">Nenhum modelo encontrado com esses filtros.</div>';
+return
+}
+prodGrid.innerHTML='';
+for(var i=0;i<r.length;i++){
+var p=r[i];
+var div=document.createElement('div');div.className='prod-item';
+var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
+var feats='<span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span>';
+var ja=jahSelecionado(p);
+var btnTxt=ja?'Selecionado':'Comparar';
+var btnCls=ja?'p-compare sel':'p-compare';
+var logo='<span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="../'+p.m.toLowerCase()+'.png" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span>';
+div.innerHTML='<div class="p-brand">'+logo+'</div><div class="p-name">'+p.mo+'</div><div class="p-color">'+cdot+' '+p.c+'</div><div class="p-feats">'+feats+'</div><button class="'+btnCls+'" data-sku="'+p.sku+'"'+(ja?' disabled':'')+'>'+btnTxt+'</button>';
+(function(sku){div.querySelector('.p-compare').onclick=function(){
+var prod=null;
+for(var j=0;j<produtos.length;j++){if(produtos[j].sku===sku){prod=produtos[j];break}}
+if(prod){selecionar(prod)}
+}})(p.sku);
+prodGrid.appendChild(div);
+}
+}
+
+buildFilters();
+renderGrid();
+
+function filtrar(q){
+if(!q){auto.classList.remove('show');return}
+q=q.toLowerCase();
+var r=[];
+for(var i=0;i<produtos.length;i++){
+var p=produtos[i];
+if(p.mo.toLowerCase().indexOf(q)!==-1||p.m.toLowerCase().indexOf(q)!==-1||(p.m+' '+p.mo).toLowerCase().indexOf(q)!==-1){
+r.push(p);
+if(r.length>=10)break;
+}
+}
+if(r.length===0){auto.classList.remove('show');return}
+auto.innerHTML='';
+for(var i=0;i<r.length;i++){
+var a=document.createElement('a');
+a.href='#';
+a.innerHTML='<div class="match-brand">'+r[i].m+'</div><div class="match-name">'+r[i].mo+'</div><div class="match-cat">'+r[i].tp+'</div>';
+a.dataset.idx=i;
+(function(idx){a.onclick=function(e){
+e.preventDefault();
+selecionar(r[idx]);
+auto.classList.remove('show');
+input.value='';
+}})(i);
+auto.appendChild(a);
+}
+auto.classList.add('show');
+}
+
+function selecionar(p){
+if(!sel1){sel1=p;renderSlot(1);if(sel2)renderComp();renderGrid();return}
+if(sel1&&sel1.sku===p.sku){mostrarInfo(p);renderGrid();return}
+if(!sel2){sel2=p;renderSlot(2);renderComp();renderGrid();return}
+sel1=sel2;sel2=p;renderSlot(1);renderSlot(2);renderComp();renderGrid();
+}
+
+function mostrarInfo(p){
+comp.classList.add('show');
+var nome=p.m+' '+p.mo;
+hdr1.textContent=nome;
+hdr2.textContent='—';
+compBody.innerHTML='<tr><td colspan="3" style="padding:30px;text-align:center;color:#555">Selecione um segundo modelo para comparar.</td></tr>';
+}
+
+function renderSlot(n){
+var el=n===1?slot1:slot2;
+var p=n===1?sel1:sel2;
+if(!p){
+el.innerHTML='<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1?'1º':'2º')+' modelo</div>';
+el.classList.remove('filled');
+return}
+el.classList.add('filled');
+var cdot='<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:4px"></span>';
+el.innerHTML='<div class="slot-brand">'+p.m+'</div><div class="slot-name">'+p.mo+'</div><div class="slot-cat">'+cdot+' '+p.c+' &bull; '+p.tp+'</div><button class="slot-remove" data-slot="'+n+'"><i class="fas fa-times"></i> Remover</button>';
+el.querySelector('.slot-remove').onclick=function(){remover(parseInt(this.dataset.slot))};
+}
+
+function remover(n){
+if(n===1){sel1=null;renderSlot(1)}else{sel2=null;renderSlot(2)}
+if(!sel1||!sel2)comp.classList.remove('show');
+renderGrid();
+}
+
+function yn(v){return v?'<i class="fas fa-check-circle yes-icon"></i>':'<i class="fas fa-times-circle no-icon"></i>'}
+function corDot(c){var bg=c==='Preto'?'#222':'#ccc';var bc=c==='Preto'?'#222':'#bbb';return '<span style="display:inline-flex;align-items:center;gap:8px;justify-content:center"><span style="width:18px;height:18px;border-radius:50%;background:'+bg+';border:2px solid '+bc+';display:inline-block;flex-shrink:0"></span>'+c+'</span>'}
+
+function renderComp(){
+if(!sel1||!sel2){comp.classList.remove('show');return}
+comp.classList.add('show');
+var n1=sel1.m+' '+sel1.mo,n2=sel2.m+' '+sel2.mo;
+hdr1.textContent=n1;
+hdr2.textContent=n2;
+var rows=[
+['Marca',sel1.m,sel2.m],
+['Modelo',sel1.mo,sel2.mo],
+['Cor',sel1.c,sel2.c],
+['Tipo de Porta',sel1.tp,sel2.tp],
+['Biometria',yn(sel1.bio),yn(sel2.bio)],
+['App',yn(sel1.app),yn(sel2.app)],
+['Wi-Fi',yn(sel1.wifi),yn(sel2.wifi)],
+['Preço','<a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Ver preço</a>','<a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Ver preço</a>']
+];
+compBody.innerHTML='';
+for(var i=0;i<rows.length;i++){
+var val1=rows[i][1],val2=rows[i][2];
+if(rows[i][0]==='Cor'){val1=corDot(val1);val2=corDot(val2)}
+var tr=document.createElement('tr');
+tr.innerHTML='<td>'+rows[i][0]+'</td><td>'+val1+'</td><td>'+val2+'</td>';
+compBody.appendChild(tr);
+}
+}
+
+input.addEventListener('input',function(){filtrar(this.value)});
+input.addEventListener('blur',function(){setTimeout(function(){auto.classList.remove('show')},200)});
+input.addEventListener('focus',function(){if(this.value)filtrar(this.value)});
+</script>
+
+</body>
+</html>
