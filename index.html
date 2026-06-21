@@ -514,6 +514,9 @@ transition:.3s;
 .comp-card-featured p{font-size:.78rem;color:#666;margin-bottom:12px;line-height:1.4}
 .comp-card-featured .comp-btn{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:50px;font-weight:800;font-size:.85rem;display:inline-block;transition:.3s}
 .comp-card-featured:hover .comp-btn{transform:scale(1.05)}
+.p-preco{font-size:.75rem;color:#222;margin:6px 0;font-weight:600}
+.preco-aprox{font-size:.62rem;color:#888;display:block;font-weight:400}
+.preco-valor{color:var(--gold);font-size:.82rem;font-weight:700}
 </style>
 
 <script type="application/ld+json">
@@ -889,7 +892,7 @@ Guias e Ferramentas
 <a href="/manutencao-fechadura-digital/" class="guide-card">
 <div class="guide-icon"><i class="fas fa-tools"></i></div>
 <div>
-<h3>Manutenção e Cuidados</h3>
+<h3>Manutenção</h3>
 <p>Cuidados e dicas para sua fechadura durar mais.</p>
 </div>
 <div class="guide-arrow"><i class="fas fa-arrow-right"></i></div>
@@ -1034,6 +1037,26 @@ href="https://wa.me/5541997469076?text=Olá,%20gostaria%20de%20um%20orçamento">
 <script>
 function extra(sku) { return prodExtra[sku] || {} }
 var logoMap = { Intelbras: 'intelbras.png', Yale: 'yale.png', Papaiz: 'papaiz.png', Pado: 'pado.png', Elsys: 'elsys.png' }
+var precos={};
+function buscarPreco(sku){
+  var p=null;
+  for(var i=0;i<produtos.length;i++){if(produtos[i].sku===sku){p=produtos[i];break}}
+  if(!p)return;
+  if(precos[sku]){atualizarPrecos(sku);return}
+  if(p.preco===undefined||p.preco===null||p.preco==='')return;
+  precos[sku]=p.preco;
+  atualizarPrecos(sku);
+}
+function atualizarPrecos(sku){
+  var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
+  for(var i=0;i<els.length;i++){
+    var v=precos[sku];
+    if(v!==null&&v!==undefined&&v!==''){
+      var num=typeof v==='number'?v:parseFloat(String(v).replace(',','.'));
+      if(!isNaN(num)){els[i].innerHTML='<span class="preco-aprox">Preço Aprox.</span> <span class="preco-valor">R$ '+num.toFixed(2).replace('.',',')+'</span>'}
+    }
+  }
+}
 function buildCard(p) {
   var ext = extra(p.sku)
   var cdot = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + (p.c === 'Preto' ? '#222' : '#ccc') + ';border:1px solid ' + (p.c === 'Preto' ? '#222' : '#bbb') + ';vertical-align:middle;margin-right:3px"></span>'
@@ -1041,7 +1064,7 @@ function buildCard(p) {
   var logo = '<div class="p-brand"><span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="' + logoMap[p.m] + '" alt="' + p.m + '" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span></div>'
   var img = ext.img ? '<div class="p-img"><img src="' + ext.img + '" alt="' + p.mo + '"></div>' : ''
   var tit = ext.tit ? '<div class="p-tit">' + ext.tit + '</div>' : ''
-  return '<div class="prod-item">' + logo + img + '<div class="p-name">' + p.mo + '</div>' + tit + '<div class="p-color">' + cdot + ' ' + p.c + '</div><div class="p-feats">' + feats + '</div><a href="' + p.url + '" target="_blank" rel="nofollow" class="p-compare"><i class="fas fa-shopping-cart"></i> Ver preço</a></div>'
+  return '<div class="prod-item">' + logo + img + '<div class="p-name">' + p.mo + '</div>' + tit + '<div class="p-color">' + cdot + ' ' + p.c + '</div><div class="p-preco" data-p-sku="' + p.sku + '"></div><div class="p-feats">' + feats + '</div><a href="' + p.url + '" target="_blank" rel="nofollow" class="p-compare"><i class="fas fa-shopping-cart"></i> Ver preço</a></div>'
 }
 var grid5Skus = [10013, 10007, 10005, 10024, 10026, 10034, 10053, 10047, 10061, 10074]
 var gHtml = ''
@@ -1051,6 +1074,9 @@ for (var i = 0; i < grid5Skus.length; i++) {
   }
 }
 document.getElementById('grid5x5').innerHTML = gHtml
+for (var i = 0; i < grid5Skus.length; i++) {
+  buscarPreco(grid5Skus[i]);
+}
 </script>
 
 </body>
