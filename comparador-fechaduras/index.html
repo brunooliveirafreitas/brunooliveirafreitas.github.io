@@ -394,7 +394,7 @@ var ja=jahSelecionado(p);
 var btnTxt=ja?'Selecionado':'Comparar';
 var btnCls=ja?'p-compare sel':'p-compare';
 var logo='<span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="../'+p.m.toLowerCase()+'.png" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span>';
-var imgHtml=ext.img?'<div class="p-img"><img src="'+ext.img+'" alt="'+p.mo+'"></div>':'';
+var imgHtml=ext.img?'<div class="p-img"><img src="/'+ext.img+'" alt="'+p.mo+'"></div>':'';
 var titHtml=ext.tit?'<div class="p-tit">'+ext.tit+'</div>':'';
 div.innerHTML='<div class="p-brand">'+logo+'</div>'+imgHtml+'<div class="p-name">'+p.mo+'</div>'+titHtml+'<div class="p-color">'+cdot+' '+p.c+'</div><div class="p-preco" data-p-sku="'+p.sku+'"></div><div class="p-feats">'+feats+'</div><button class="'+btnCls+'" data-sku="'+p.sku+'"'+(ja?' disabled':'')+'>'+btnTxt+'</button>';
 (function(sku){div.querySelector('.p-compare').onclick=function(){
