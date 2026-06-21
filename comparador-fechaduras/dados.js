@@ -119,7 +119,7 @@ var prodExtra={
 10027:{img:"../10027.webp",tit:"Fechadura Digital Eletrônica Ymf 40A Senha E Biometria",res:"Biometria e senha. Instalação embutir. Suporta até 100 códigos. Para portas a partir de 3,5 cm."},
 10028:{img:"../10028.webp",tit:"Fechadura Digital YRD256 Deadbolt Embutir",res:"Deadbolt embutir. Código numérico até 25 usuários. IP55. Portas de 3 a 5,7 cm. Bateria emergência 9V."},
 10029:{img:"../10029.webp",tit:"Fechadura Digital Gemini Mini Biometria App Senha",res:"Biometria, app e senha. Até 250 biometrias/senhas. IP55 portas externas. Acabamento grafite."},
-10030:{img:"../10030.svg",tit:"Fechadura Digital Reflecta Abertura Por Biometria Senha",res:"Abertura por biometria e senha. Design moderno."},
+10030:{img:"../10030.webp",tit:"Fechadura Digital Reflecta Abertura Por Biometria Senha",res:"Abertura por biometria e senha. Design moderno."},
 10031:{img:"../10031.webp",tit:"Fechadura Digital Ydl 120Maçaneta, Senha E Chave",res:"Maçaneta e senha. Até 50 códigos. Instalação embutir. Portas de 3 a 4,5 cm. Resistente água."},
 10032:{img:"../10032.webp",tit:"Fechadura Digital Biometria Ymi 70a",res:"Biometria, cartão, senha, chave e app. Portas de 3,5 a 11,5 cm."},
 10033:{img:"../10033.webp",tit:"Fechadura Digital Lia Bp Para Porta Correr Cromada",res:"Para porta de correr. Biometria, senha e cartão. Até 250 digitais. IP55. Aço inox 304."},
