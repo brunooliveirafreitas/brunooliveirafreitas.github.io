@@ -1063,7 +1063,7 @@ function buildCard(p) {
   var cdot = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + (p.c === 'Preto' ? '#222' : '#ccc') + ';border:1px solid ' + (p.c === 'Preto' ? '#222' : '#bbb') + ';vertical-align:middle;margin-right:3px"></span>'
   var feats = '<span class="' + (p.bio ? 'on' : 'off') + '" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="' + (p.app ? 'on' : 'off') + '" title="App"><i class="fas fa-mobile-screen"></i></span><span class="' + (p.wifi ? 'on' : 'off') + '" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="' + (p.bt ? 'on' : 'off') + '" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>'
   var logo = '<div class="p-brand"><span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="' + logoMap[p.m] + '" alt="' + p.m + '" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span></div>'
-  var img = ext.img ? '<div class="p-img"><img src="' + ext.img + '" alt="' + p.mo + '"></div>' : ''
+  var img = ext.img ? '<div class="p-img"><img src="/' + ext.img + '" alt="' + p.mo + '"></div>' : ''
   var tit = ext.tit ? '<div class="p-tit">' + ext.tit + '</div>' : ''
   return '<div class="prod-item">' + logo + img + '<div class="p-name">' + p.mo + '</div>' + tit + '<div class="p-color">' + cdot + ' ' + p.c + '</div><div class="p-preco" data-p-sku="' + p.sku + '"></div><div class="p-feats">' + feats + '</div><a href="' + p.url + '" target="_blank" rel="nofollow" class="p-compare"><i class="fas fa-shopping-cart"></i> Ver preço</a></div>'
 }
