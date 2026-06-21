@@ -1,6 +1,6 @@
 var produtos=[
 // ── Intelbras ──────────────────────────────────────────
-{sku:10001,m:"Intelbras",mo:"FR 101 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,ind:"Residências",esp:"25-50",url:"https://meli.la/2Tcf4Pe",ml:"MLB20938205",preco:269},
+{sku:10001,m:"Intelbras",mo:"FR 101 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,ind:"Residências",esp:"25-50",url:"https://meli.la/2Tcf4Pe",preco:269},
 {sku:10002,m:"Intelbras",mo:"FR 220 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"25-50",url:"https://meli.la/1pt8tQ3",preco:784},
 {sku:10003,m:"Intelbras",mo:"FR 331 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"35-60",url:"https://meli.la/1oyP6j7",preco:2780},
 {sku:10004,m:"Intelbras",mo:"FR 620 Preto",c:"Preto",cat:"Residencial",tp:"Push & Pull (Madeira)",bio:0,app:0,wifi:0,bt:0,ind:"Residências",esp:"35-50",url:"https://meli.la/18thyDR",preco:1650},
