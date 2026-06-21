@@ -67,6 +67,10 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .comp-table .no-icon{color:#ccc;font-size:1.1rem}
 .comp-table .comp-btn{display:inline-block;background:var(--gold);color:var(--dark);padding:10px 25px;border-radius:50px;font-weight:700;text-decoration:none;font-size:.82rem;transition:.3s}
 .comp-table .comp-btn:hover{background:#c49a2e}
+.preco-aprox{font-size:.78rem;font-weight:400;color:#aaa}
+.preco-valor{display:block;font-size:1.1rem;font-weight:700;color:var(--gold)}
+.p-preco{font-size:.85rem;font-weight:600;color:var(--gold);min-height:22px;margin:4px 0 6px}
+.p-comp-preco{font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:6px}
 .comp-table .foto-label{vertical-align:top;padding-top:25px!important}
 .comp-foto{width:100%;max-width:320px;height:260px;display:flex;align-items:center;justify-content:center;margin:auto;overflow:hidden;border-radius:12px;background:#fafafa}
 .comp-foto img{max-height:240px;max-width:100%;object-fit:contain}
@@ -81,6 +85,12 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .filter-group label:hover{border-color:var(--gold)}
 .filter-group input{display:none}
 .filter-group input:checked+label{background:var(--dark);color:var(--gold);border-color:var(--dark)}
+.filter-group .price-slider-wrap{padding:2px 4px 0;max-width:160px}
+.filter-group .price-slider-wrap input[type=range]{width:100%;height:5px;background:#ddd;border-radius:3px;outline:none;margin-bottom:2px;cursor:pointer;display:block;accent-color:var(--gold)}
+.filter-group .price-slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);border:none;cursor:pointer}
+.filter-group .price-slider-wrap input[type=range]::-moz-range-track{height:5px;background:#ddd;border-radius:3px;border:none}
+.filter-group .price-slider-wrap input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold);border:none;cursor:pointer}
+.filter-group .price-slider-wrap .price-val{font-size:.68rem;font-weight:600;color:var(--gold)}
 
 .prod-count{font-size:.85rem;color:#888;margin-bottom:15px}
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:40px}
@@ -187,6 +197,7 @@ footer{background:var(--dark);color:#aaa;text-align:center;padding:30px 0 20px}
 <a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
 <a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
 <a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
+<a href="https://acessocasa.com.br/tipos-fechadura-digital/">Guia de Tipos de Fechaduras</a>
 <a href="https://acessocasa.com.br/comparador-fechaduras/">Comparador de Modelos</a>
 </div>
 <div>
@@ -239,6 +250,30 @@ var hdr2=document.getElementById('hdr2');
 var compBody=document.getElementById('compBody');
 
 var filterRow=document.getElementById('filterRow');
+var precos={};
+var precoMaxFiltro=99999;
+
+function buscarPreco(sku){
+  var p=null;
+  for(var i=0;i<produtos.length;i++){if(produtos[i].sku===sku){p=produtos[i];break}}
+  if(!p)return;
+  if(precos[sku]){atualizarPrecos(sku);return}
+  if(p.preco===undefined||p.preco===null||p.preco==='')return;
+  precos[sku]=p.preco;
+  atualizarPrecos(sku);
+}
+
+
+function atualizarPrecos(sku){
+  var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
+  for(var i=0;i<els.length;i++){
+    var v=precos[sku];
+    if(v!==null&&v!==undefined&&v!==''){
+      var num=typeof v==='number'?v:parseFloat(String(v).replace(',','.'));
+      if(!isNaN(num)){els[i].innerHTML='<span class="preco-aprox">Preço Aprox.</span> <span class="preco-valor">R$ '+num.toFixed(2).replace('.',',')+'</span>'}
+    }
+  }
+}
 var prodGrid=document.getElementById('prodGrid');
 var prodCount=document.getElementById('prodCount');
 
@@ -255,7 +290,8 @@ var grupos=[
 {key:'bio',tit:'Biometria',vals:['Sim','Não']},
 {key:'app',tit:'App',vals:['Sim','Não']},
 {key:'wifi',tit:'Wi-Fi',vals:['Sim','Não']},
-{key:'bt',tit:'Bluetooth',vals:['Sim','Não']}
+{key:'bt',tit:'Bluetooth',vals:['Sim','Não']},
+{key:'esp',tit:'Espessura da Porta',vals:['Até 45 mm','45-60 mm','60-80 mm','Acima de 80 mm']}
 ];
 for(var g=0;g<grupos.length;g++){
 var div=document.createElement('div');div.className='filter-group';
@@ -269,6 +305,27 @@ div.appendChild(ck);div.appendChild(lb);
 }
 filterRow.appendChild(div);
 }
+var precosArr=[];
+for(var i=0;i<produtos.length;i++){if(produtos[i].preco!==undefined&&produtos[i].preco!==null)precosArr.push(produtos[i].preco)}
+var precoMin=Math.min.apply(null,precosArr);
+var precoMax=Math.max.apply(null,precosArr);
+precoMaxFiltro=precoMax;
+var priceDiv=document.createElement('div');priceDiv.className='filter-group';
+var priceH4=document.createElement('h4');priceH4.textContent='Preço Máx.';priceDiv.appendChild(priceH4);
+var priceWrap=document.createElement('div');priceWrap.className='price-slider-wrap';
+var slider=document.createElement('input');slider.type='range';slider.min=precoMin;slider.max=precoMax;slider.value=precoMax;slider.step=10;
+var valSpan=document.createElement('span');valSpan.className='price-val';
+function fmtPrecoSlider(v){return 'R$ '+v.toFixed(0).replace('.',',')}
+valSpan.textContent=fmtPrecoSlider(precoMax);
+slider.oninput=function(){
+precoMaxFiltro=parseInt(this.value);
+valSpan.textContent=fmtPrecoSlider(precoMaxFiltro);
+renderGrid();
+};
+priceWrap.appendChild(slider);priceWrap.appendChild(valSpan);
+priceDiv.style.flex='0 1 auto';priceDiv.style.maxWidth='200px';
+priceDiv.appendChild(priceWrap);
+filterRow.appendChild(priceDiv);
 }
 
 function getFilterState(){
@@ -297,6 +354,20 @@ if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i
 if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==='Sim'&&p.app===1)||(s.app[i]==='Não'&&p.app===0)){ok=true;break}}if(!ok)return false}
 if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==='Sim'&&p.wifi===1)||(s.wifi[i]==='Não'&&p.wifi===0)){ok=true;break}}if(!ok)return false}
 if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==='Sim'&&p.bt===1)||(s.bt[i]==='Não'&&p.bt===0)){ok=true;break}}if(!ok)return false}
+if(s.esp&&s.esp.length){
+  var espMax=-1;
+  if(p.esp&&p.esp!=='N/A'){var parts=p.esp.split('-');if(parts.length===2)espMax=parseInt(parts[1])}
+  var ok=false;
+  for(var i=0;i<s.esp.length;i++){
+    if(espMax===-1){ok=true;break}
+    if(s.esp[i]==='Até 45 mm'&&espMax<=45){ok=true;break}
+    if(s.esp[i]==='45-60 mm'&&espMax>45&&espMax<=60){ok=true;break}
+    if(s.esp[i]==='60-80 mm'&&espMax>60&&espMax<=80){ok=true;break}
+    if(s.esp[i]==='Acima de 80 mm'&&espMax>80){ok=true;break}
+  }
+  if(!ok)return false
+}
+if(p.preco!==undefined&&p.preco!==null&&p.preco>precoMaxFiltro)return false;
 return true;
 }
 
@@ -325,13 +396,14 @@ var btnCls=ja?'p-compare sel':'p-compare';
 var logo='<span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="../'+p.m.toLowerCase()+'.png" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span>';
 var imgHtml=ext.img?'<div class="p-img"><img src="'+ext.img+'" alt="'+p.mo+'"></div>':'';
 var titHtml=ext.tit?'<div class="p-tit">'+ext.tit+'</div>':'';
-div.innerHTML='<div class="p-brand">'+logo+'</div>'+imgHtml+'<div class="p-name">'+p.mo+'</div>'+titHtml+'<div class="p-color">'+cdot+' '+p.c+'</div><div class="p-feats">'+feats+'</div><button class="'+btnCls+'" data-sku="'+p.sku+'"'+(ja?' disabled':'')+'>'+btnTxt+'</button>';
+div.innerHTML='<div class="p-brand">'+logo+'</div>'+imgHtml+'<div class="p-name">'+p.mo+'</div>'+titHtml+'<div class="p-color">'+cdot+' '+p.c+'</div><div class="p-preco" data-p-sku="'+p.sku+'"></div><div class="p-feats">'+feats+'</div><button class="'+btnCls+'" data-sku="'+p.sku+'"'+(ja?' disabled':'')+'>'+btnTxt+'</button>';
 (function(sku){div.querySelector('.p-compare').onclick=function(){
 var prod=null;
 for(var j=0;j<produtos.length;j++){if(produtos[j].sku===sku){prod=produtos[j];break}}
 if(prod){selecionar(prod)}
 }})(p.sku);
 prodGrid.appendChild(div);
+buscarPreco(p.sku);
 }
 }
 
@@ -422,11 +494,12 @@ var rows=[
 ['Foto',foto1,foto2],
 ['Cor',sel1.c,sel2.c],
 ['Tipo de Porta',sel1.tp,sel2.tp],
+['Espessura da Porta',sel1.esp==='N/A'?'—':sel1.esp+' mm',sel2.esp==='N/A'?'—':sel2.esp+' mm'],
 ['Biometria',yn(sel1.bio),yn(sel2.bio)],
 ['App',yn(sel1.app),yn(sel2.app)],
 ['Wi-Fi',yn(sel1.wifi),yn(sel2.wifi)],
 ['Bluetooth',yn(sel1.bt),yn(sel2.bt)],
-['Preço','<a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Ver preço</a>','<a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Ver preço</a>']
+['Preço','<div class="p-comp-preco" data-p-sku="'+sel1.sku+'"></div><a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Confirmar Preço</a>','<div class="p-comp-preco" data-p-sku="'+sel2.sku+'"></div><a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Confirmar Preço</a>']
 ];
 if(ext1.res||ext2.res){
 rows.push(['Resumo','<div class="comp-resumo">'+(ext1.res||'—')+'</div>','<div class="comp-resumo">'+(ext2.res||'—')+'</div>']);
@@ -440,6 +513,7 @@ var tdCls=rows[i][0]==='Foto'?' class="foto-label"':'';
 tr.innerHTML='<td'+tdCls+'>'+rows[i][0]+'</td><td>'+val1+'</td><td>'+val2+'</td>';
 compBody.appendChild(tr);
 }
+buscarPreco(sel1.sku);buscarPreco(sel2.sku);
 }
 
 input.addEventListener('input',function(){filtrar(this.value)});
