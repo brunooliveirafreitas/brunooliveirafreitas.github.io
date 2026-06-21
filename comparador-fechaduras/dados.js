@@ -30,7 +30,7 @@ var produtos=[
 {sku:10027,m:"Yale",mo:"YMF 40A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"35-100",url:"https://meli.la/13yruYS",preco:1347},
 {sku:10028,m:"Yale",mo:"YRD 256 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,bt:0,ind:"Portas de correr",esp:"30-57",url:"https://meli.la/12Han4H",preco:539},
 {sku:10029,m:"Yale",mo:"Gemini Mini Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"N/A",url:"https://meli.la/1kGXbWB",preco:749},
-{sku:10030,m:"Yale",mo:"Reflecta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,ind:"Residências",esp:"N/A",url:"https://meli.la/2Y43jHV",preco:551},
+{sku:10030,m:"Yale",mo:"Reflecta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"N/A",url:"https://meli.la/2Y43jHV",preco:551},
 {sku:10031,m:"Yale",mo:"YDL 120 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,ind:"Residências",esp:"30-45",url:"https://meli.la/1PwVwNb",preco:320},
 {sku:10032,m:"Yale",mo:"YMI 70A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,ind:"Residências",esp:"35-115",url:"https://meli.la/1vTtEEd",preco:3886},
 {sku:10033,m:"Yale",mo:"Lia BP Preto",c:"Preto",cat:"Biométrica",tp:"Porta de Correr",bio:1,app:0,wifi:0,bt:0,ind:"Portas de correr",esp:"30-70",url:"https://meli.la/1nEmsRc",preco:706},
