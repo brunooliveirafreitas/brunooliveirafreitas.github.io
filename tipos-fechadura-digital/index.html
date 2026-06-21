@@ -460,7 +460,7 @@ var ext=extra(p.sku);
 var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
 var feats='<span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>';
 var logo='<span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="/'+p.m.toLowerCase()+'.png" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span>';
-var imgHtml=ext.img?'<div class="p-img"><img src="'+ext.img+'" alt="'+p.mo+'" loading="lazy"></div>':'<div class="p-img" style="background:white"></div>';
+var imgHtml=ext.img?'<div class="p-img"><img src="/'+ext.img+'" alt="'+p.mo+'" loading="lazy"></div>':'<div class="p-img" style="background:white"></div>';
 html+='<a href="'+p.url+'" target="_blank" rel="nofollow" class="prod-item">';
 html+='<div class="p-brand">'+logo+'</div>';
 html+=imgHtml;
