@@ -486,8 +486,8 @@ var ext1=extra(sel1.sku),ext2=extra(sel2.sku);
 var n1=ext1.tit||sel1.m+' '+sel1.mo,n2=ext2.tit||sel2.m+' '+sel2.mo;
 hdr1.textContent=n1;
 hdr2.textContent=n2;
-var foto1=ext1.img?'<div class="comp-foto"><img src="'+ext1.img+'" alt="'+sel1.mo+'"></div>':'';
-var foto2=ext2.img?'<div class="comp-foto"><img src="'+ext2.img+'" alt="'+sel2.mo+'"></div>':'';
+var foto1=ext1.img?'<div class="comp-foto"><img src="/'+ext1.img+'" alt="'+sel1.mo+'"></div>':'';
+var foto2=ext2.img?'<div class="comp-foto"><img src="/'+ext2.img+'" alt="'+sel2.mo+'"></div>':'';
 var rows=[
 ['Marca',sel1.m,sel2.m],
 ['Modelo',sel1.mo,sel2.mo],
