@@ -165,11 +165,10 @@ text-align:center;
 padding:30px 0 20px;
 }
 .footer-grid{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px 60px;
-max-width:1000px;
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:20px 12px;
+max-width:1200px;
 margin:auto;
 padding:0 20px 20px;
 border-bottom:1px solid rgba(255,255,255,.08);
@@ -329,6 +328,9 @@ font-size:.9rem;
 .icon-card:hover .icon-circle{background:var(--dark);color:var(--gold)}
 .icon-card h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
 .icon-card p{font-size:.82rem;color:#555}
+@media(max-width:768px){
+.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -582,59 +584,13 @@ font-size:.9rem;
 </a>
 </section>
 
-<footer>
-
-<div class="footer-grid">
-
-  <div>
-<h4>Nossos Serviços</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
-<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
-<a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
-<a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
-</div>
-
-<div>
-<h4>Cidades Atendidas</h4>
-<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
-<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
-<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
-<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
-<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
-<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
-</div>
-
-<div>
-<h4>Clientes Atendidos</h4>
-<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
-<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
-<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
-<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
-</div>
-
-<div>
-<h4>Marcas Atendidas</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
-</div>
-
-</div>
-
-<div class="footer-copy">
-<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Inteligentes para Empresas em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
-<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
-</div>
-
-</footer>
+<footer id="footer"></footer>
 
 <a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20empresarial">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<script src="../footer.js"></script>
+<script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
 </html>

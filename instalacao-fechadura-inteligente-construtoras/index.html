@@ -177,11 +177,10 @@ text-align:center;
 padding:30px 0 20px;
 }
 .footer-grid{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px 60px;
-max-width:1000px;
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:20px 12px;
+max-width:1200px;
 margin:auto;
 padding:0 20px 20px;
 border-bottom:1px solid rgba(255,255,255,.08);
@@ -327,6 +326,30 @@ object-fit:contain;
 .icon-card:hover .icon-circle{background:var(--dark);color:var(--gold)}
 .icon-card h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
 .icon-card p{font-size:.82rem;color:#555}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px;margin:auto}
+.stat-card{text-align:center;padding:30px 15px;background:white;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);border:1px solid #eee}
+.stat-card .stat-num{font-size:2.2rem;font-weight:800;color:var(--gold);display:block}
+.stat-card .stat-label{font-size:.8rem;color:#555;margin-top:5px;display:block}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+.faq-grid{max-width:800px;margin:auto}
+.faq-item{border:1px solid #e5e7eb;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq-item:hover{border-color:var(--gold)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;background:white;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--dark);text-align:left;transition:.2s}
+.faq-q:hover{background:#fafafa}
+.faq-q i{font-size:.8rem;color:var(--gold);transition:.3s;flex-shrink:0}
+.faq-item.active .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;background:#fafafa}
+.faq-item.active .faq-a{max-height:500px;padding:14px 20px}
+.faq-a p{color:#555;font-size:.85rem;line-height:1.6}
+.contact-card{background:var(--gold);border-radius:20px;padding:40px;text-align:center;color:var(--dark);max-width:700px;margin:auto}
+.contact-card h3{font-size:1.4rem;margin-bottom:8px}
+.contact-card p{font-size:.9rem;margin-bottom:20px;opacity:.8}
+.contact-card .btn{background:var(--dark);color:white}
+.contact-card .btn:hover{background:#1e2a4a}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
 @media(max-width:1024px){
 .grid-3{grid-template-columns:repeat(2,1fr)}
 }
@@ -340,6 +363,7 @@ object-fit:contain;
 .grid-3{grid-template-columns:1fr}
 .cta h2{font-size:2rem}
 .cta p{font-size:1rem}
+.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
 }
 </style>
 <script type="application/ld+json">
@@ -567,6 +591,64 @@ object-fit:contain;
 
 <section class="section bg-gray">
 <div class="container">
+<h2 class="section-title">Acesso Casa em Números</h2>
+<p class="section-subtitle">Confiança que sua construtora merece.</p>
+<div class="stats-grid">
+<div class="stat-card">
+<span class="stat-num">+500</span>
+<span class="stat-label">Fechaduras Instaladas</span>
+</div>
+<div class="stat-card">
+<span class="stat-num">+50</span>
+<span class="stat-label">Condomínios Atendidos</span>
+</div>
+<div class="stat-card">
+<span class="stat-num">8</span>
+<span class="stat-label">Cidades na RMC</span>
+</div>
+<div class="stat-card">
+<span class="stat-num">5</span>
+<span class="stat-label">Marcas Parceiras</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Dúvidas Frequentes para Construtoras</h2>
+<p class="section-subtitle">Respondemos as principais perguntas de engenheiros e incorporadores.</p>
+<div class="faq-grid">
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Qual o prazo para instalação de um empreendimento inteiro?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Depende da quantidade de unidades, mas trabalhamos com cronograma acelerado. Para empreendimentos de até 50 unidades, conseguimos instalar em 3 a 5 dias úteis, respeitando o andamento da obra.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Vocês emitem nota fiscal?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim, emitimos nota fiscal de serviço para construtoras, facilitando a prestação de contas e o repasse aos compradores.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Qual modelo de fechadura vocês recomendam para empreendimentos?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Depende do perfil do imóvel. Para empreendimentos de médio padrão, a <strong>Intelbras FR 101</strong> (biometria + senha) é a mais indicada pelo custo-benefício. Para alto padrão, recomendamos <strong>Intelbras IFR 7000</strong> ou <strong>Yale Solis</strong> (smart lock com app e Wi-Fi).</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Vocês fazem a configuração para entrega ao comprador?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim. Deixamos a fechadura configurada com senha mestra padrão e manual de uso impresso. O comprador recebe a fechadura funcionando e pode trocar a senha ao se mudar.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Tem desconto para instalação em grande volume?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim, trabalhamos com <strong>desconto progressivo</strong> conforme o volume de unidades. Quanto mais apartamentos, menor o valor por instalação. Consulte uma proposta personalizada.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Posso incluir a fechadura digital no memorial descritivo do empreendimento?</span><i class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim, podemos firmar parceria desde o lançamento, incluindo a instalação de fechaduras digitais no memorial descritivo como diferencial de venda do empreendimento.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-gray">
+<div class="container">
 <h2 class="section-title">Marcas Atendidas</h2>
 <div class="brands-grid">
 <a href="/instalacao-fechadura-intelbras-curitiba" class="brand">
@@ -596,54 +678,24 @@ object-fit:contain;
 </a>
 </section>
 
-<footer>
-<div class="footer-grid">
-
-  <div>
-<h4>Nossos Serviços</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
-<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
-<a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
-<a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
-</div>
-  
-<div>
-<h4>Cidades Atendidas</h4>
-<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
-<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
-<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
-<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
-<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
-<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
-</div>
-<div>
-<h4>Clientes Atendidos</h4>
-<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
-<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
-<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
-<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
-</div>
-<div>
-<h4>Marcas Atendidas</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
-</div>
-</div>
-<div class="footer-copy">
-<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Inteligentes para Construtoras em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
-<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
-</div>
-</footer>
+<footer id="footer"></footer>
 
 <a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento%20para%20fechadura%20para%20construtora">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+function toggleFAQ(btn){
+var item=btn.parentNode;
+var isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item.active').forEach(function(el){el.classList.remove('active')});
+if(!isActive)item.classList.add('active');
+}
+
+</script>
+
+<script src="../footer.js"></script>
+<script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
 </html>
 

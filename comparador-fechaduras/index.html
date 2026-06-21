@@ -124,7 +124,16 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 }
 
 footer{background:var(--dark);color:#aaa;text-align:center;padding:30px 0 20px}
-.footer-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px 60px;max-width:1000px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:20px 12px;
+max-width:1200px;
+margin:auto;
+padding:0 20px 20px;
+border-bottom:1px solid rgba(255,255,255,.08);
+margin-bottom:20px;
+}
 .footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
 .footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s;line-height:1.5}
 .footer-grid a:hover{color:var(--gold)}
@@ -132,7 +141,7 @@ footer{background:var(--dark);color:#aaa;text-align:center;padding:30px 0 20px}
 .footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
 .whatsapp{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:.3s}
 .whatsapp:hover{transform:scale(1.1)}
-@media(max-width:768px){.footer-grid{justify-content:flex-start;gap:30px}}
+@media(max-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}}
 </style>
 </head>
 <body>
@@ -189,49 +198,7 @@ footer{background:var(--dark);color:#aaa;text-align:center;padding:30px 0 20px}
 </div>
 </section>
 
-<footer>
-<div class="footer-grid">
-<div>
-<h4>Nossos Serviços</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
-<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
-<a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
-<a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
-<a href="https://acessocasa.com.br/tipos-fechadura-digital/">Guia de Tipos de Fechaduras</a>
-<a href="https://acessocasa.com.br/comparador-fechaduras/">Comparador de Modelos</a>
-</div>
-<div>
-<h4>Cidades Atendidas</h4>
-<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
-<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
-<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
-<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
-<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
-<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
-</div>
-<div>
-<h4>Clientes Atendidos</h4>
-<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
-<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
-<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
-<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
-</div>
-<div>
-<h4>Marcas Atendidas</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
-</div>
-</div>
-<div class="footer-copy">
-<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Digitais em Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo.</p>
-<p style="margin-top:8px"><a href="/politica-privacidade/">Política de Privacidade</a></p>
-</div>
-</footer>
+<footer id="footer"></footer>
 
 <a class="whatsapp" href="https://wa.me/5541997469076?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento"><i class="fab fa-whatsapp"></i></a>
 
@@ -262,7 +229,6 @@ function buscarPreco(sku){
   precos[sku]=p.preco;
   atualizarPrecos(sku);
 }
-
 
 function atualizarPrecos(sku){
   var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
@@ -521,5 +487,7 @@ input.addEventListener('blur',function(){setTimeout(function(){auto.classList.re
 input.addEventListener('focus',function(){if(this.value)filtrar(this.value)});
 </script>
 
+<script src="../footer.js"></script>
+<script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
 </html>
