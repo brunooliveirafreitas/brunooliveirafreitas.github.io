@@ -73,6 +73,9 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .prod-item .p-tit{font-size:.68rem;color:#666;margin-bottom:6px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .prod-item .p-btn{background:var(--dark);color:white;padding:8px 18px;border-radius:50px;font-size:.7rem;font-weight:700;display:inline-block;transition:.3s;text-decoration:none}
 .prod-item:hover .p-btn{background:var(--gold);color:var(--dark)}
+.p-preco{font-size:.75rem;color:#222;margin:6px 0;font-weight:600}
+.preco-aprox{font-size:.62rem;color:#888;display:block;font-weight:400}
+.preco-valor{color:var(--gold);font-size:.82rem;font-weight:700}
 .type-header{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:15px}
 .type-header .type-icon{width:60px;height:60px;border-radius:50%;background:var(--dark);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
 .type-header h2{margin:0;font-size:1.6rem;color:var(--dark)}
@@ -372,7 +375,9 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
 <a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
 <a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
+<a href="https://acessocasa.com.br/tipos-fechadura-digital/">Guia de Tipos de Fechaduras</a>
 <a href="https://acessocasa.com.br/comparador-fechaduras/">Comparador de Modelos</a>
+<a href="https://acessocasa.com.br/manutencao-fechadura-digital/">Guia de Manutenção e Cuidados</a>
 </div> 
 <div>
 <h4>Cidades Atendidas</h4>
@@ -411,176 +416,29 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<script src="../comparador-fechaduras/dados.js"></script>
 <script>
-var produtos=[
-{sku:10001,m:"Intelbras",mo:"FR 101 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2Tcf4Pe"},
-{sku:10002,m:"Intelbras",mo:"FR 220 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1pt8tQ3"},
-{sku:10003,m:"Intelbras",mo:"FR 331 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1oyP6j7"},
-{sku:10004,m:"Intelbras",mo:"FR 620 Preto",c:"Preto",cat:"Biométrica",tp:"Push & Pull (Madeira)",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/18thyDR"},
-{sku:10005,m:"Intelbras",mo:"IFR 7000 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/2HmRYbF"},
-{sku:10006,m:"Intelbras",mo:"FR 101 V Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2S9ubDC"},
-{sku:10007,m:"Intelbras",mo:"FR 201 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2FYSQK9"},
-{sku:10008,m:"Intelbras",mo:"FR 201 V Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1p3Dehs"},
-{sku:10009,m:"Intelbras",mo:"FR 221 V Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1ugZUkG"},
-{sku:10010,m:"Intelbras",mo:"FR 330 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/2cNWG7s"},
-{sku:10011,m:"Intelbras",mo:"FD 1000 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/1LUWtDS"},
-{sku:10012,m:"Intelbras",mo:"FD 2000 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/1acByc4"},
-{sku:10013,m:"Intelbras",mo:"FR 10 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2rd7uYP"},
-{sku:10014,m:"Intelbras",mo:"FR 210 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2hTF2j5"},
-{sku:10015,m:"Intelbras",mo:"FR 320 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/2d4UWyz"},
-{sku:10016,m:"Intelbras",mo:"FR 400 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Vidro",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1bwtfTX"},
-{sku:10017,m:"Intelbras",mo:"IFR 7000 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/2pmeeWg"},
-{sku:10018,m:"Intelbras",mo:"MFD 2020 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/2FG2wSf"},
-{sku:10019,m:"Intelbras",mo:"MFD 3001 D Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/1626n1A"},
-{sku:10020,m:"Intelbras",mo:"MFR 2020 V Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/1JArGHe"},
-{sku:10021,m:"Intelbras",mo:"MFR 2040 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/2Wgq24h"},
-{sku:10022,m:"Intelbras",mo:"MFR 3001 V Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/1dB4qFA"},
-{sku:10023,m:"Intelbras",mo:"MFV 3000 Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/2XasUDW"},
-{sku:10024,m:"Yale",mo:"YDF 40A Preto",c:"Preto",cat:"Biométrica",tp:"Porta de Correr",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1dBymLv"},
-{sku:10025,m:"Yale",mo:"YDM 60 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:0,bt:1,url:"https://meli.la/1FNvgxB"},
-{sku:10026,m:"Yale",mo:"YMC 420W Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:1,bt:0,url:"https://meli.la/1E6P6mh"},
-{sku:10027,m:"Yale",mo:"YMF 40A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/13yruYS"},
-{sku:10028,m:"Yale",mo:"YRD 256 Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,bt:1,url:"https://meli.la/12Han4H"},
-{sku:10029,m:"Yale",mo:"Gemini Mini Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/1kGXbWB"},
-{sku:10030,m:"Yale",mo:"Reflecta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:1,url:"https://meli.la/2Y43jHV"},
-{sku:10031,m:"Yale",mo:"YDL 120 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1PwVwNb"},
-{sku:10032,m:"Yale",mo:"YMI 70A Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/1vTtEEd"},
-{sku:10033,m:"Yale",mo:"Lia BP Preto",c:"Preto",cat:"Biométrica",tp:"Porta de Correr",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/1nEmsRc"},
-{sku:10034,m:"Yale",mo:"Solis Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:0,app:1,wifi:1,bt:1,url:"https://meli.la/2EyqLLp"},
-{sku:10035,m:"Yale",mo:"YBL 410B Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:1,url:"https://meli.la/2yvzujG"},
-{sku:10036,m:"Yale",mo:"YDF 40A BP",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2bqZkC8"},
-{sku:10038,m:"Yale",mo:"YDF 40A RL Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2nCvBJF"},
-{sku:10039,m:"Yale",mo:"YMC 420W Zigbee",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:0,url:"https://meli.la/1nyx1kh"},
-{sku:10040,m:"Yale",mo:"YMF 40A RL Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/1o8Eyri"},
-{sku:10041,m:"Yale",mo:"YRD 256 BP Preto",c:"Preto",cat:"Residencial",tp:"Porta de Correr",bio:0,app:0,wifi:0,bt:1,url:"https://meli.la/13cjjQ6"},
-{sku:10042,m:"Yale",mo:"YRD 256 RL Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:1,url:"https://meli.la/1izaKEM"},
-{sku:10043,m:"Papaiz",mo:"SL125 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1jr6hRw"},
-{sku:10044,m:"Papaiz",mo:"SL140 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2rDiyks"},
-{sku:10045,m:"Papaiz",mo:"SL205 Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:0,url:"https://meli.la/2TWcga4"},
-{sku:10046,m:"Papaiz",mo:"SL200 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:0,url:"https://meli.la/1ivfKN1"},
-{sku:10047,m:"Papaiz",mo:"SL150 Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1MHkGzK"},
-{sku:10048,m:"Papaiz",mo:"SL125B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/1S2EaMx"},
-{sku:10049,m:"Papaiz",mo:"SL205 Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:0,url:"https://meli.la/1aHGHRM"},
-{sku:10050,m:"Papaiz",mo:"SL140B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2mshghp"},
-{sku:10051,m:"Papaiz",mo:"SL140B Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2S1sLDt"},
-{sku:10052,m:"Papaiz",mo:"SL100 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1Q4VB8v"},
-{sku:10053,m:"Papaiz",mo:"SL120 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1fSiweA"},
-{sku:10054,m:"Papaiz",mo:"SL130 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2yEWSAG"},
-{sku:10055,m:"Papaiz",mo:"SL130 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/26pdwVD"},
-{sku:10056,m:"Papaiz",mo:"SL135 Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2HK4iks"},
-{sku:10057,m:"Papaiz",mo:"SL135 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1qkTYui"},
-{sku:10058,m:"Papaiz",mo:"SL140 Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/16WrNmf"},
-{sku:10059,m:"Pado",mo:"FDE-300W",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/29n3nf8"},
-{sku:10060,m:"Pado",mo:"FDE-101",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/1wpP9Gi"},
-{sku:10061,m:"Pado",mo:"FDE-201",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/15We6xF"},
-{sku:10062,m:"Pado",mo:"FDS-10",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2HBP4eN"},
-{sku:10063,m:"Pado",mo:"FDS-50",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1vXdLkb"},
-{sku:10064,m:"Pado",mo:"FDE-101RM Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:0,url:"https://meli.la/2fRbb6v"},
-{sku:10065,m:"Pado",mo:"FDV-200 Preto",c:"Preto",cat:"Smart",tp:"Porta de Vidro",bio:0,app:1,wifi:0,bt:0,url:"https://meli.la/2EQr7Bb"},
-{sku:10066,m:"Elsys",mo:"Blues ESF-DE4250I Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2MrGD1x"},
-{sku:10067,m:"Elsys",mo:"Blues ESF-DE4250I Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2tQRBwN"},
-{sku:10068,m:"Elsys",mo:"Dance Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/1dvyuem"},
-{sku:10069,m:"Elsys",mo:"Dance Preta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/16VKv12"},
-{sku:10070,m:"Elsys",mo:"ESF-DE2000B Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2tDMBJL"},
-{sku:10071,m:"Elsys",mo:"ESF-DE2000B Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/19b9xKh"},
-{sku:10072,m:"Elsys",mo:"ESF-DE4000B Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/1Kh2NoX"},
-{sku:10073,m:"Elsys",mo:"ESF-DE4000B Preta",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/1ZjPCCz"},
-{sku:10074,m:"Elsys",mo:"ESF-DE4000B Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/2GXm7JC"},
-{sku:10075,m:"Elsys",mo:"Pop ESF-DS1100V Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/133TkNW"},
-{sku:10076,m:"Elsys",mo:"Pop ESF-DS1100V Preto",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2nQHGwb"},
-{sku:10077,m:"Elsys",mo:"Samba ESF-DE6100I Prata",c:"Prata",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2kSr7pt"},
-{sku:10078,m:"Elsys",mo:"Samba ESF-DE6100I Preto",c:"Preto",cat:"Biométrica",tp:"Madeira / Metal",bio:1,app:0,wifi:0,bt:1,url:"https://meli.la/2p6i4xF"},
-{sku:10079,m:"Elsys",mo:"SAX ESF-DE5100I Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/2mBMnQK"},
-{sku:10080,m:"Elsys",mo:"SAX ESF-DE5100I Preto",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/27tKrtt"},
-{sku:10081,m:"Elsys",mo:"SAX Prata",c:"Prata",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/2RpoEx4"},
-{sku:10082,m:"Elsys",mo:"SAX Preta",c:"Preto",cat:"Smart",tp:"Madeira / Metal",bio:1,app:1,wifi:1,bt:1,url:"https://meli.la/1rSW4u7"},
-{sku:10083,m:"Elsys",mo:"Tecno DS4100V Prata",c:"Prata",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/32yUaSp"},
-{sku:10084,m:"Elsys",mo:"Tecno DS4100V Preta",c:"Preto",cat:"Residencial",tp:"Madeira / Metal",bio:0,app:0,wifi:0,bt:0,url:"https://meli.la/2mL7jdg"}
-];
-var prodExtra={
-10001:{img:"/10001.webp",tit:"Fechadura Digital Sobrepor Fr 101"},
-10002:{img:"/10002.webp",tit:"Fechadura Digital Sobrepor Senha Biometria Fr 220"},
-10003:{img:"/10003.webp",tit:"Fechadura Digital Touch Embutir Biometria Fr331"},
-10004:{img:"/10004.webp",tit:"Fechadura Digital Push & Pull Senha Tag Fr 620"},
-10005:{img:"/10005.webp",tit:"Fechadura Digital Smart Embutir Ifr 7000"},
-10006:{img:"/10006.webp",tit:"Fechadura Digital Sobrepor Fr 101 V"},
-10007:{img:"/10007.webp",tit:"Fechadura Digital Sobrepor Fr201"},
-10008:{img:"/10008.webp",tit:"Fechadura Digital Sobrepor Fr 201 V"},
-10009:{img:"/10009.webp",tit:"Fechadura Digital Embutir Biometria FR 221V"},
-10010:{img:"/10010.webp",tit:"Fechadura Digital EmbutirBiometria Fr 330"},
-10011:{img:"/10011.webp",tit:"Fechadura Digital Sobrepor Fd 1000 D"},
-10012:{img:"/10012.webp",tit:"Fechadura Digital Sobrepor Fd 2000 D"},
-10013:{img:"/10013.webp",tit:"Fechadura Digital SobreporSenha FR 10"},
-10014:{img:"/10014.webp",tit:"Fechadura Digital Senha Fr 210"},
-10015:{img:"/10015.webp",tit:"Fechadura Digital Embutir Cartão Senha Fr 320"},
-10016:{img:"/10016.webp",tit:"Fechadura Digital Fr400 Para PortasVidro"},
-10017:{img:"/10017.webp",tit:"Fechadura Digital Smart Embutir Ifr 7000 Prata"},
-10018:{img:"/10018.webp",tit:"Fechadura Digital Sobrepor Mfd 2020 D Biometria"},
-10019:{img:"/10019.webp",tit:"Fechadura Digital Embutir S Maçaneta Mfd 3001d"},
-10020:{img:"/10020.webp",tit:"Fechadura Digital Sobrepor Mfr 2020 V"},
-10021:{img:"/10021.webp",tit:"Fechadura Digital Acesso Via Palma Da Mão Mfr 2040"},
-10022:{img:"/10022.webp",tit:"Fechadura Digital Embutir Sem Maçaneta Mfr 3001 V"},
-10023:{img:"/10023.webp",tit:"Fechadura Digital EmbutirBiometria Mfv 3000"},
-10024:{img:"/10024.webp",tit:"Fechadura Digital Biometrica Ydf 40a Bp Porta Correr"},
-10025:{img:"/10025.webp",tit:"Fechadura Digital Ydm60 Biometria Código, Cartão, Chave"},
-10026:{img:"/10026.webp",tit:"Fechadura Digital YMC 420W Cor Aço Inoxidável"},
-10027:{img:"/10027.webp",tit:"Fechadura Digital Eletrônica Ymf 40A Senha E Biometria"},
-10028:{img:"/10028.webp",tit:"Fechadura Digital YRD256 Deadbolt Embutir"},
-10029:{img:"/10029.webp",tit:"Fechadura Digital Gemini Mini Biometria App Senha"},
-10031:{img:"/10031.webp",tit:"Fechadura Digital Ydl 120Maçaneta, Senha E Chave"},
-10032:{img:"/10032.webp",tit:"Fechadura Digital Biometria Ymi 70a"},
-10033:{img:"/10033.webp",tit:"Fechadura Digital Lia Bp Para Porta Correr Cromada"},
-10034:{img:"/10034.webp",tit:"Fechadura Digital Biometria Senha Solis"},
-10035:{img:"/10035.webp",tit:"Fechadura Digital Ybl 410b Sobrepor Biometria App Bluetooth"},
-10036:{img:"/10036.webp",tit:"Fechadura Digital Ydf 40bp Biometria"},
-10038:{img:"/10038.webp",tit:"Fechadura Digital Biometrica Ydf 40a Rolete Hub Wifi"},
-10039:{img:"/10039.webp",tit:"Fechadura Digital Ymc 420w FoscoZigbee Integrado"},
-10040:{img:"/10040.webp",tit:"Fechadura Digital Ymf 40a Rl Senha Biometria"},
-10041:{img:"/10041.webp",tit:"Fechadura Digital Eletrônica YRD 256BP"},
-10042:{img:"/10042.webp",tit:"Fechadura Digital Yrd 256 Rl Rolete /prateado"},
-10043:{img:"/10043.webp",tit:"Fechadura Digital Sobrepor SL125 Senha Touchscreen"},
-10044:{img:"/10044.webp",tit:"Fechadura Digital Eletronica Sl140 Sobrepor Senha"},
-10045:{img:"/10045.webp",tit:"Fechadura Digital Embutir Sl205 Biometria Ip55"},
-10046:{img:"/10046.webp",tit:"Fechadura Digital SL200 Smart Lock"},
-10047:{img:"/10047.webp",tit:"Fechadura Digital SL150 Biometria RFID Embutir Touch"},
-10048:{img:"/10048.webp",tit:"Fechadura Digital Sl125bBiometria Sobrepor Resistent"},
-10049:{img:"/10049.webp",tit:"Fechadura Digital Sl205 Senha Tag Digital Biometria"},
-10050:{img:"/10050.webp",tit:"Fechadura Digital Sl140b"},
-10051:{img:"/10051.webp",tit:"Fechadura Digital Sl140b"},
-10052:{img:"/10052.webp",tit:"Fechadura Digital EmbutirSenha E Cartão Sl100"},
-10053:{img:"/10053.webp",tit:"Fechadura Digital Sobrepor Smart Lock Sl120"},
-10054:{img:"/10054.webp",tit:"Fechadura Digital Biometria Embutir Sl130"},
-10055:{img:"/10055.webp",tit:"Fechadura Digital Biometria Embutir Sl130"},
-10056:{img:"/10056.webp",tit:"Fechadura Digital Biometria Sl135"},
-10057:{img:"/10057.webp",tit:"Fechadura Digital Biometria Sl135"},
-10058:{img:"/10058.webp",tit:"Fechadura Digital Eletronica Sl140 Sobrepor"},
-10059:{img:"/10059.webp",tit:"Fechadura Digital Embutir Inteligente Fde-300w Ep"},
-10060:{img:"/10060.webp",tit:"Fechadura Digital Biometria Fde-101 Hub Wifi App"},
-10061:{img:"/10061.webp",tit:"Fechadura Digital Biometria Maçaneta Fde-201"},
-10062:{img:"/10062.webp",tit:"Fechadura Digital Fds-10 Sobrepor Senha Touchscreen"},
-10063:{img:"/10063.webp",tit:"Fechadura Digital Sobrepor Cartão E Senha Fds-50"},
-10064:{img:"/10064.webp",tit:"Fechadura Digital Biometria Fde-101rm Rolete Magnético Hub Wifi"},
-10065:{img:"/10065.webp",tit:"Fechadura Digital Fdv-201 Porta Vidro Giro ou Correr App TTlock"},
-10066:{img:"/10066.webp",tit:"Fechadura Digital Embutir Blues Esf-de4250i Cor"},
-10067:{img:"/10067.webp",tit:"Fechadura Digital Embutir Blues Esf-de4250i Cor"},
-10068:{img:"/10068.webp",tit:"Fechadura Digital Sobrepor Dance Esf-ds910v Cor"},
-10069:{img:"/10069.webp",tit:"Fechadura Digital Sobrepor Dance Senha Campainha"},
-10070:{img:"/10070.webp",tit:"Fechadura Digital Embutir Biometria Esfde2000b"},
-10071:{img:"/10071.webp",tit:"Fechadura Digital Senha Esf-de2000b"},
-10072:{img:"/10072.webp",tit:"Fechadura Digital ESF-4000B Wi-Fi Biometria Senha App"},
-10073:{img:"/10073.webp",tit:"Fechadura Digital Biometria E Wi-fi Smart De4000b"},
-10074:{img:"/10074.webp",tit:"Fechadura Digital Biometria Wi-fi Smart De4000b"},
-10075:{img:"/10075.webp",tit:"Fechadura Digital Pop SobreporSenha"},
-10076:{img:"/10076.webp",tit:"Fechadura Digital Pop SobreporSenha"},
-10077:{img:"/10077.webp",tit:"Fechadura Digital Samba Wifi Ip55 Puxador Embutido"},
-10078:{img:"/10078.webp",tit:"Fechadura Digital Esf-de6100i Embutir"},
-10079:{img:"/10079.webp",tit:"Fechadura Digital Embutir Wifi Ip55 Esf-de5100i Sax"},
-10080:{img:"/10080.webp",tit:"Fechadura Digital Embutir Wifi Ip55 Esf-de5100i Sax"},
-10081:{img:"/10081.webp",tit:"Fechadura Digital Biometria Wifi Camera Ip55 Sax"},
-10082:{img:"/10082.webp",tit:"Fechadura Digital Embutir Esf-de51001 Sax Cor"},
-10083:{img:"/10083.webp",tit:"Fechadura Digital Sobrepor Wi-fi Senha Tag Biometria Life DS4100"},
-10084:{img:"/10084.webp",tit:"Fechadura Digital Sobrepor Wifi Senha Tag Biometria Esfds4100v"}
-};
+var precos={};
+function buscarPreco(sku){
+var p=null;
+for(var i=0;i<produtos.length;i++){if(produtos[i].sku===sku){p=produtos[i];break}}
+if(!p)return;
+if(precos[sku]){atualizarPrecos(sku);return}
+if(p.preco===undefined||p.preco===null||p.preco==='')return;
+precos[sku]=p.preco;
+atualizarPrecos(sku);
+}
+function atualizarPrecos(sku){
+var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
+for(var i=0;i<els.length;i++){
+var v=precos[sku];
+if(v!==null&&v!==undefined&&v!==''){
+var num=typeof v==='number'?v:parseFloat(String(v).replace(',','.'));
+if(!isNaN(num)){els[i].innerHTML='<span class="preco-aprox">Preço Aprox.</span> <span class="preco-valor">R$ '+num.toFixed(2).replace('.',',')+'</span>'}
+}
+}
+}
+
 
 function extra(sku){
 var e=prodExtra[sku];
@@ -609,12 +467,14 @@ html+=imgHtml;
 html+='<div class="p-name">'+p.mo+'</div>';
 html+='<div class="p-tit">'+ext.tit+'</div>';
 html+='<div class="p-color">'+cdot+' '+p.c+'</div>';
+html+='<div class="p-preco" data-p-sku="'+p.sku+'"></div>';
 html+='<div class="p-feats">'+feats+'</div>';
 html+='<span class="p-btn"><i class="fas fa-shopping-cart"></i> Ver preço</span>';
 html+='</a>';
 }
 if(!html)html='<p style="grid-column:1/-1;text-align:center;color:#888;font-size:.9rem;padding:20px">Nenhum modelo encontrado para esta categoria.</p>';
 el.innerHTML=html;
+for(var i=0;i<produtos.length;i++){if(produtos[i].cat===catFilter)buscarPreco(produtos[i].sku);}
 }
 
 renderTypeSection('sobrepor-products','Residencial',5);
