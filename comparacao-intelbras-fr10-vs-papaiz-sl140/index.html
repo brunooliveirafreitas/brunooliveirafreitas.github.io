@@ -78,7 +78,16 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .cta-section p{color:#ccc;font-size:1rem;margin-bottom:25px}
 .cta-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
 footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
-.footer-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:40px 60px;max-width:1000px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:20px 12px;
+max-width:1200px;
+margin:auto;
+padding:0 20px 20px;
+border-bottom:1px solid rgba(255,255,255,.08);
+margin-bottom:20px;
+}
 .footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
 .footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s}
 .footer-grid a:hover{color:var(--gold)}
@@ -95,6 +104,9 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .hero{padding:110px 0 50px}
 .section-title{font-size:1.4rem}
 .comparison-table th,.comparison-table td{padding:10px 8px;font-size:.78rem}
+}
+@media(max-width:768px){
+.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
 }
 </style>
 <script type="application/ld+json">
@@ -316,49 +328,13 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 </div>
 </section>
 
-<footer>
-<div class="footer-grid">
-<div>
-<h4>Nossos Serviços</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-eletronica-curitiba/">Instalação de Fechadura Digital</a>
-<a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
-</div>
-<div>
-<h4>Cidades Atendidas</h4>
-<a href="/instalacao-fechadura-inteligente-curitiba/">Curitiba</a>
-<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/">São José dos Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-pinhais/">Pinhais</a>
-<a href="/instalacao-fechadura-inteligente-colombo/">Colombo</a>
-<a href="/instalacao-fechadura-inteligente-araucaria/">Araucária</a>
-<a href="/instalacao-fechadura-inteligente-campo-largo/">Campo Largo</a>
-<a href="/instalacao-fechadura-inteligente-quatro-barras/">Quatro Barras</a>
-<a href="/instalacao-fechadura-inteligente-piraquara/">Piraquara</a>
-</div>
-<div>
-<h4>Clientes Atendidos</h4>
-<a href="/instalacao-fechadura-inteligente-residencial/">Residências</a>
-<a href="/instalacao-fechadura-inteligente-condominios/">Condomínios</a>
-<a href="/instalacao-fechadura-inteligente-construtoras/">Construtoras</a>
-<a href="/instalacao-fechadura-inteligente-empresas/">Empresas</a>
-</div>
-<div>
-<h4>Marcas Atendidas</h4>
-<a href="https://acessocasa.com.br/instalacao-fechadura-intelbras-curitiba/">Intelbras</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-yale-curitiba/">Yale</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-papaiz-curitiba/">Papaiz</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-pado-curitiba/">Pado</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-elsys-curitiba/">Elsys</a>
-</div>
-</div>
-<div class="footer-copy">
-<p>&copy; 2026 ACESSO CASA &bull; Instalação de Fechaduras Digitais em Curitiba e Região Metropolitana.</p>
-<p style="margin-top:8px;"><a href="/politica-privacidade/" style="color:#555;text-decoration:none;font-size:.75rem;">Política de Privacidade</a></p>
-</div>
-</footer>
+<footer id="footer"></footer>
 
 <a class="whatsapp" href="https://wa.me/5541997469076?text=Olá,%20vi%20o%20comparativo%20FR10%20vs%20SL140%20e%20gostaria%20de%20ajuda">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<script src="../footer.js"></script>
+<script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
 </html>
