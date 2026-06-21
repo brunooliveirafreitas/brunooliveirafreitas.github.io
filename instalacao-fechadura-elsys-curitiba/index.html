@@ -98,6 +98,14 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .icon-card:hover .icon-circle{background:var(--dark);color:var(--gold)}
 .icon-card h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
 .icon-card p{font-size:.82rem;color:#555}
+.p-preco{font-size:.75rem;color:#222;margin:6px 0;font-weight:600}
+.preco-aprox{font-size:.62rem;color:#888;display:block;font-weight:400}
+.preco-valor{color:var(--gold);font-size:.82rem;font-weight:700}
+.price-slider-wrap{display:flex;align-items:center;gap:8px}
+.price-slider-wrap input[type=range]{-webkit-appearance:none;appearance:none;width:120px;height:5px;border-radius:5px;background:#ddd;outline:none;margin:0;border:none;display:block}
+.price-slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);cursor:pointer;border:2px solid #fff;box-shadow:0 0 3px rgba(0,0,0,.3)}
+.price-slider-wrap input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold);cursor:pointer;border:2px solid #fff;box-shadow:0 0 3px rgba(0,0,0,.3)}
+.price-val{font-size:.75rem;font-weight:700;color:var(--gold);white-space:nowrap;min-width:55px}
 @media(max-width:768px){
 .logo img{height:55px}
 .social{display:none}
@@ -316,6 +324,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <a href="https://acessocasa.com.br/fechaduras-digitais-indicadas/">Produtos Indicados</a>
 <a href="https://acessocasa.com.br/guia-compatibilidade-portas/">Guia de Compatibilidade</a>
 <a href="https://acessocasa.com.br/guia-7-erros/">Guia Grátis: 7 Erros</a>
+<a href="https://acessocasa.com.br/tipos-fechadura-digital/">Guia de Tipos de Fechaduras</a>
 </div>  
   
 <div>
@@ -358,6 +367,26 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <script src="../comparador-fechaduras/dados.js"></script>
 <script>
 function extra(sku){return prodExtra[sku]||{}}
+var precos={};
+function buscarPreco(sku){
+var p=null;
+for(var i=0;i<produtos.length;i++){if(produtos[i].sku===sku){p=produtos[i];break}}
+if(!p)return;
+if(precos[sku]){atualizarPrecos(sku);return}
+if(p.preco===undefined||p.preco===null||p.preco==='')return;
+precos[sku]=p.preco;
+atualizarPrecos(sku);
+}
+function atualizarPrecos(sku){
+var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
+for(var i=0;i<els.length;i++){
+var v=precos[sku];
+if(v!==null&&v!==undefined&&v!==''){
+var num=typeof v==='number'?v:parseFloat(String(v).replace(',','.'));
+if(!isNaN(num)){els[i].innerHTML='<span class="preco-aprox">Preço Aprox.</span> <span class="preco-valor">R$ '+num.toFixed(2).replace('.',',')+'</span>'}
+}
+}
+}
 var produtosMarca=produtos.filter(function(p){return p.m==="Elsys"});
 
 var filterRow=document.getElementById("filterRow");
@@ -387,9 +416,26 @@ var ck=document.createElement("input");ck.type="checkbox";ck.id=id;ck.dataset.gr
 var lb=document.createElement("label");lb.htmlFor=id;lb.textContent=val;
 div.appendChild(ck);div.appendChild(lb);
 }
-filterRow.appendChild(div);
+    filterRow.appendChild(div);
+    }
+var precosArr=[];
+for(var i=0;i<produtosMarca.length;i++){if(produtosMarca[i].preco!==undefined&&produtosMarca[i].preco!==null)precosArr.push(produtosMarca[i].preco)}
+var precoMin=precosArr.length?Math.min.apply(null,precosArr):0;
+var precoMax=precosArr.length?Math.max.apply(null,precosArr):0;
+var priceDiv=document.createElement('div');priceDiv.className='filter-group';
+var priceH4=document.createElement('h4');priceH4.textContent='Preço Máx.';priceDiv.appendChild(priceH4);
+var priceWrap=document.createElement('div');priceWrap.className='price-slider-wrap';
+var slider=document.createElement('input');slider.type='range';slider.min=precoMin;slider.max=precoMax;slider.value=precoMax;slider.step=10;
+var valSpan=document.createElement('span');valSpan.className='price-val';
+function fmtPrecoSlider(v){return 'R$ '+v.toFixed(0).replace('.',',')}
+valSpan.textContent=fmtPrecoSlider(precoMax);
+slider.oninput=function(){precoMaxFiltro=parseInt(this.value);valSpan.textContent=fmtPrecoSlider(precoMaxFiltro);renderGrid();};
+priceWrap.appendChild(slider);priceWrap.appendChild(valSpan);
+priceDiv.style.flex='0 1 auto';priceDiv.style.maxWidth='200px';
+priceDiv.appendChild(priceWrap);
+filterRow.appendChild(priceDiv);
 }
-}
+var precoMaxFiltro=99999;
 
 function getFilterState(){
 var checks=document.querySelectorAll("#filterRow input[type=checkbox]");
@@ -410,6 +456,7 @@ if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i
 if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==="Sim"&&p.app===1)||(s.app[i]==="Não"&&p.app===0)){ok=true;break}}if(!ok)return false}
 if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==="Sim"&&p.wifi===1)||(s.wifi[i]==="Não"&&p.wifi===0)){ok=true;break}}if(!ok)return false}
 if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==="Sim"&&p.bt===1)||(s.bt[i]==="Não"&&p.bt===0)){ok=true;break}}if(!ok)return false}
+if(p.preco!==undefined&&p.preco!==null&&p.preco!==''&&p.preco>precoMaxFiltro)return false;
 return true;
 }
 
@@ -432,8 +479,9 @@ var cdot="<span style=\"display:inline-block;width:10px;height:10px;border-radiu
 var feats="<span class=\""+(p.bio?"on":"off")+"\" title=\"Biometria\"><i class=\"fas fa-fingerprint\"></i></span><span class=\""+(p.app?"on":"off")+"\" title=\"App\"><i class=\"fas fa-mobile-screen\"></i></span><span class=\""+(p.wifi?"on":"off")+"\" title=\"Wi-Fi\"><i class=\"fas fa-wifi\"></i></span><span class=\""+(p.bt?"on":"off")+"\" title=\"Bluetooth\"><i class=\"fab fa-bluetooth-b\"></i></span>";
 var imgHtml=ext.img?"<div class=\"p-img\"><img src=\""+ext.img+"\" alt=\""+p.mo+"\"></div>":"";
 var titHtml=ext.tit?"<div class=\"p-tit\">"+ext.tit+"</div>":"";
-div.innerHTML="<div class=\"p-brand\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px\"><img src=\"../elsys.png\" alt=\"Elsys\" style=\"max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75\"></span></div>"+imgHtml+"<div class=\"p-name\">"+p.mo+"</div>"+titHtml+"<div class=\"p-color\">"+cdot+" "+p.c+"</div><div class=\"p-feats\">"+feats+"</div><a href=\""+p.url+"\" target=\"_blank\" rel=\"nofollow\" class=\"p-compare\"><i class=\"fas fa-shopping-cart\"></i> Ver preço</a>";
+div.innerHTML="<div class=\"p-brand\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px\"><img src=\"../elsys.png\" alt=\"Elsys\" style=\"max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75\"></span></div>"+imgHtml+"<div class=\"p-name\">"+p.mo+"</div>"+titHtml+"<div class=\"p-color\">"+cdot+" "+p.c+"</div><div class=\"p-preco\" data-p-sku=\""+p.sku+"\"></div><div class=\"p-feats\">"+feats+"</div><a href=\""+p.url+"\" target=\"_blank\" rel=\"nofollow\" class=\"p-compare\"><i class=\"fas fa-shopping-cart\"></i> Ver preço</a>";
 prodGrid.appendChild(div);
+buscarPreco(p.sku);
 }
 }
 
