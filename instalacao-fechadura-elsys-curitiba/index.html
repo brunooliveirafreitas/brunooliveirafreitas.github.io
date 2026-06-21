@@ -477,7 +477,7 @@ var ext=extra(p.sku);
 var div=document.createElement("div");div.className="prod-item";
 var cdot="<span style=\"display:inline-block;width:10px;height:10px;border-radius:50%;background:"+(p.c==="Preto"?"#222":"#ccc")+";border:1px solid "+(p.c==="Preto"?"#222":"#bbb")+";vertical-align:middle;margin-right:3px\"></span>";
 var feats="<span class=\""+(p.bio?"on":"off")+"\" title=\"Biometria\"><i class=\"fas fa-fingerprint\"></i></span><span class=\""+(p.app?"on":"off")+"\" title=\"App\"><i class=\"fas fa-mobile-screen\"></i></span><span class=\""+(p.wifi?"on":"off")+"\" title=\"Wi-Fi\"><i class=\"fas fa-wifi\"></i></span><span class=\""+(p.bt?"on":"off")+"\" title=\"Bluetooth\"><i class=\"fab fa-bluetooth-b\"></i></span>";
-var imgHtml=ext.img?"<div class=\"p-img\"><img src=\""+ext.img+"\" alt=\""+p.mo+"\"></div>":"";
+var imgHtml=ext.img?"<div class=\"p-img\"><img src=\"/"+ext.img+"\" alt=\""+p.mo+"\"></div>":"";
 var titHtml=ext.tit?"<div class=\"p-tit\">"+ext.tit+"</div>":"";
 div.innerHTML="<div class=\"p-brand\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px\"><img src=\"../elsys.png\" alt=\"Elsys\" style=\"max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75\"></span></div>"+imgHtml+"<div class=\"p-name\">"+p.mo+"</div>"+titHtml+"<div class=\"p-color\">"+cdot+" "+p.c+"</div><div class=\"p-preco\" data-p-sku=\""+p.sku+"\"></div><div class=\"p-feats\">"+feats+"</div><a href=\""+p.url+"\" target=\"_blank\" rel=\"nofollow\" class=\"p-compare\"><i class=\"fas fa-shopping-cart\"></i> Ver preço</a>";
 prodGrid.appendChild(div);
