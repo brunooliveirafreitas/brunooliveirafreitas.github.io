@@ -226,7 +226,7 @@ margin-bottom:20px;
 
 `<a class="whatsapp" href="https://wa.me/5541984695794?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-<script defer src="dados.js"></script>
+<script src="dados.js"></script>
 <script>
 function extra(sku){return prodExtra[sku]||{}}
 
@@ -379,7 +379,7 @@ var p=r[i];
 var div=document.createElement('div');div.className='prod-item';
 var ext=extra(p.sku);
 var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
-var feats='<span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>';
+var feats='<span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span><span class="'+(p.tag?'on':'off')+'" title="Tag"><i class="fas fa-tag"></i></span>';
 var ja=jahSelecionado(p);
 var btnTxt=ja?'Selecionado':'Comparar';
 var btnCls=ja?'p-compare sel':'p-compare';
