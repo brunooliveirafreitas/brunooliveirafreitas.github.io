@@ -16,8 +16,8 @@
 <meta name="description"
 content="Instalação profissional de fechaduras digitais em Colombo e Região Metropolitana. Atendimento rápido, configuração completa e orçamento gratuito.">
 
-<meta property="og:title" content="Acesso Casa">
-<meta property="og:description" content="Instalação de Fechaduras Digitais em Curitiba">
+<meta property="og:title" content="Acesso Casa | Instalação de Fechaduras Digitais em Colombo">
+<meta property="og:description" content="Instalação de Fechaduras Digitais em Colombo">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://acessocasa.com.br/og-image.svg">
 <meta property="og:image:width" content="1200">
@@ -28,579 +28,42 @@ content="Instalação profissional de fechaduras digitais em Colombo e Região M
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
+<link rel="stylesheet" href="/style.css">
 
-:root{
---dark:#0F172A;
---gold:#D4AF37;
---white:#FFFFFF;
---gray:#F3F4F6;
-}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-scroll-behavior:smooth;
-}
 
-body{
-background:#fff;
-color:#222;
-line-height:1.6;
-}
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-header{
-position:fixed;
-width:100%;
-top:0;
-z-index:999;
-background:rgba(15,23,42,.95);
-backdrop-filter:blur(10px);
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-}
-
-.logo img{
-height:70px;
-display:block;
-}
-
-.social{
-color:white;
-font-size:14px;
-font-weight:500;
-text-align:right;
-}
-
-.hero{
-background:
-linear-gradient(rgba(15,23,42,.88),
-rgba(15,23,42,.88)),
-url('/hero-fechadura.png');
-
-background-size:cover;
-background-position:center;
-min-height:700px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-padding-top:120px;
-padding-bottom:80px;
-
-text-align:center;
-color:white;
-}
-
-.hero-content{
-max-width:800px;
-}
-
-.hero h1{
-font-size:2.8rem;
-line-height:1.15;
-margin-bottom:15px;
-font-weight:800;
-}
-
-.hero p{
-font-size:1.2rem;
-margin-bottom:35px;
-color:#e5e7eb;
-}
-
-.btn{
-display:inline-block;
-background:var(--gold);
-color:var(--dark);
-padding:18px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.section{
-padding:90px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:50px;
-font-size:2.2rem;
-color:var(--dark);
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-counter-reset:step;
-}
-.step-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-text-align:center;
-position:relative;
-}
-.step-card::before{
-counter-increment:step;
-content:counter(step);
-position:absolute;
-top:-15px;
-left:50%;
-transform:translateX(-50%);
-background:var(--gold);
-color:var(--dark);
-font-weight:800;
-font-size:1.1rem;
-width:35px;
-height:35px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-.step-card h3{
-margin-bottom:8px;
-font-size:1.05rem;
-}
-.step-card p{
-color:#555;
-font-size:.9rem;
-}
-.section-subtitle{
-text-align:center;
-margin-bottom:50px;
-font-size:1.1rem;
-color:#555;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-}
-.card-link{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-a.card-link:hover{
-background:#D4AF37;
-color:#0F172A;
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-}
-
-.brands{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:20px;
-align-items:center;
-}
-
-.cta{
-background:var(--dark);
-color:white;
-text-align:center;
-padding:100px 20px;
-}
-
-.cta h2{
-font-size:2.5rem;
-margin-bottom:20px;
-}
-
-footer{
-background:#0F172A;
-color:#aaa;
-text-align:center;
-padding:30px 0 20px;
-}
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(7,1fr);
-gap:20px 12px;
-max-width:1200px;
-margin:auto;
-padding:0 20px 20px;
-border-bottom:1px solid rgba(255,255,255,.08);
-margin-bottom:20px;
-}
-.footer-grid h4{
-color:var(--gold);
-font-size:.85rem;
-margin-bottom:10px;
-font-weight:700;
-letter-spacing:.5px;
-}
-.footer-grid a{
-display:block;
-color:#888;
-text-decoration:none;
-font-size:.8rem;
-margin-bottom:5px;
-transition:.2s;
-line-height:1.5;
-}
-.footer-grid a:hover{
-color:var(--gold);
-}
-.footer-copy{
-color:#555;
-font-size:.75rem;
-padding:0 20px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-text-decoration:none;
-z-index:9999;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-.brands-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:18px;
-max-width:900px;
-margin:auto;
-}
-
-.brand{
-background:#fff;
-padding:15px;
-border-radius:16px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-display:flex;
-justify-content:center;
-align-items:center;
-height:90px;
-text-decoration:none;
-transition:.3s;
-}
-
-.brand:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.brand img{
-max-width:110px;
-max-height:45px;
-object-fit:contain;
-}
-
-.map-bairros-grid{
-display:flex;
-gap:50px;
-align-items:center;
-}
-.map-wrapper{
-flex:0 0 55%;
-min-width:0;
-}
-.bairros-grid{
-flex:1;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-}
-.bairro-card{
-background:#f8fafc;
-padding:16px 12px;
-border-radius:12px;
-text-align:center;
-font-weight:600;
-font-size:.85rem;
-color:#333;
-transition:.2s;
-}
-.bairro-card:hover{
-background:#D4AF37;
-color:#0F172A;
-}
-@media(max-width:1024px){
-.bairros-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:768px){
-.map-bairros-grid{flex-direction:column;gap:30px}
-.map-wrapper{flex:none;width:100%;max-width:500px;margin:auto}
-.bairros-grid{grid-template-columns:repeat(2,1fr);width:100%}
-}
-
-@media(max-width:768px){
-
-.logo img{
-height:55px;
-}
-
-.social{
-display:none;
-}
-
-.hero{
-min-height:600px;
-padding-top:110px;
-}
-
-.hero h1{
-font-size:2rem;
-}
-
-.hero p{
-font-size:1rem;
-}
-
-.section-title{
-font-size:1.8rem;
-}
-
-.cta h2{
-font-size:2rem;
-}
-
-}
-.instagram-btn{
-display:flex;
-align-items:center;
-gap:10px;
-
-padding:12px 24px;
-
-background:linear-gradient(
-135deg,
-#833AB4 0%,
-#C13584 35%,
-#E1306C 60%,
-#F77737 100%
-);
-
-color:white;
-text-decoration:none;
-font-weight:700;
-font-size:14px;
-
-border-radius:999px;
-
-border:1px solid rgba(255,255,255,.15);
-
-box-shadow:
-0 8px 20px rgba(225,48,108,.35),
-inset 0 1px 0 rgba(255,255,255,.2);
-
-transition:.3s;
-}
-
-.instagram-btn img{
-width:20px;
-height:20px;
-}
-
-.instagram-btn:hover{
-transform:translateY(-2px) scale(1.03);
-}
   
-.instagram-btn i{
-font-size:20px;
-color:white;
-}
-  
-@media(max-width:768px){
-.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
-}
-</style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"Acesso Casa",
-  "url":"https://acessocasa.com.br",
-  "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "image":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "telephone":"+55 41 98469-5794",
-  "priceRange":"$$",
-  "description":"Instalação de fechaduras digitais em Pinhais e Região Metropolitana.",
-  "areaServed":[
-    "Curitiba",
-    "São José dos Pinhais",
-    "Pinhais",
-    "Colombo",
-    "Araucária",
-    "Campo Largo"
-  ],
-  "address":{
-    "@type":"PostalAddress",
-    "addressLocality":"Curitiba",
-    "addressRegion":"PR",
-    "addressCountry":"BR"
-  },
-  "sameAs":[
-    "https://www.instagram.com/acessocasainteligente/"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "@id":"https://acessocasa.com.br/#business",
-  "name":"Acesso Casa",
-  "url":"https://acessocasa.com.br",
-  "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "image":"https://acessocasa.com.br/logo-acesso-casa.png",
-  "description":"Instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-  "telephone":"+55 41 98469-5794",
-  "priceRange":"$$",
-  "areaServed":[
-    {
-      "@type":"City",
-      "name":"Curitiba"
-    },
-    {
-      "@type":"City",
-      "name":"São José dos Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Pinhais"
-    },
-    {
-      "@type":"City",
-      "name":"Colombo"
-    },
-    {
-      "@type":"City",
-      "name":"Araucária"
-    },
-    {
-      "@type":"City",
-      "name":"Campo Largo"
-    }
-  ],
-  "sameAs":[
-    "https://www.instagram.com/acessocasainteligente"
-  ],
-  "contactPoint":{
-    "@type":"ContactPoint",
-    "telephone":"+55 41 98469-5794",
-    "contactType":"customer service",
-    "areaServed":"BR",
-    "availableLanguage":"Portuguese"
-  }
-}
-</script>
 
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://acessocasa.com.br/#localbusiness",
-
-  "name": "Acesso Casa",
-
-  "url": "https://acessocasa.com.br",
-
-  "telephone": "+55 41 98469-5794",
-
-  "description": "Especializada em instalação de fechaduras digitais e eletrônicas em Curitiba e Região Metropolitana.",
-
-  "logo": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "image": "https://acessocasa.com.br/logo-acesso-casa.png",
-
-  "priceRange": "$$",
-
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Curitiba"
-    },
-    {
-      "@type": "City",
-      "name": "São José dos Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Pinhais"
-    },
-    {
-      "@type": "City",
-      "name": "Colombo"
-    },
-    {
-      "@type": "City",
-      "name": "Araucária"
-    },
-    {
-      "@type": "City",
-      "name": "Campo Largo"
-    }
-  ],
-
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+55 41 98469-5794",
-    "contactType": "customer service",
-    "availableLanguage": "Portuguese"
-  },
-
-  "sameAs": [
-    "https://www.instagram.com/acessocasainteligente",
-    "https://share.google/OCYBh0tPAsarT598l"
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Acesso Casa",
+  "url":"https://acessocasa.com.br",
+  "logo":"https://acessocasa.com.br/logo-acesso-casa.png",
+  "image":"https://acessocasa.com.br/logo-acesso-casa.png",
+  "telephone":"+55 41 98469-5794",
+  "priceRange":"\$\$",
+  "openingHours":["Mo-Fr 08:00-18:00","Sa 08:00-12:00"],
+  "description":"Instalação de fechaduras digitais em Colombo e Região Metropolitana.",
+  "areaServed":[{"@type":"City","name":"Curitiba"},{"@type":"City","name":"São José dos Pinhais"},{"@type":"City","name":"Pinhais"},{"@type":"City","name":"Colombo"},{"@type":"City","name":"Araucária"},{"@type":"City","name":"Campo Largo"}],
+  "address":{"@type":"PostalAddress","addressLocality":"Colombo","addressRegion":"PR","addressCountry":"BR"},
+  "contactPoint":{"@type":"ContactPoint","telephone":"+55 41 98469-5794","contactType":"customer service","areaServed":"BR","availableLanguage":"Portuguese"},
+  "sameAs":["https://www.instagram.com/acessocasainteligente"]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://acessocasa.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Acesso Casa | Instalação de Fechaduras Digitais em Colombo","item":"https://acessocasa.com.br/instalacao-fechadura-inteligente-colombo/"}
   ]
 }
 </script>
 
-  
 </head>
 
 <body>
@@ -645,8 +108,8 @@ Colombo e Região Metropolitana.<br>
 Segurança inteligente para sua casa.
 </p>
 
-<a class="btn"
-href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento">
+`<a class="btn"
+href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Solicitar orçamento pelo WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
  Solicitar Orçamento
@@ -889,8 +352,8 @@ Envie uma foto da sua porta pelo WhatsApp e descubra qual instalação é ideal 
 
 <br>
 
-<a class="btn"
-href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento">
+`<a class="btn"
+href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Falar no WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
  Falar no WhatsApp
@@ -901,14 +364,14 @@ href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento">
 
 <footer id="footer"></footer>
 
-<a class="whatsapp"
-href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento">
+`<a class="whatsapp"
+href="https://wa.me/5541984695794?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Fale conosco pelo WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
 
 </a>
   
-<script src="../footer.js"></script>
+<script defer src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
 </html>
