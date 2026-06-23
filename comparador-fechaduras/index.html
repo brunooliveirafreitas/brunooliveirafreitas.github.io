@@ -277,6 +277,7 @@ var grupos=[
 {key:'m',tit:'Marca',vals:marcas},
 {key:'tp',tit:'Tipo de Porta',vals:tipos},
 {key:'c',tit:'Cor',vals:cores},
+{key:'tag',tit:'Tag (RFID)',vals:['Sim','Não']},
 {key:'bio',tit:'Biometria',vals:['Sim','Não']},
 {key:'app',tit:'App',vals:['Sim','Não']},
 {key:'wifi',tit:'Wi-Fi',vals:['Sim','Não']},
@@ -340,6 +341,7 @@ var s=getFilterState();
 if(s.m&&s.m.length&&s.m.indexOf(p.m)===-1)return false;
 if(s.tp&&s.tp.length&&s.tp.indexOf(p.tp)===-1)return false;
 if(s.c&&s.c.length&&s.c.indexOf(p.c)===-1)return false;
+if(s.tag&&s.tag.length){var ok=false;for(var i=0;i<s.tag.length;i++){if((s.tag[i]==='Sim'&&p.tag===1)||(s.tag[i]==='Não'&&p.tag===0)){ok=true;break}}if(!ok)return false}
 if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==='Sim'&&p.bio===1)||(s.bio[i]==='Não'&&p.bio===0)){ok=true;break}}if(!ok)return false}
 if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==='Sim'&&p.app===1)||(s.app[i]==='Não'&&p.app===0)){ok=true;break}}if(!ok)return false}
 if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==='Sim'&&p.wifi===1)||(s.wifi[i]==='Não'&&p.wifi===0)){ok=true;break}}if(!ok)return false}
@@ -379,7 +381,7 @@ var p=r[i];
 var div=document.createElement('div');div.className='prod-item';
 var ext=extra(p.sku);
 var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
-var feats='<span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span><span class="'+(p.tag?'on':'off')+'" title="Tag"><i class="fas fa-tag"></i></span>';
+var feats='<span class="'+(p.tag?'on':'off')+'" title="Tag"><i class="fas fa-tag"></i></span><span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>';
 var ja=jahSelecionado(p);
 var btnTxt=ja?'Selecionado':'Comparar';
 var btnCls=ja?'p-compare sel':'p-compare';
@@ -485,6 +487,7 @@ var rows=[
 ['Cor',sel1.c,sel2.c],
 ['Tipo de Porta',sel1.tp,sel2.tp],
 ['Espessura da Porta',sel1.esp==='N/A'?'—':sel1.esp+' mm',sel2.esp==='N/A'?'—':sel2.esp+' mm'],
+['Tag (RFID)',yn(sel1.tag),yn(sel2.tag)],
 ['Biometria',yn(sel1.bio),yn(sel2.bio)],
 ['App',yn(sel1.app),yn(sel2.app)],
 ['Wi-Fi',yn(sel1.wifi),yn(sel2.wifi)],
