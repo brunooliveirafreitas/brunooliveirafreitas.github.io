@@ -206,6 +206,8 @@ margin-bottom:20px;
 </div>
 </div>
 
+<div class="comparing-hint" id="comparingHint" style="display:none;text-align:center;font-size:.82rem;color:#888;margin:-30px 0 30px">Apenas os modelos selecionados aparecem abaixo. Remova um para ver todos novamente.</div>
+
 <div class="comparison" id="comparison">
 <h3 style="text-align:center;font-size:1.3rem;margin-bottom:20px;color:var(--dark)">Comparativo entre os Modelos</h3>
 <table class="comp-table">
@@ -362,10 +364,16 @@ function jahSelecionado(p){return sel1&&sel1.sku===p.sku||sel2&&sel2.sku===p.sku
 
 function renderGrid(){
 var r=[];
+var comparando=sel1&&sel2;
+if(comparando){
+r=[sel1,sel2];
+}else{
 for(var i=0;i<produtos.length;i++){
 if(matchFilter(produtos[i]))r.push(produtos[i]);
 }
-prodCount.textContent=r.length+' modelo'+(r.length!==1?'s':'')+' encontrado'+(r.length!==1?'s':'');
+}
+prodCount.textContent=comparando?'2 modelos selecionados':r.length+' modelo'+(r.length!==1?'s':'')+' encontrado'+(r.length!==1?'s':'');
+document.getElementById('comparingHint').style.display=comparando?'block':'none';
 if(r.length===0){
 prodGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem">Nenhum modelo encontrado com esses filtros.</div>';
 return
