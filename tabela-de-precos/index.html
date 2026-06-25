@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta property="og:locale" content="pt_BR">
 <link rel="canonical" href="https://acessocasa.com.br/tabela-de-precos/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tabela de Preços de Instalação de Fechaduras Digitais | Acesso Casa</title>
@@ -12,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://acessocasa.com.br/og-image.svg">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
 <style>
 :root{--dark:#0F172A;--gold:#D4AF37;--white:#FFFFFF;--gray:#F3F4F6}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
@@ -110,7 +111,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <div class="container">
 <h1>Tabela de Preços de Instalação</h1>
 <p>Selecione sua cidade ou bairro para ver os valores com deslocamento já incluso.</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Pedir Orçamento Gratuito</a>
+<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="btn btn-wpp"><i aria-hidden="true" class="fab fa-whatsapp"></i> Pedir Orçamento Gratuito</a>
 </div>
 </section>
 
@@ -133,7 +134,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
   <div class="price-grid" id="priceGrid"></div>
 
   <div class="services-box">
-  <h3><i class="fas fa-tools" style="color:var(--gold);margin-right:8px"></i> Outros Serviços</h3>
+  <h3><i aria-hidden="true" class="fas fa-tools" style="color:var(--gold);margin-right:8px"></i> Outros Serviços</h3>
   <div class="services-grid" id="servicesGrid"></div>
   <p style="font-size:.82rem;color:#aaa;margin-top:20px">* Valores com deslocamento incluso. Consulte para cidades não listadas.</p>
   </div>
@@ -145,7 +146,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <section class="cta-section">
 <h2>Preço fechado só no WhatsApp</h2>
 <p>Os valores da tabela são aproximados. Envie uma mensagem e garantimos o melhor preço para sua instalação.</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar Orçamento</a>
+<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado" class="btn btn-wpp"><i aria-hidden="true" class="fab fa-whatsapp"></i> Solicitar Orçamento</a>
 <p class="obs">Resposta em menos de 5 minutos no horário comercial</p>
 </section>
 
@@ -153,7 +154,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <script src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="whatsapp" target="_blank" aria-label="WhatsApp"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
 
 <script>
 var grupos = [
@@ -251,12 +252,12 @@ function atualizarPrecos(){
     var textowpp=s.min>0?' ('+fmt(Math.round(s.min*m))+' a '+fmt(Math.round(s.max*m))+')':'';
     var wpp='https://wa.me/5541997248338?text=Olá,%20quero%20instalar%20'+encodeURIComponent(s.nome)+'%20em%20'+encodeURIComponent(c.nome)+textowpp;
     pg+='<div class="price-card'+fea+'">';
-    pg+='<div class="price-icon"><i class="fas '+s.icone+'"></i></div>';
+    pg+='<div class="price-icon"><i aria-hidden="true" class="fas '+s.icone+'"></i></div>';
     pg+='<h3>'+s.nome+'</h3>';
     pg+='<p>'+s.desc+'</p>';
     pg+='<div class="price-range">'+preco+'</div>';
     pg+='<p class="price-detail">'+s.detalhe+'</p>';
-    pg+='<a href="'+wpp+'" class="btn btn-wpp" target="_blank"><i class="fab fa-whatsapp"></i> Solicitar</a>';
+    pg+='<a href="'+wpp+'" class="btn btn-wpp" target="_blank"><i aria-hidden="true" class="fab fa-whatsapp"></i> Solicitar</a>';
     pg+='</div>';
   });
   document.getElementById('priceGrid').innerHTML=pg;
@@ -265,7 +266,7 @@ function atualizarPrecos(){
   outros.forEach(function(o){
     var p=o.preco<0?'Sob consulta':fmt(Math.round(o.preco*m));
     sg+='<div class="service-item">';
-    sg+='<i class="fas '+o.icone+'"></i>';
+    sg+='<i aria-hidden="true" class="fas '+o.icone+'"></i>';
     sg+='<h4>'+o.nome+'</h4>';
     sg+='<div class="price">'+p+'</div>';
     sg+='<p>'+o.desc+'</p>';

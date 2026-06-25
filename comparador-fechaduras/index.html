@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta property="og:locale" content="pt_BR">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comparador de Fechaduras Digitais | Acesso Casa</title>
 <meta name="description" content="Compare modelos de fechaduras digitais lado a lado: biometria, app, Wi-Fi, tipo de porta e mais. Encontre a fechadura ideal para sua porta.">
@@ -14,7 +15,7 @@
 <meta property="og:description" content="Compare modelos lado a lado: biometria, app, Wi-Fi, tipo de porta e mais.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
 <style>
 :root{--dark:#0F172A;--gold:#D4AF37}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
@@ -189,7 +190,7 @@ margin-bottom:20px;
 <div class="container">
 
 <div class="search-wrap">
-<i class="fas fa-search search-icon"></i>
+<i aria-hidden="true" class="fas fa-search search-icon"></i>
 <input class="search-input" type="text" id="searchInput" placeholder="Digite o nome da marca ou modelo... (ex: FR 101, Yale, Pado FDE-300W)" autocomplete="off">
 <div class="autocomplete" id="autocomplete"></div>
 </div>
@@ -203,11 +204,11 @@ margin-bottom:20px;
 
 <div class="slots" id="slots">
 <div class="slot" id="slot1">
-<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1º modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1º modelo</div>
 </div>
 <div class="vs-badge">VS</div>
 <div class="slot" id="slot2">
-<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2º modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2º modelo</div>
 </div>
 </div>
 
@@ -226,7 +227,7 @@ margin-bottom:20px;
 
 </main><footer id="footer"></footer>
 
-<a class="whatsapp" href="https://wa.me/5541997248338?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento" aria-label="Fale conosco pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="whatsapp" href="https://wa.me/5541997248338?text=Ol%C3%A1,%20gostaria%20de%20um%20or%C3%A7amento" aria-label="Fale conosco pelo WhatsApp"><i aria-hidden="true" class="fab fa-whatsapp"></i></a>
 
 <script src="dados.js"></script>
 <script>
@@ -389,7 +390,7 @@ var p=r[i];
 var div=document.createElement('div');div.className='prod-item';
 var ext=extra(p.sku);
 var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
-var feats='<span class="'+(p.tag?'on':'off')+'" title="Tag"><i class="fas fa-tag"></i></span><span class="'+(p.bio?'on':'off')+'" title="Biometria"><i class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i class="fab fa-bluetooth-b"></i></span>';
+var feats='<span class="'+(p.tag?'on':'off')+'" title="Tag"><i aria-hidden="true" class="fas fa-tag"></i></span><span class="'+(p.bio?'on':'off')+'" title="Biometria"><i aria-hidden="true" class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i aria-hidden="true" class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i aria-hidden="true" class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i aria-hidden="true" class="fab fa-bluetooth-b"></i></span>';
 var ja=jahSelecionado(p);
 var btnTxt=ja?'Selecionado':'Comparar';
 var btnCls=ja?'p-compare sel':'p-compare';
@@ -461,12 +462,12 @@ function renderSlot(n){
 var el=n===1?slot1:slot2;
 var p=n===1?sel1:sel2;
 if(!p){
-el.innerHTML='<div class="slot-placeholder"><i class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1?'1º':'2º')+' modelo</div>';
+el.innerHTML='<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1?'1º':'2º')+' modelo</div>';
 el.classList.remove('filled');
 return}
 el.classList.add('filled');
 var cdot='<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:4px"></span>';
-el.innerHTML='<div class="slot-brand">'+p.m+'</div><div class="slot-name">'+p.mo+'</div><div class="slot-cat">'+cdot+' '+p.c+' &bull; '+p.tp+'</div><button class="slot-remove" data-slot="'+n+'"><i class="fas fa-times"></i> Remover</button>';
+el.innerHTML='<div class="slot-brand">'+p.m+'</div><div class="slot-name">'+p.mo+'</div><div class="slot-cat">'+cdot+' '+p.c+' &bull; '+p.tp+'</div><button class="slot-remove" data-slot="'+n+'"><i aria-hidden="true" class="fas fa-times"></i> Remover</button>';
 el.querySelector('.slot-remove').onclick=function(){remover(parseInt(this.dataset.slot))};
 }
 
@@ -476,7 +477,7 @@ if(!sel1||!sel2)comp.classList.remove('show');
 renderGrid();
 }
 
-function yn(v){return v?'<i class="fas fa-check-circle yes-icon"></i>':'<i class="fas fa-times-circle no-icon"></i>'}
+function yn(v){return v?'<i aria-hidden="true" class="fas fa-check-circle yes-icon"></i>':'<i aria-hidden="true" class="fas fa-times-circle no-icon"></i>'}
 function corDot(c){var bg=c==='Preto'?'#222':'#ccc';var bc=c==='Preto'?'#222':'#bbb';return '<span style="display:inline-flex;align-items:center;gap:8px;justify-content:center"><span style="width:18px;height:18px;border-radius:50%;background:'+bg+';border:2px solid '+bc+';display:inline-block;flex-shrink:0"></span>'+c+'</span>'}
 
 function renderComp(){
@@ -500,7 +501,7 @@ var rows=[
 ['App',yn(sel1.app),yn(sel2.app)],
 ['Wi-Fi',yn(sel1.wifi),yn(sel2.wifi)],
 ['Bluetooth',yn(sel1.bt),yn(sel2.bt)],
-['Preço','<div class="p-comp-preco" data-p-sku="'+sel1.sku+'"></div><a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Confirmar Preço</a>','<div class="p-comp-preco" data-p-sku="'+sel2.sku+'"></div><a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i class="fas fa-shopping-cart"></i> Confirmar Preço</a>']
+['Preço','<div class="p-comp-preco" data-p-sku="'+sel1.sku+'"></div><a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Preço</a>','<div class="p-comp-preco" data-p-sku="'+sel2.sku+'"></div><a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Preço</a>']
 ];
 if(ext1.res||ext2.res){
 rows.push(['Resumo','<div class="comp-resumo">'+(ext1.res||'—')+'</div>','<div class="comp-resumo">'+(ext2.res||'—')+'</div>']);
