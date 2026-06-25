@@ -16,6 +16,7 @@
 <meta property="og:image:height" content="630">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
 :root{--dark:#0F172A;--gold:#D4AF37;--white:#FFFFFF;--gray:#F3F4F6;--light-bg:#f8fafc}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
@@ -55,10 +56,7 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .testimonial i{color:var(--gold);font-size:1.5rem;margin-bottom:10px;display:block}
 .testimonial blockquote{font-size:.95rem;color:#555;font-style:italic;margin-bottom:10px}
 .testimonial cite{font-size:.8rem;color:#999;font-style:normal}
-.cta-box{background:linear-gradient(135deg,#0F172A,#1E293B);border-radius:20px;padding:50px 30px;text-align:center;color:white;margin-bottom:30px}
-.cta-box h2{font-size:1.5rem;margin-bottom:10px}
-.cta-box p{color:#94A3B8;font-size:.9rem;margin-bottom:20px}
-.cta-box .wa-count{font-size:.8rem;color:#666;margin-top:12px}
+
 .bg-gray{background:var(--light-bg)}
 .about-box{background:white;border-radius:16px;padding:30px;box-shadow:0 4px 15px rgba(0,0,0,.05);max-width:650px;margin:0 auto}
 .about-box h3{font-size:1rem;color:var(--dark);margin-bottom:8px}
@@ -83,6 +81,15 @@ margin-bottom:20px;
 .instagram-btn{display:flex;align-items:center;gap:10px;padding:12px 24px;background:linear-gradient(135deg,#833AB4 0%,#C13584 35%,#E1306C 60%,#F77737 100%);color:white;text-decoration:none;font-weight:700;font-size:14px;border-radius:999px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 20px rgba(225,48,108,.35),inset 0 1px 0 rgba(255,255,255,.2);transition:.3s}
 .instagram-btn:hover{transform:translateY(-2px) scale(1.03)}
 .instagram-btn i{font-size:20px;color:white}
+.sib-form{background:transparent!important;padding:0!important}
+.sib-form-block__button{border-radius:50px!important;font-family:'Montserrat',sans-serif!important;font-weight:700!important;padding:18px 36px!important;letter-spacing:1px}
+#sib-container{background:transparent!important;border:none!important;max-width:100%!important;padding:0!important}
+#sib-container .entry__label{font-family:'Montserrat',sans-serif!important;font-weight:600!important;color:#fff!important}
+#sib-container .input,.sib-sms-input-wrapper .entry__field select{background:#fff!important;border:2px solid rgba(255,255,255,.2)!important;border-radius:12px!important;padding:14px 16px!important;font-family:'Montserrat',sans-serif!important;font-size:.9rem!important;color:#333!important}
+#sib-container .input:focus,.sib-sms-input-wrapper .entry__field select:focus{border-color:var(--gold)!important;outline:none!important}
+.cta-form{background:linear-gradient(135deg,#0F172A,#1E293B);border-radius:20px;padding:50px 30px;text-align:center;color:white;margin-bottom:30px}
+.cta-form h2{font-size:1.5rem;margin-bottom:10px;color:#fff}
+.cta-form p{color:#94A3B8;font-size:.9rem;margin-bottom:20px}
 @media(max-width:768px){
 .logo img{height:50px}
 .social{display:none}
@@ -99,7 +106,7 @@ margin-bottom:20px;
   "@context":"https://schema.org",
   "@type":"WebPage",
   "name":"Guia Grátis: 7 Erros ao Escolher Fechadura Digital",
-  "description":"Guia gratuito com os 7 erros mais comuns ao escolher uma fechadura digital. Receba pelo WhatsApp.",
+  "description":"Guia gratuito com os 7 erros mais comuns ao escolher uma fechadura digital. Receba por e-mail.",
   "url":"https://acessocasa.com.br/guia-7-erros/",
   "author":{"@type":"LocalBusiness","name":"Acesso Casa"}
 }
@@ -130,12 +137,7 @@ margin-bottom:20px;
 <div class="badge"><i aria-hidden="true" class="fas fa-file-pdf"></i>Material Exclusivo</div>
 <h1>7 Erros ao Escolher uma Fechadura Digital</h1>
 <p>Guia gratuito com os erros mais comuns que fazem você perder dinheiro, tempo e segurança na hora de comprar sua fechadura digital.</p>
-<div class="price-tag"><i aria-hidden="true" class="fas fa-gift"></i> Grátis — via WhatsApp</div>
-<div>
-<a class="btn btn-wa" href="https://wa.me/5541997248338?text=Olá,%20quero%20receber%20o%20Guia%20Grátis:%207%20Erros%20ao%20Escolher%20Fechadura%20Digital%20🤝">
-<i aria-hidden="true" class="fab fa-whatsapp"></i> Quero Receber o Guia Grátis
-</a>
-</div>
+<div class="price-tag"><i aria-hidden="true" class="fas fa-gift"></i> Grátis</div>
 </div>
 </section>
 
@@ -227,13 +229,103 @@ margin-bottom:20px;
 
 </div>
 
-<div class="cta-box">
-<h2>Receba o Guia Completo com os 7 Erros</h2>
-<p>Clique no botão abaixo, receba o material gratuito no WhatsApp e descubra qual fechadura ideal para você.</p>
-<a class="btn btn-wa" href="https://wa.me/5541997248338?text=Olá,%20quero%20receber%20o%20Guia%20Grátis:%207%20Erros%20ao%20Escolher%20Fechadura%20Digital%20🤝">
-<i aria-hidden="true" class="fab fa-whatsapp"></i> Quero o Guia Grátis
-</a>
-<p class="wa-count"><i aria-hidden="true" class="fas fa-clock"></i> Resposta em até 2 minutos</p>
+<div class="cta-form">
+<div class="sib-form" style="text-align:center;background-color:transparent">
+  <div id="sib-form-container" class="sib-form-container">
+    <div id="error-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px;max-width:540px">
+      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"/></svg>
+        <span class="sib-form-message-panel__inner-text">Sua assinatura não pôde ser validada.</span>
+      </div>
+    </div>
+    <div id="success-message" class="sib-form-message-panel" style="font-size:16px;text-align:left;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:3px;max-width:540px">
+      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"/></svg>
+        <span class="sib-form-message-panel__inner-text">Você fez sua assinatura com sucesso.</span>
+      </div>
+    </div>
+    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center;direction:ltr">
+      <form id="sib-form" method="POST" action="https://21776e0b.sibforms.com/serve/MUIFAPDww95fD-rjguQ_r7OoeiwCaHfAVHNMp4XMoR5rM_dOy6saFp0Nji6Jdqcx7FbbpSHJBnkpxP_Dgc2ePyLlab4mlZKpZLh-eZae5sSchyQd-1iQ7XGYQ1XmQFsQqfA4K1rfyNBDMqFqWtoMoaNth-NJpQqQBWphCRNJQzXwW6jHn541zwT6YMe8k_HYbijSisS_zeuJaAiFQw==" data-type="subscription">
+        <div style="padding:8px 0">
+          <div class="sib-form-block" style="font-size:1.5rem;font-weight:700;text-align:center;color:#fff;background-color:transparent">
+            <p>Receba o Guia Completo!</p>
+          </div>
+        </div>
+        <div style="padding:8px 0">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" style="font-weight:600;text-align:left;font-size:14px;color:#fff" for="NOME" data-required="*">Nome Completo</label>
+                <div class="entry__field">
+                  <input class="input" maxlength="200" type="text" id="NOME" name="NOME" autocomplete="off" placeholder="Seu nome" data-required="true" required />
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+            </div>
+          </div>
+        </div>
+        <div style="padding:8px 0">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" style="font-weight:600;text-align:left;font-size:14px;color:#fff" for="EMAIL" data-required="*">Seu melhor e-mail</label>
+                <div class="entry__field">
+                  <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="seu@email.com" data-required="true" required />
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+            </div>
+          </div>
+        </div>
+        <div style="padding:8px 0">
+          <div class="sib-sms-field sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" style="font-weight:600;text-align:left;font-size:14px;color:#fff" for="SMS" data-required="*">Celular / WhatsApp</label>
+                <div class="sib-sms-input-wrapper" style="direction:ltr">
+                  <div class="sib-sms-input" data-placeholder="(41) 99999-9999" data-required="true" data-country-code="BR" data-value="" data-attributename="SMS">
+                    <div class="entry__field">
+                      <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
+                        <option value="+55" selected>+55 BR</option>
+                      </select>
+                    </div>
+                    <div class="entry__field" style="width:100%">
+                      <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="(41) 99999-9999" data-required="true" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+            </div>
+          </div>
+        </div>
+        <div style="padding:8px 0">
+          <div class="sib-form-block" style="text-align:center">
+            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px;font-weight:700;text-align:center;color:#0F172A;background-color:#D4AF37;border-width:0px;border-radius:50px;padding:18px 36px;width:100%;max-width:400px;cursor:pointer" form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+              QUERO RECEBER O GUIA
+            </button>
+          </div>
+        </div>
+        <div style="padding:8px 0">
+          <div class="sib-captcha sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <label class="entry__label" style="font-weight:600;text-align:center;font-size:12px;color:rgba(255,255,255,.5)">Protegido por reCAPTCHA</label>
+                <script>function handleCaptchaResponse(){var event=new Event('captchaChange');document.getElementById('sib-captcha').dispatchEvent(event)}</script>
+                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6LfknDItAAAAANiGAufjbD5dLL7ev7cic84gmn8N" data-callback="handleCaptchaResponse" style="direction:ltr;display:flex;justify-content:center"></div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-size:16px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:3px"></label>
+            </div>
+          </div>
+        </div>
+        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input type="hidden" name="locale" value="pt">
+      </form>
+    </div>
+  </div>
+</div>
+<p style="color:#94A3B8;font-size:.8rem;margin-top:12px"><i class="fas fa-lock" style="color:var(--gold)"></i> Seus dados estão seguros. Não fazemos spam.</p>
 </div>
 
 </div>
@@ -260,5 +352,20 @@ margin-bottom:20px;
 
 <script src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
+
+<script>
+window.REQUIRED_CODE_ERROR_MESSAGE='Escolha um código de país';
+window.LOCALE='pt';
+window.EMAIL_INVALID_MESSAGE=window.SMS_INVALID_MESSAGE="A informação fornecida não é válida. Verifique o formato do campo e tente novamente.";
+window.REQUIRED_ERROR_MESSAGE="Este campo não pode ser deixado em branco.";
+window.GENERIC_INVALID_MESSAGE="A informação fornecida não é válida. Verifique o formato do campo e tente novamente.";
+window.INVALID_NUMBER="A informação fornecida não é válida. Verifique o formato do campo e tente novamente.";
+window.INVALID_DATE="Insira uma data válida";
+window.REQUIRED_MULTISELECT_MESSAGE='Selecione pelo menos 1 opção';
+window.translation={common:{selectedList:'{quantity} lista selecionada',selectedLists:'{quantity} listas selecionadas',selectedOption:'{quantity} selecionado',selectedOptions:'{quantity} selecionados'}};
+var AUTOHIDE=Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?hl=pt"></script>
 </body>
 </html>
