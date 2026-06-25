@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 <meta property="og:title" content="Comparador de Fechaduras Digitais | Acesso Casa">
 <meta property="og:description" content="Compare modelos lado a lado: biometria, app, Wi-Fi, tipo de porta e mais.">
 <link rel="icon" type="image/png" href="../favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2ªfamily=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
 <style>
 :root{--dark:#0F172A;--gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37}
@@ -171,8 +171,8 @@ margin-bottom:20px;
 </script>
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Acesso Casa | Instala��o de Fechaduras Digitais">
-<meta name="twitter:description" content="Instala��o profissional de fechaduras digitais em Curitiba e Regi�o Metropolitana.">
+<meta name="twitter:title" content="Acesso Casa | Instalação de Fechaduras Digitais">
+<meta name="twitter:description" content="Instalação profissional de fechaduras digitais em Curitiba e Região Metropolitana.">
 <meta name="twitter:image" content="https://acessocasa.com.br/og-image.svg">
 </head>
 <body>
@@ -205,11 +205,11 @@ margin-bottom:20px;
 
 <div class="slots" id="slots">
 <div class="slot" id="slot1">
-<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1� modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1Âª modelo</div>
 </div>
 <div class="vs-badge">VS</div>
 <div class="slot" id="slot2">
-<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2� modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2Âª modelo</div>
 </div>
 </div>
 
@@ -218,7 +218,7 @@ margin-bottom:20px;
 <div class="comparison" id="comparison">
 <h3 style="text-align:center;font-size:1.3rem;margin-bottom:20px;color:var(--dark)">Comparativo entre os Modelos</h3>
 <table class="comp-table">
-<thead><tr><th>Caracter�stica</th><th id="hdr1">Modelo 1</th><th id="hdr2">Modelo 2</th></tr></thead>
+<thead><tr><th>Característica</th><th id="hdr1">Modelo 1</th><th id="hdr2">Modelo 2</th></tr></thead>
 <tbody id="compBody"></tbody>
 </table>
 </div>
@@ -259,12 +259,12 @@ var grupos=[
 {key:'m',tit:'Marca',vals:marcas},
 {key:'tp',tit:'Tipo de Porta',vals:tipos},
 {key:'c',tit:'Cor',vals:cores},
-{key:'tag',tit:'Tag (RFID)',vals:['Sim','N�o']},
-{key:'bio',tit:'Biometria',vals:['Sim','N�o']},
-{key:'app',tit:'App',vals:['Sim','N�o']},
-{key:'wifi',tit:'Wi-Fi',vals:['Sim','N�o']},
-{key:'bt',tit:'Bluetooth',vals:['Sim','N�o']},
-{key:'esp',tit:'Espessura da Porta',vals:['At� 45 mm','45-60 mm','60-80 mm','Acima de 80 mm']}
+{key:'tag',tit:'Tag (RFID)',vals:['Sim','Não']},
+{key:'bio',tit:'Biometria',vals:['Sim','Não']},
+{key:'app',tit:'App',vals:['Sim','Não']},
+{key:'wifi',tit:'Wi-Fi',vals:['Sim','Não']},
+{key:'bt',tit:'Bluetooth',vals:['Sim','Não']},
+{key:'esp',tit:'Espessura da Porta',vals:['At? 45 mm','45-60 mm','60-80 mm','Acima de 80 mm']}
 ];
 for(var g=0;g<grupos.length;g++){
 var div=document.createElement('div');div.className='filter-group';
@@ -284,7 +284,7 @@ var precoMin=Math.min.apply(null,precosArr);
 var precoMax=Math.max.apply(null,precosArr);
 precoMaxFiltro=precoMax;
 var priceDiv=document.createElement('div');priceDiv.className='filter-group';
-var priceH4=document.createElement('h4');priceH4.textContent='Pre�o M�x.';priceDiv.appendChild(priceH4);
+var priceH4=document.createElement('h4');priceH4.textContent='Preço Máx.';priceDiv.appendChild(priceH4);
 var priceWrap=document.createElement('div');priceWrap.className='price-slider-wrap';
 var slider=document.createElement('input');slider.type='range';slider.min=precoMin;slider.max=precoMax;slider.value=precoMax;slider.step=10;
 var valSpan=document.createElement('span');valSpan.className='price-val';
@@ -323,18 +323,18 @@ var s=getFilterState();
 if(s.m&&s.m.length&&s.m.indexOf(p.m)===-1)return false;
 if(s.tp&&s.tp.length&&s.tp.indexOf(p.tp)===-1)return false;
 if(s.c&&s.c.length&&s.c.indexOf(p.c)===-1)return false;
-if(s.tag&&s.tag.length){var ok=false;for(var i=0;i<s.tag.length;i++){if((s.tag[i]==='Sim'&&p.tag===1)||(s.tag[i]==='N�o'&&p.tag===0)){ok=true;break}}if(!ok)return false}
-if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==='Sim'&&p.bio===1)||(s.bio[i]==='N�o'&&p.bio===0)){ok=true;break}}if(!ok)return false}
-if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==='Sim'&&p.app===1)||(s.app[i]==='N�o'&&p.app===0)){ok=true;break}}if(!ok)return false}
-if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==='Sim'&&p.wifi===1)||(s.wifi[i]==='N�o'&&p.wifi===0)){ok=true;break}}if(!ok)return false}
-if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==='Sim'&&p.bt===1)||(s.bt[i]==='N�o'&&p.bt===0)){ok=true;break}}if(!ok)return false}
+if(s.tag&&s.tag.length){var ok=false;for(var i=0;i<s.tag.length;i++){if((s.tag[i]==='Sim'&&p.tag===1)||(s.tag[i]==='Não'&&p.tag===0)){ok=true;break}}if(!ok)return false}
+if(s.bio&&s.bio.length){var ok=false;for(var i=0;i<s.bio.length;i++){if((s.bio[i]==='Sim'&&p.bio===1)||(s.bio[i]==='Não'&&p.bio===0)){ok=true;break}}if(!ok)return false}
+if(s.app&&s.app.length){var ok=false;for(var i=0;i<s.app.length;i++){if((s.app[i]==='Sim'&&p.app===1)||(s.app[i]==='Não'&&p.app===0)){ok=true;break}}if(!ok)return false}
+if(s.wifi&&s.wifi.length){var ok=false;for(var i=0;i<s.wifi.length;i++){if((s.wifi[i]==='Sim'&&p.wifi===1)||(s.wifi[i]==='Não'&&p.wifi===0)){ok=true;break}}if(!ok)return false}
+if(s.bt&&s.bt.length){var ok=false;for(var i=0;i<s.bt.length;i++){if((s.bt[i]==='Sim'&&p.bt===1)||(s.bt[i]==='Não'&&p.bt===0)){ok=true;break}}if(!ok)return false}
 if(s.esp&&s.esp.length){
   var espMax=-1;
   if(p.esp&&p.esp!=='N/A'){var parts=p.esp.split('-');if(parts.length===2)espMax=parseInt(parts[1])}
   var ok=false;
   for(var i=0;i<s.esp.length;i++){
     if(espMax===-1){ok=true;break}
-    if(s.esp[i]==='At� 45 mm'&&espMax<=45){ok=true;break}
+    if(s.esp[i]==='At? 45 mm'&&espMax<=45){ok=true;break}
     if(s.esp[i]==='45-60 mm'&&espMax>45&&espMax<=60){ok=true;break}
     if(s.esp[i]==='60-80 mm'&&espMax>60&&espMax<=80){ok=true;break}
     if(s.esp[i]==='Acima de 80 mm'&&espMax>80){ok=true;break}
@@ -357,7 +357,7 @@ for(var i=0;i<produtos.length;i++){
 if(matchFilter(produtos[i]))r.push(produtos[i]);
 }
 }
-prodCount.textContent=comparando?'2 modelos selecionados':r.length+' modelo'+(r.length!==1?'s':'')+' encontrado'+(r.length!==1?'s':'');
+prodCount.textContent=comparando?'2 modelos selecionados':r.length+' modelo'+(r.length!==1ª's':'')+' encontrado'+(r.length!==1ª's':'');
 document.getElementById('comparingHint').style.display=comparando?'block':'none';
 if(r.length===0){
 prodGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem">Nenhum modelo encontrado com esses filtros.</div>';
@@ -433,15 +433,15 @@ comp.classList.add('show');
 var ext=extra(p.sku);
 var nome=ext.tit||p.m+' '+p.mo;
 hdr1.textContent=nome;
-hdr2.textContent='�';
+hdr2.textContent='?';
 compBody.innerHTML='<tr><td colspan="3" style="padding:30px;text-align:center;color:#555">Selecione um segundo modelo para comparar.</td></tr>';
 }
 
 function renderSlot(n){
-var el=n===1?slot1:slot2;
-var p=n===1?sel1:sel2;
+var el=n===1ªslot1:slot2;
+var p=n===1ªsel1:sel2;
 if(!p){
-el.innerHTML='<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1?'1�':'2�')+' modelo</div>';
+el.innerHTML='<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1ª'1Âª':'2Âª')+' modelo</div>';
 el.classList.remove('filled');
 return}
 el.classList.add('filled');
@@ -474,16 +474,16 @@ var rows=[
 ['Foto',foto1,foto2],
 ['Cor',sel1.c,sel2.c],
 ['Tipo de Porta',sel1.tp,sel2.tp],
-['Espessura da Porta',sel1.esp==='N/A'?'�':sel1.esp+' mm',sel2.esp==='N/A'?'�':sel2.esp+' mm'],
+['Espessura da Porta',sel1.esp==='N/A'?'?':sel1.esp+' mm',sel2.esp==='N/A'?'?':sel2.esp+' mm'],
 ['Tag (RFID)',yn(sel1.tag),yn(sel2.tag)],
 ['Biometria',yn(sel1.bio),yn(sel2.bio)],
 ['App',yn(sel1.app),yn(sel2.app)],
 ['Wi-Fi',yn(sel1.wifi),yn(sel2.wifi)],
 ['Bluetooth',yn(sel1.bt),yn(sel2.bt)],
-['Pre�o','<div class="p-comp-preco" data-p-sku="'+sel1.sku+'"></div><a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Pre�o</a>','<div class="p-comp-preco" data-p-sku="'+sel2.sku+'"></div><a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Pre�o</a>']
+['Preço','<div class="p-comp-preco" data-p-sku="'+sel1.sku+'"></div><a href="'+sel1.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Preço</a>','<div class="p-comp-preco" data-p-sku="'+sel2.sku+'"></div><a href="'+sel2.url+'" target="_blank" rel="nofollow" class="comp-btn"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Confirmar Preço</a>']
 ];
 if(ext1.res||ext2.res){
-rows.push(['Resumo','<div class="comp-resumo">'+(ext1.res||'�')+'</div>','<div class="comp-resumo">'+(ext2.res||'�')+'</div>']);
+rows.push(['Resumo','<div class="comp-resumo">'+(ext1.res||'-')+'</div>','<div class="comp-resumo">'+(ext2.res||'-')+'</div>']);
 }
 compBody.innerHTML='';
 for(var i=0;i<rows.length;i++){
