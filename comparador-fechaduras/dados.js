@@ -105,7 +105,7 @@ var prodExtra={
 10013:{img:"images/products/10013.webp",tit:"Fechadura Digital SobreporSenha FR 10",res:"Acabamento mate. Suporta até 9 senhas. Para portas de madeira e metal de 2,5 a 5 cm. Requer 4 pilhas AA."},
 10014:{img:"images/products/10014.webp",tit:"Fechadura Digital Senha Fr 210",res:"Teclado touch screen. Cadastre até 4 senhas e 100 tags. Aviso sonoro de violação. Para portas de 2,5 a 5 cm. Modelo sobrepor."},
 10015:{img:"images/products/10015.webp",tit:"Fechadura Digital Embutir Cartão Senha Fr 320",res:"Aberturas: senha numérica e tag de proximidade. Para portas de alumínio de 2,5 a 5 cm. Requer 4 pilhas AA."},
-10016:{img:"images/products/10016.webp",tit:"Fechadura Digital Fr400 Para PortasVidro",res:"Aberturas: cartão, senha e tags. Suporta até 4 senhas. Para portas de vidro de até 1 cm de espessura. Alimentação por pilhas."},
+10016:{img:"images/products/10016.png",tit:"Fechadura Digital Fr400 Para PortasVidro",res:"Aberturas: cartão, senha e tags. Suporta até 4 senhas. Para portas de vidro de até 1 cm de espessura. Alimentação por pilhas."},
 10017:{img:"images/products/10017.webp",tit:"Fechadura Digital Smart Embutir Ifr 7000 Prata",res:"Aberturas: app, biometria, chave, chaveiro de aproximação e senha. Para portas de 3 a 6 cm. Acompanha 2 chaves mecânicas."},
 10018:{img:"images/products/10018.webp",tit:"Fechadura Digital Sobrepor Mfd 2020 D Biometria",res:"Acabamento preto e prata. Aberturas: app, biometria, senha e tag. Para portas de correr, giro e pivotantes."},
 10019:{img:"images/products/10019.webp",tit:"Fechadura Digital Embutir S Maçaneta Mfd 3001d",res:"Aberturas: biometria, senha e app. Para portas de giro e pivotantes de 3 a 6 cm. Requer 4 pilhas AA."},

@@ -205,11 +205,11 @@ margin-bottom:20px;
 
 <div class="slots" id="slots">
 <div class="slot" id="slot1">
-<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1Âª modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 1º modelo</div>
 </div>
 <div class="vs-badge">VS</div>
 <div class="slot" id="slot2">
-<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2Âª modelo</div>
+<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o 2º modelo</div>
 </div>
 </div>
 
@@ -264,7 +264,7 @@ var grupos=[
 {key:'app',tit:'App',vals:['Sim','Não']},
 {key:'wifi',tit:'Wi-Fi',vals:['Sim','Não']},
 {key:'bt',tit:'Bluetooth',vals:['Sim','Não']},
-{key:'esp',tit:'Espessura da Porta',vals:['At? 45 mm','45-60 mm','60-80 mm','Acima de 80 mm']}
+{key:'esp',tit:'Espessura da Porta',vals:['Até 45 mm','45-60 mm','60-80 mm','Acima de 80 mm']}
 ];
 for(var g=0;g<grupos.length;g++){
 var div=document.createElement('div');div.className='filter-group';
@@ -334,7 +334,7 @@ if(s.esp&&s.esp.length){
   var ok=false;
   for(var i=0;i<s.esp.length;i++){
     if(espMax===-1){ok=true;break}
-    if(s.esp[i]==='At? 45 mm'&&espMax<=45){ok=true;break}
+    if(s.esp[i]==='Até 45 mm'&&espMax<=45){ok=true;break}
     if(s.esp[i]==='45-60 mm'&&espMax>45&&espMax<=60){ok=true;break}
     if(s.esp[i]==='60-80 mm'&&espMax>60&&espMax<=80){ok=true;break}
     if(s.esp[i]==='Acima de 80 mm'&&espMax>80){ok=true;break}
@@ -357,7 +357,7 @@ for(var i=0;i<produtos.length;i++){
 if(matchFilter(produtos[i]))r.push(produtos[i]);
 }
 }
-prodCount.textContent=comparando?'2 modelos selecionados':r.length+' modelo'+(r.length!==1ª's':'')+' encontrado'+(r.length!==1ª's':'');
+prodCount.textContent=comparando?'2 modelos selecionados':r.length+' modelo'+(r.length!==1?'s':'')+' encontrado'+(r.length!==1?'s':'');
 document.getElementById('comparingHint').style.display=comparando?'block':'none';
 if(r.length===0){
 prodGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem">Nenhum modelo encontrado com esses filtros.</div>';
@@ -438,10 +438,10 @@ compBody.innerHTML='<tr><td colspan="3" style="padding:30px;text-align:center;co
 }
 
 function renderSlot(n){
-var el=n===1ªslot1:slot2;
-var p=n===1ªsel1:sel2;
+var el=n===1?slot1:slot2;
+var p=n===1?sel1:sel2;
 if(!p){
-el.innerHTML='<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1ª'1Âª':'2Âª')+' modelo</div>';
+el.innerHTML='<div class="slot-placeholder"><i aria-hidden="true" class="fas fa-plus-circle" style="font-size:2rem;color:#ddd;display:block;margin-bottom:8px"></i>Selecione o '+(n===1?'1º':'2º')+' modelo</div>';
 el.classList.remove('filled');
 return}
 el.classList.add('filled');

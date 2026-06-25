@@ -362,7 +362,7 @@ var r=[];
 for(var i=0;i<produtosMarca.length;i++){
 if(matchFilter(produtosMarca[i]))r.push(produtosMarca[i]);
 }
-prodCount.textContent=r.length+" modelo"+(r.length!==1ª"s":"")+" Elsys encontrado"+(r.length!==1ª"s":"");
+prodCount.textContent=r.length+" modelo"+(r.length!==1?"s":"")+" Elsys encontrado"+(r.length!==1?"s":"");
 if(r.length===0){
 prodGrid.innerHTML="<div style=\"grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem\">Nenhum modelo encontrado com esses filtros.</div>";
 return

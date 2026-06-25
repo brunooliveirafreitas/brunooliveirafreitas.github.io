@@ -356,7 +356,7 @@ var r=[];
 for(var i=0;i<produtosIntelbras.length;i++){
 if(matchFilter(produtosIntelbras[i]))r.push(produtosIntelbras[i]);
 }
-prodCount.textContent=r.length+' modelo'+(r.length!==1ª's':'')+' Intelbras encontrado'+(r.length!==1ª's':'');
+prodCount.textContent=r.length+' modelo'+(r.length!==1?'s':'')+' Intelbras encontrado'+(r.length!==1?'s':'');
 if(r.length===0){
 prodGrid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;font-size:.9rem">Nenhum modelo encontrado com esses filtros.</div>';
 return
