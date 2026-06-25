@@ -2,7 +2,7 @@
 
 :root{
 --dark:#0F172A;
---gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37
+--gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37;
 --white:#FFFFFF;
 --gray:#F3F4F6;
 }
@@ -225,6 +225,8 @@ font-size:.75rem;
 padding:0 20px;
 }
 
+.prod-item .p-compare{background:var(--gold);color:var(--dark);border:none;padding:7px 16px;border-radius:50px;font-size:.7rem;font-weight:700;cursor:pointer;transition:.3s;font-family:inherit;text-decoration:none;display:inline-block}
+.prod-item .p-compare:hover{background:#c49a2e}
 .whatsapp{
 position:fixed;
 bottom:25px;

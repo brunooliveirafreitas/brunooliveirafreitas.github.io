@@ -174,3 +174,40 @@ var prodExtra={
 10083:{img:"images/products/10083.webp",tit:"Fechadura Digital Sobrepor Wi-fi Senha Tag Biometria Life DS4100",res:"Wi-Fi. Biometria, senha, tag e app Tuya. Até 200 senhas e 100 digitais. USB-C emergência."},
 10084:{img:"images/products/10084.webp",tit:"Fechadura Digital Sobrepor Wifi Senha Tag Biometria Esfds4100v",res:"Wi-Fi. Biometria, senha, tag e app Elsys Casa+. Até 300 tags. Travamento automático."}
 };
+function extra(sku){
+var e=prodExtra[sku];
+if(!e)e={};
+if(!e.img)e.img='images/products/'+sku+'.webp';
+if(!e.tit)e.tit='Fechadura Digital';
+return e;
+}
+var logoMap = { Intelbras: '/intelbras.png', Yale: '/yale.png', Papaiz: '/papaiz.png', Pado: '/pado.png', Elsys: '/elsys.png' };
+var precosGlobal={};
+function buscarPreco(sku){
+  var p=null;
+  for(var i=0;i<produtos.length;i++){if(produtos[i].sku===sku){p=produtos[i];break}}
+  if(!p)return;
+  if(precosGlobal[sku]){atualizarPrecos(sku);return}
+  if(p.preco===undefined||p.preco===null||p.preco==='')return;
+  precosGlobal[sku]=p.preco;
+  atualizarPrecos(sku);
+}
+function atualizarPrecos(sku){
+  var els=document.querySelectorAll('[data-p-sku="'+sku+'"]');
+  for(var i=0;i<els.length;i++){
+    var v=precosGlobal[sku];
+    if(v!==null&&v!==undefined&&v!==''){
+      var num=typeof v==='number'?v:parseFloat(String(v).replace(',','.'));
+      if(!isNaN(num)){els[i].innerHTML='<span class="preco-aprox">Pre\u00e7o Aprox.</span> <span class="preco-valor">R$ '+num.toFixed(2).replace('.',',')+'</span>'}
+    }
+  }
+}
+function buildCard(p){
+  var ext=extra(p.sku);
+  var cdot='<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+(p.c==='Preto'?'#222':'#ccc')+';border:1px solid '+(p.c==='Preto'?'#222':'#bbb')+';vertical-align:middle;margin-right:3px"></span>';
+  var feats='<span class="'+(p.tag?'on':'off')+'" title="Tag"><i aria-hidden="true" class="fas fa-tag"></i></span><span class="'+(p.bio?'on':'off')+'" title="Biometria"><i aria-hidden="true" class="fas fa-fingerprint"></i></span><span class="'+(p.app?'on':'off')+'" title="App"><i aria-hidden="true" class="fas fa-mobile-screen"></i></span><span class="'+(p.wifi?'on':'off')+'" title="Wi-Fi"><i aria-hidden="true" class="fas fa-wifi"></i></span><span class="'+(p.bt?'on':'off')+'" title="Bluetooth"><i aria-hidden="true" class="fab fa-bluetooth-b"></i></span>';
+  var logo='<div class="p-brand"><span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="'+logoMap[p.m]+'" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span></div>';
+  var img=ext.img?'<div class="p-img"><img src="/'+ext.img+'" alt="'+p.mo+'" loading="lazy"></div>':'';
+  var tit=ext.tit?'<div class="p-tit">'+ext.tit+'</div>':'';
+  return '<div class="prod-item">'+logo+img+'<div class="p-name">'+p.mo+'</div>'+tit+'<div class="p-color">'+cdot+' '+p.c+'</div><div class="p-preco" data-p-sku="'+p.sku+'"></div><div class="p-feats">'+feats+'</div><a href="'+p.url+'" target="_blank" rel="nofollow" class="p-compare"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Ver pre\u00e7o</a></div>';
+}
