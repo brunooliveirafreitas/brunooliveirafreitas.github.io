@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
 <style>
-:root{--dark:#0F172A;--gold:#D4AF37}
+:root{--dark:#0F172A;--gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
 body{line-height:1.6;color:#222;background:#f8f8f8}
 .container{width:90%;max-width:1200px;margin:auto}
@@ -40,7 +40,7 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .autocomplete a{display:block;padding:14px 20px;text-decoration:none;color:#222;transition:.1s;border-bottom:1px solid #f0f0f0}
 .autocomplete a:last-child{border:none}
 .autocomplete a:hover{background:#faf5e6}
-.autocomplete .match-brand{font-size:.7rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.autocomplete .match-brand{font-size:.7rem;color:var(--gold-text);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .autocomplete .match-name{font-size:.88rem;font-weight:500}
 .autocomplete .match-cat{font-size:.72rem;color:#888}
 
@@ -48,12 +48,12 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .slot{background:white;border-radius:20px;padding:30px 20px;text-align:center;border:2px dashed #ddd;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.3s}
 .slot.filled{border-color:var(--gold);border-style:solid}
 .slot .slot-placeholder{color:#bbb;font-size:.9rem}
-.slot .slot-brand{font-size:.75rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.slot .slot-brand{font-size:.75rem;color:var(--gold-text);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .slot .slot-name{font-size:1.05rem;font-weight:600;margin:4px 0}
 .slot .slot-cat{font-size:.8rem;color:#555}
 .slot .slot-remove{display:inline-block;margin-top:10px;color:#e74c3c;font-size:.75rem;cursor:pointer;text-decoration:none;border:none;background:none}
 .slot .slot-remove:hover{text-decoration:underline}
-.vs-badge{font-size:1.3rem;font-weight:800;color:var(--gold);background:#0F172A;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vs-badge{font-size:1.3rem;font-weight:800;color:var(--gold-bright);background:#0F172A;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
 .comparison{display:none}
 .comparison.show{display:block}
@@ -72,9 +72,9 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .comp-table .comp-btn{display:inline-block;background:var(--gold);color:var(--dark);padding:10px 25px;border-radius:50px;font-weight:700;text-decoration:none;font-size:.82rem;transition:.3s}
 .comp-table .comp-btn:hover{background:#c49a2e}
 .preco-aprox{font-size:.78rem;font-weight:400;color:#aaa}
-.preco-valor{display:block;font-size:1.1rem;font-weight:700;color:var(--gold)}
-.p-preco{font-size:.85rem;font-weight:600;color:var(--gold);min-height:22px;margin:4px 0 6px}
-.p-comp-preco{font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:6px}
+.preco-valor{display:block;font-size:1.1rem;font-weight:700;color:var(--gold-text)}
+.p-preco{font-size:.85rem;font-weight:600;color:var(--gold-text);min-height:22px;margin:4px 0 6px}
+.p-comp-preco{font-size:1.2rem;font-weight:700;color:var(--gold-text);margin-bottom:6px}
 .comp-table .foto-label{vertical-align:top;padding-top:25px!important}
 .comp-foto{width:100%;max-width:320px;height:260px;display:flex;align-items:center;justify-content:center;margin:auto;overflow:hidden;border-radius:12px;background:#fafafa}
 .comp-foto img{max-height:240px;max-width:100%;object-fit:contain}
@@ -88,19 +88,19 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .filter-group label{display:inline-block;margin:3px 5px 3px 0;padding:5px 12px;border-radius:50px;border:1.5px solid #ddd;font-size:.75rem;cursor:pointer;transition:.2s;user-select:none;color:#555}
 .filter-group label:hover{border-color:var(--gold)}
 .filter-group input{display:none}
-.filter-group input:checked+label{background:var(--dark);color:var(--gold);border-color:var(--dark)}
+.filter-group input:checked+label{background:var(--dark);color:var(--gold-bright);border-color:var(--dark)}
 .filter-group .price-slider-wrap{padding:2px 4px 0;max-width:160px}
 .filter-group .price-slider-wrap input[type=range]{width:100%;height:5px;background:#ddd;border-radius:3px;outline:none;margin-bottom:2px;cursor:pointer;display:block;accent-color:var(--gold)}
 .filter-group .price-slider-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);border:none;cursor:pointer}
 .filter-group .price-slider-wrap input[type=range]::-moz-range-track{height:5px;background:#ddd;border-radius:3px;border:none}
 .filter-group .price-slider-wrap input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold);border:none;cursor:pointer}
-.filter-group .price-slider-wrap .price-val{font-size:.68rem;font-weight:600;color:var(--gold)}
+.filter-group .price-slider-wrap .price-val{font-size:.68rem;font-weight:600;color:var(--gold-text)}
 
 .prod-count{font-size:.85rem;color:#888;margin-bottom:15px}
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:40px}
 .prod-item{background:white;border-radius:16px;padding:18px 14px;text-align:center;border:1px solid #eee;transition:.3s}
 .prod-item:hover{border-color:var(--gold);box-shadow:0 4px 15px rgba(0,0,0,.07)}
-.prod-item .p-brand{font-size:.62rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.prod-item .p-brand{font-size:.62rem;color:var(--gold-text);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .prod-item .p-name{font-size:.82rem;font-weight:600;margin:5px 0 3px;color:var(--dark)}
 .prod-item .p-color{font-size:.7rem;color:#666;margin-bottom:6px}
 .prod-item .p-feats{display:flex;justify-content:center;gap:8px;margin-bottom:10px}
@@ -138,11 +138,11 @@ padding:0 20px 20px;
 border-bottom:1px solid rgba(255,255,255,.08);
 margin-bottom:20px;
 }
-.footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.footer-grid h4{color:var(--gold-bright);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
 .footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s;line-height:1.5}
-.footer-grid a:hover{color:var(--gold)}
-.footer-copy{color:#555;font-size:.75rem;padding:0 20px}
-.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.footer-grid a:hover{color:var(--gold-bright)}
+.footer-copy{color:#999;font-size:.75rem;padding:0 20px}
+.footer-copy a{color:#999;text-decoration:none;font-size:.75rem}
 .whatsapp{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1.8rem;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:.3s}
 .whatsapp:hover{transform:scale(1.1)}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}}
@@ -395,7 +395,7 @@ var ja=jahSelecionado(p);
 var btnTxt=ja?'Selecionado':'Comparar';
 var btnCls=ja?'p-compare sel':'p-compare';
 var logo='<span style="display:inline-flex;align-items:center;justify-content:center;width:90px;height:24px"><img src="../'+p.m.toLowerCase()+'.png" alt="'+p.m+'" style="max-height:24px;max-width:90px;height:auto;width:auto;opacity:.75"></span>';
-var imgHtml=ext.img?'<div class="p-img"><img src="/'+ext.img+'" alt="'+p.mo+'"></div>':'';
+var imgHtml=ext.img?'<div class="p-img"><img src="/'+ext.img+'" alt="'+p.mo+'" loading="lazy"></div>':'';
 var titHtml=ext.tit?'<div class="p-tit">'+ext.tit+'</div>':'';
 div.innerHTML='<div class="p-brand">'+logo+'</div>'+imgHtml+'<div class="p-name">'+p.mo+'</div>'+titHtml+'<div class="p-color">'+cdot+' '+p.c+'</div><div class="p-preco" data-p-sku="'+p.sku+'"></div><div class="p-feats">'+feats+'</div><button class="'+btnCls+'" data-sku="'+p.sku+'"'+(ja?' disabled':'')+'>'+btnTxt+'</button>';
 (function(sku){div.querySelector('.p-compare').onclick=function(){

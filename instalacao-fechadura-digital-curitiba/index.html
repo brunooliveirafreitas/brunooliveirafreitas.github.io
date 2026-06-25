@@ -29,7 +29,7 @@
 
 :root{
 --dark:#0F172A;
---gold:#D4AF37;
+--gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37;
 }
 
 *{
@@ -190,11 +190,11 @@ height:50px;
 
 footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .footer-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:20px 12px;max-width:1200px;margin:auto;padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
-.footer-grid h4{color:var(--gold);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
+.footer-grid h4{color:var(--gold-bright);font-size:.85rem;margin-bottom:10px;font-weight:700;letter-spacing:.5px}
 .footer-grid a{display:block;color:#888;text-decoration:none;font-size:.8rem;margin-bottom:5px;transition:.2s;line-height:1.5}
-.footer-grid a:hover{color:var(--gold)}
-.footer-copy{color:#555;font-size:.75rem;padding:0 20px}
-.footer-copy a{color:#555;text-decoration:none;font-size:.75rem}
+.footer-grid a:hover{color:var(--gold-bright)}
+.footer-copy{color:#999;font-size:.75rem;padding:0 20px}
+.footer-copy a{color:#999;text-decoration:none;font-size:.75rem}
 @media(max-width:768px){
 .footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
 }

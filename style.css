@@ -2,7 +2,7 @@
 
 :root{
 --dark:#0F172A;
---gold:#D4AF37;
+--gold:#B8860B;--gold-text:#7A6200;--gold-bright:#D4AF37
 --white:#FFFFFF;
 --gray:#F3F4F6;
 }
@@ -162,7 +162,7 @@ margin-right:auto;
 .icon-card{text-align:center;padding:30px;background:white;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s;display:block;text-decoration:none;color:inherit}
 .icon-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
 .icon-card .icon-circle{width:60px;height:60px;border-radius:50%;background:var(--gold);color:var(--dark);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:1.5rem;transition:.3s}
-.icon-card:hover .icon-circle{background:var(--dark);color:var(--gold)}
+.icon-card:hover .icon-circle{background:var(--dark);color:var(--gold-bright)}
 .icon-card h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
 .icon-card p{color:#666;font-size:.85rem;line-height:1.5}
 .brands{
@@ -201,7 +201,7 @@ border-bottom:1px solid rgba(255,255,255,.08);
 margin-bottom:20px;
 }
 .footer-grid h4{
-color:var(--gold);
+color:var(--gold-bright);
 font-size:.85rem;
 margin-bottom:10px;
 font-weight:700;
@@ -217,7 +217,7 @@ transition:.2s;
 line-height:1.5;
 }
 .footer-grid a:hover{
-color:var(--gold);
+color:var(--gold-bright);
 }
 .footer-copy{
 color:#999;
