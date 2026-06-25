@@ -27,39 +27,11 @@ max-width:1200px;
 margin:auto;
 }
 
-header{
-position:fixed;
-width:100%;
-top:0;
-z-index:999;
-background:rgba(15,23,42,.95);
-backdrop-filter:blur(10px);
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-}
-
-.logo img{
-height:70px;
-display:block;
-}
-
-.social{
-color:white;
-font-size:14px;
-font-weight:500;
-text-align:right;
-}
-
 .hero{
 background:
 linear-gradient(rgba(15,23,42,.88),
 rgba(15,23,42,.88)),
-url('/hero-fechadura.png');
+url('/hero-fechadura.jpg');
 
 background-size:cover;
 background-position:center;
@@ -193,18 +165,6 @@ margin-right:auto;
 .icon-card:hover .icon-circle{background:var(--dark);color:var(--gold)}
 .icon-card h3{font-size:1rem;margin-bottom:6px;color:var(--dark)}
 .icon-card p{color:#666;font-size:.85rem;line-height:1.5}
-.card-link{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-a.card-link:hover{
-background:#D4AF37;
-color:#0F172A;
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,.15);
-}
-
 .brands{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
@@ -358,15 +318,6 @@ color:#0F172A;
 }
 
 @media(max-width:768px){
-
-.logo img{
-height:55px;
-}
-
-.social{
-display:none;
-}
-
 .hero{
 min-height:600px;
 padding-top:110px;

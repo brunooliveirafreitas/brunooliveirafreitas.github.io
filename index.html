@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="pt-BR">
 
@@ -55,39 +55,13 @@ max-width:1200px;
 margin:auto;
 }
 
-header{
-position:fixed;
-width:100%;
-top:0;
-z-index:999;
-background:rgba(15,23,42,.95);
-backdrop-filter:blur(10px);
-}
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-}
-
-.logo img{
-height:70px;
-display:block;
-}
-
-.social{
-color:white;
-font-size:14px;
-font-weight:500;
-text-align:right;
-}
 
 .hero{
 background:
 linear-gradient(rgba(15,23,42,.88),
 rgba(15,23,42,.88)),
-url('hero-fechadura.png');
+url('hero-fechadura.jpg');
 
 background-size:cover;
 background-position:center;
@@ -172,11 +146,7 @@ transform:translateY(-5px);
 box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
-.card-link{
-text-decoration:none;
-color:inherit;
-display:block;
-}
+
 
 .brands{
 display:grid;
@@ -341,15 +311,6 @@ background:#f8fafc;
 }
 
 @media(max-width:768px){
-
-.logo img{
-height:55px;
-}
-
-.social{
-display:none;
-}
-
 .hero{
 min-height:600px;
 padding-top:110px;
@@ -555,6 +516,11 @@ transition:.3s;
   ]
 }
 </script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Acesso Casa | Instalação de Fechaduras Digitais">
+<meta name="twitter:description" content="Instalação profissional de fechaduras digitais em Curitiba e Região Metropolitana.">
+<meta name="twitter:image" content="https://acessocasa.com.br/og-image.svg">
 </head>
 
 <body>
@@ -562,7 +528,7 @@ transition:.3s;
 <div id="header"></div>
 <script src="header.js"></script>
 
-<section class="hero">
+<main><section class="hero">
 
 <div class="container hero-content">
 
@@ -576,7 +542,7 @@ Curitiba e Região Metropolitana.<br>
 Segurança inteligente para sua casa.
 </p>
 
-`<a class="btn"
+<a class="btn"
 href="https://wa.me/5541997248338?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Solicitar orçamento pelo WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
@@ -960,7 +926,7 @@ Envie uma foto da sua porta pelo WhatsApp e descubra qual instalação é ideal 
 
 <br>
 
-`<a class="btn"
+<a class="btn"
 href="https://wa.me/5541997248338?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Falar no WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
@@ -970,9 +936,9 @@ href="https://wa.me/5541997248338?text=Olá,%20gostaria%20de%20um%20orçamento" 
 
 </section>
 
-<footer id="footer"></footer>
+</main><footer id="footer"></footer>
 
-`<a class="whatsapp"
+<a class="whatsapp"
 href="https://wa.me/5541997248338?text=Olá,%20gostaria%20de%20um%20orçamento" aria-label="Fale conosco pelo WhatsApp">
 
 <i class="fab fa-whatsapp"></i>

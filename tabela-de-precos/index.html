@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -22,7 +22,7 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
 .logo img{height:70px;display:block}
 .social{color:white;font-size:14px;font-weight:500;text-align:right}
-.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('/hero-fechadura.png');background-size:cover;background-position:center;min-height:380px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:40px;text-align:center;color:white}
+.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('/hero-fechadura.jpg');background-size:cover;background-position:center;min-height:380px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:40px;text-align:center;color:white}
 .hero h1{font-size:2.4rem;line-height:1.15;margin-bottom:10px;font-weight:800}
 .hero p{font-size:1.05rem;margin-bottom:20px;color:#e5e7eb}
 .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:700;transition:.3s;border:none;cursor:pointer;font-family:inherit;font-size:inherit}
@@ -95,13 +95,18 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .cta-section h2{font-size:1.3rem}
 }
 </style>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Acesso Casa | Instalação de Fechaduras Digitais">
+<meta name="twitter:description" content="Instalação profissional de fechaduras digitais em Curitiba e Região Metropolitana.">
+<meta name="twitter:image" content="https://acessocasa.com.br/og-image.svg">
 </head>
 <body>
 
 <div id="header"></div>
 <script src="../header.js"></script>
 
-<section class="hero">
+<main><section class="hero">
 <div class="container">
 <h1>Tabela de Preços de Instalação</h1>
 <p>Selecione sua cidade ou bairro para ver os valores com deslocamento já incluso.</p>
@@ -144,7 +149,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <p class="obs">Resposta em menos de 5 minutos no horário comercial</p>
 </section>
 
-<footer id="footer"></footer>
+</main><footer id="footer"></footer>
 <script src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 
