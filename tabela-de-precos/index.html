@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tabela de Preços de Instalação de Fechaduras Digitais | Acesso Casa</title>
 <link rel="icon" type="image/png" href="/favicon.png">
-<meta name="description" content="Preços de instalação de fechaduras digitais em Curitiba. Orçamento gratuito pelo WhatsApp.">
+<meta name="description" content="Preços de instalação de fechaduras digitais em Curitiba e Região Metropolitana. Selecione sua cidade e veja os valores com deslocamento incluso.">
 <meta property="og:title" content="Tabela de Preços de Instalação | Acesso Casa">
 <meta property="og:description" content="Preços de instalação de fechaduras digitais em Curitiba e Região Metropolitana.">
 <meta property="og:type" content="website">
@@ -22,9 +22,9 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
 .logo img{height:70px;display:block}
 .social{color:white;font-size:14px;font-weight:500;text-align:right}
-.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('/hero-fechadura.png');background-size:cover;background-position:center;min-height:400px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:50px;text-align:center;color:white}
+.hero{background:linear-gradient(rgba(15,23,42,.88),rgba(15,23,42,.88)),url('/hero-fechadura.png');background-size:cover;background-position:center;min-height:380px;display:flex;align-items:center;justify-content:center;padding-top:120px;padding-bottom:40px;text-align:center;color:white}
 .hero h1{font-size:2.4rem;line-height:1.15;margin-bottom:10px;font-weight:800}
-.hero p{font-size:1.1rem;margin-bottom:25px;color:#e5e7eb}
+.hero p{font-size:1.05rem;margin-bottom:20px;color:#e5e7eb}
 .btn{display:inline-block;background:var(--gold);color:var(--dark);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:700;transition:.3s;border:none;cursor:pointer;font-family:inherit;font-size:inherit}
 .btn:hover{transform:translateY(-3px)}
 .btn-wpp{background:#25D366;color:white}
@@ -32,9 +32,23 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .section{padding:70px 0}
 .section-title{text-align:center;margin-bottom:10px;font-size:2rem;color:var(--dark)}
 .section-subtitle{text-align:center;margin-bottom:45px;font-size:1.05rem;color:#555;max-width:700px;margin-left:auto;margin-right:auto}
-.bg-gray{background:#f8fafc}
+
+/* City Selector */
+.city-selector{background:#f8fafc;border-radius:20px;padding:45px 30px;text-align:center;margin-bottom:50px}
+.city-selector h3{font-size:1.2rem;color:var(--dark);margin-bottom:6px}
+.city-selector p{color:#666;font-size:.88rem;margin-bottom:22px}
+.city-selector select{appearance:none;-webkit-appearance:none;background:white;border:2px solid #e5e7eb;border-radius:14px;padding:16px 50px 16px 22px;font-family:inherit;font-size:1rem;font-weight:600;color:var(--dark);cursor:pointer;transition:.3s;width:100%;max-width:500px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;text-align:left}
+.city-selector select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+.city-selector option{font-weight:400;padding:10px}
+.prices-hidden{display:none}
+
+/* Price Summary Bar */
+.price-summary{text-align:center;margin-bottom:40px;padding:20px;background:linear-gradient(135deg,var(--gold),#c49a2e);border-radius:14px;color:var(--dark)}
+.price-summary strong{font-size:1.2rem}
+.price-summary span{font-size:.85rem;opacity:.85}
+
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-bottom:50px}
-.price-card{background:white;border-radius:20px;padding:30px 25px;box-shadow:0 8px 25px rgba(0,0,0,.06);border:1px solid #eef0f2;transition:.3s;text-align:center;display:flex;flex-direction:column}
+.price-card{background:white;border-radius:20px;padding:30px 25px;box-shadow:0 8px 25px rgba(0,0,0,.06);border:1px solid #eef0f2;transition:.3s;text-align:center;display:flex;flex-direction:column;animation:fadeUp .4s ease}
 .price-card:hover{border-color:var(--gold);box-shadow:0 12px 35px rgba(212,175,55,.12);transform:translateY(-4px)}
 .price-card.featured{border:2px solid var(--gold);position:relative}
 .price-card.featured::before{content:'MAIS PROCURADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;letter-spacing:1px;padding:4px 14px;border-radius:20px}
@@ -68,9 +82,12 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 .footer-copy{color:#555;font-size:.75rem;padding:0 20px}
 .footer-copy a{color:#555;text-decoration:none}
 .whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;z-index:9999;box-shadow:0 10px 25px rgba(0,0,0,.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+
 @media(max-width:768px){
 .hero h1{font-size:1.6rem}
-.hero{min-height:300px;padding-top:100px;padding-bottom:35px}
+.hero{min-height:300px;padding-top:100px;padding-bottom:30px}
 .section{padding:45px 0}
 .price-grid{grid-template-columns:1fr}
 .services-grid{grid-template-columns:1fr}
@@ -87,7 +104,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <section class="hero">
 <div class="container">
 <h1>Tabela de Preços de Instalação</h1>
-<p>Valores aproximados para instalação de fechaduras digitais em Curitiba e Região Metropolitana.</p>
+<p>Selecione sua cidade ou bairro para ver os valores com deslocamento já incluso.</p>
 <a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Pedir Orçamento Gratuito</a>
 </div>
 </section>
@@ -95,96 +112,26 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <section class="section">
 <div class="container">
 
-<h2 class="section-title">Instalação Profissional</h2>
-<p class="section-subtitle">Preços por tipo de fechadura. O valor exato pode variar conforme o modelo e as condições da porta.</p>
-
-<div class="price-grid">
-
-<div class="price-card">
-<div class="price-icon"><i class="fas fa-door-closed"></i></div>
-<h3>Instalação Fechadura para Porta Interna</h3>
-<p>Banheiros, quartos, escritórios. Modelos compactos com senha ou cartão.</p>
-<div class="price-range">R$ 150 <span>a</span> R$ 350</div>
-<p class="price-detail">Instalação simples | Acabamento clean | Retirada da antiga incluso</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20fechadura%20em%20porta%20interna%20(150%20a%20350)" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar</a>
+<div class="city-selector">
+<h3>📍 Selecione o local da instalação</h3>
+<p>Os preços são ajustados automaticamente conforme a distância.</p>
+<select id="citySelect" onchange="selecionar(this.value)">
+<option value="">— Escolha uma cidade ou bairro —</option>
+</select>
 </div>
 
-<div class="price-card">
-<div class="price-icon"><i class="fas fa-fingerprint"></i></div>
-<h3>Instalação Fechadura Biométrica</h3>
-<p>Leitor de digital. Maior segurança sem chave ou senha.</p>
-<div class="price-range">R$ 180 <span>a</span> R$ 400</div>
-<p class="price-detail">Cadastro de digitais | Teste de funcionamento | Orientações de uso</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20fechadura%20biom%C3%A9trica%20(180%20a%20400)" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar</a>
-</div>
+<div class="prices-hidden" id="priceSection">
+  <div class="price-summary" id="priceSummary"></div>
 
-<div class="price-card featured">
-<div class="price-icon"><i class="fas fa-wifi"></i></div>
-<h3>Instalação Smart Lock (Wi-Fi / Bluetooth)</h3>
-<p>Controle pelo celular. Alexa e Google Assistant.</p>
-<div class="price-range">R$ 280 <span>a</span> R$ 550</div>
-<p class="price-detail">Configuração de app e rede Wi-Fi | Teste remoto | Treinamento completo</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20Smart%20Lock%20(280%20a%20550)" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar</a>
-</div>
+  <h2 class="section-title">Instalação Profissional</h2>
+  <p class="section-subtitle">Preços por tipo de fechadura, já com deslocamento incluso para sua região.</p>
+  <div class="price-grid" id="priceGrid"></div>
 
-<div class="price-card">
-<div class="price-icon"><i class="fas fa-door-open"></i></div>
-<h3>Instalação Fechadura de Entrada</h3>
-<p>Portas sociais e de garagem. Sobrepor ou embutir.</p>
-<div class="price-range">R$ 180 <span>a</span> R$ 380</div>
-<p class="price-detail">Reforço de fixação | Alinhamento da porta | Acabamento profissional</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20fechadura%20de%20entrada%20(180%20a%20380)" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar</a>
-</div>
-
-<div class="price-card">
-<div class="price-icon"><i class="fas fa-mobile-screen"></i></div>
-<h3>Instalação Fechadura com App</h3>
-<p>Ideal para Airbnb, escritórios e controle remoto de acesso.</p>
-<div class="price-range">R$ 200 <span>a</span> R$ 420</div>
-<p class="price-detail">Configuração de senhas temporárias | App | Histórico de acesso</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20fechadura%20com%20app%20(200%20a%20420)" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Solicitar</a>
-</div>
-
-<div class="price-card">
-<div class="price-icon"><i class="fas fa-building"></i></div>
-<h3>Instalação para Condomínios</h3>
-<p>Áreas comuns, halls e portarias. Múltiplos usuários.</p>
-<div class="price-range">Sob consulta</div>
-<p class="price-detail">Projeto personalizado | Alto volume | Integração com interfone</p>
-<a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20quero%20instalar%20fechadura%20em%20condom%C3%ADnio" class="btn btn-wpp"><i class="fab fa-whatsapp"></i> Consultar</a>
-</div>
-
-</div>
-
-<div class="services-box">
-<h3><i class="fas fa-tools" style="color:var(--gold);margin-right:8px"></i> Outros Serviços</h3>
-<div class="services-grid">
-<div class="service-item">
-<i class="fas fa-screwdriver-wrench"></i>
-<h4>Manutenção</h4>
-<div class="price">R$ 80</div>
-<p>Limpeza, lubrificação e ajustes</p>
-</div>
-<div class="service-item">
-<i class="fas fa-cog"></i>
-<h4>Configuração</h4>
-<div class="price">R$ 60</div>
-<p>App, senhas, biometria e Wi-Fi</p>
-</div>
-<div class="service-item">
-<i class="fas fa-hammer"></i>
-<h4>Instalação com Adequação</h4>
-<div class="price">R$ 180</div>
-<p>Ajustes na porta + retirada da antiga</p>
-</div>
-<div class="service-item">
-<i class="fas fa-hard-hat"></i>
-<h4>Instalação em Obra</h4>
-<div class="price">Sob consulta</div>
-<p>Para construtoras e grandes volumes</p>
-</div>
-</div>
-<p style="font-size:.82rem;color:#aaa;margin-top:20px">* Valores para Curitiba e Região Metropolitana. Consulte para outras cidades.</p>
+  <div class="services-box">
+  <h3><i class="fas fa-tools" style="color:var(--gold);margin-right:8px"></i> Outros Serviços</h3>
+  <div class="services-grid" id="servicesGrid"></div>
+  <p style="font-size:.82rem;color:#aaa;margin-top:20px">* Valores com deslocamento incluso. Consulte para cidades não listadas.</p>
+  </div>
 </div>
 
 </div>
@@ -202,6 +149,128 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 
 <a href="https://wa.me/5541997248338?text=Ol%C3%A1,%20vi%20a%20tabela%20de%20pre%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento" class="whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+var grupos = [
+  {
+    label: "Curitiba - Matriz",
+    cidades: [
+      {nome:"Centro", mult:1.0},
+      {nome:"Batel / Água Verde / Bigorrilho", mult:1.0},
+      {nome:"Mercês / Juvevê / Cabral", mult:1.0}
+    ]
+  },
+  {
+    label: "Curitiba - Demais Regiões",
+    cidades: [
+      {nome:"Santa Felicidade", mult:1.15},
+      {nome:"Portão / Fazendinha", mult:1.15},
+      {nome:"Boqueirão / Hauer", mult:1.15},
+      {nome:"Cajuru", mult:1.15},
+      {nome:"CIC", mult:1.15},
+      {nome:"Tatuquara", mult:1.15},
+      {nome:"Sítio Cercado", mult:1.15},
+      {nome:"Umbará", mult:1.15}
+    ]
+  },
+  {
+    label: "Região Metropolitana",
+    cidades: [
+      {nome:"Pinhais", mult:1.15},
+      {nome:"São José dos Pinhais", mult:1.2},
+      {nome:"Colombo", mult:1.2},
+      {nome:"Quatro Barras", mult:1.2},
+      {nome:"Piraquara", mult:1.25},
+      {nome:"Fazenda Rio Grande", mult:1.25},
+      {nome:"Araucária", mult:1.3},
+      {nome:"Campo Largo", mult:1.3},
+      {nome:"Almirante Tamandaré", mult:1.3},
+      {nome:"Campina Grande do Sul", mult:1.3}
+    ]
+  }
+];
+
+var servicos = [
+  {id:"interna", nome:"Instalação Fechadura para Porta Interna", desc:"Banheiros, quartos, escritórios. Modelos compactos.", min:150, max:350, icone:"fa-door-closed", detalhe:"Instalação simples | Acabamento clean | Retirada da antiga incluso", featured:false},
+  {id:"biometrica", nome:"Instalação Fechadura Biométrica", desc:"Leitor de digital. Maior segurança sem chave.", min:180, max:400, icone:"fa-fingerprint", detalhe:"Cadastro de digitais | Teste de funcionamento | Orientações", featured:false},
+  {id:"smartlock", nome:"Instalação Smart Lock (Wi-Fi / Bluetooth)", desc:"Controle pelo celular. Alexa e Google Assistant.", min:280, max:550, icone:"fa-wifi", detalhe:"Configuração de app e rede Wi-Fi | Teste remoto | Treinamento", featured:true},
+  {id:"entrada", nome:"Instalação Fechadura de Entrada", desc:"Portas sociais e de garagem. Sobrepor ou embutir.", min:180, max:380, icone:"fa-door-open", detalhe:"Reforço de fixação | Alinhamento | Acabamento profissional", featured:false},
+  {id:"app", nome:"Instalação Fechadura com App", desc:"Ideal para Airbnb, escritórios e controle remoto.", min:200, max:420, icone:"fa-mobile-screen", detalhe:"Senhas temporárias | App | Histórico de acesso", featured:false},
+  {id:"condominio", nome:"Instalação para Condomínios", desc:"Áreas comuns, halls e portarias.", min:0, max:0, icone:"fa-building", detalhe:"Projeto personalizado | Alto volume | Integração", featured:false}
+];
+
+var outros = [
+  {nome:"Manutenção", preco:80, icone:"fa-screwdriver-wrench", desc:"Limpeza, lubrificação e ajustes"},
+  {nome:"Configuração", preco:60, icone:"fa-cog", desc:"App, senhas, biometria e Wi-Fi"},
+  {nome:"Instalação com Adequação", preco:180, icone:"fa-hammer", desc:"Ajustes na porta + retirada da antiga"},
+  {nome:"Instalação em Obra", preco:-1, icone:"fa-hard-hat", desc:"Para construtoras e grandes volumes"}
+];
+
+var cidadeAtual = null;
+
+function fmt(v){return v<0?"Sob consulta":'R$ '+v.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g,'$1.')}
+function fmtRange(c,min,max){return min>0?fmt(Math.round(min*c))+' <span>a</span> '+fmt(Math.round(max*c)):'Sob consulta'}
+
+function montarSelect(){
+  var sel=document.getElementById('citySelect');
+  grupos.forEach(function(g){
+    var og=document.createElement('optgroup');
+    og.label=g.label;
+    g.cidades.forEach(function(c){
+      var op=document.createElement('option');
+      op.value=g.label+'|'+c.nome+'|'+c.mult;
+      op.textContent=c.nome;
+      og.appendChild(op);
+    });
+    sel.appendChild(og);
+  });
+}
+
+function selecionar(val){
+  if(!val){document.getElementById('priceSection').classList.add('prices-hidden');return}
+  var partes=val.split('|');
+  var cidadeNome=partes[1], mult=parseFloat(partes[2]), grupoNome=partes[0];
+  cidadeAtual={nome:cidadeNome, mult:mult, grupo:grupoNome};
+  document.getElementById('priceSection').classList.remove('prices-hidden');
+  atualizarPrecos();
+}
+
+function atualizarPrecos(){
+  var c=cidadeAtual, m=c.mult;
+  document.getElementById('priceSummary').innerHTML='<strong>📍 '+c.nome+'</strong> &mdash; <span>Preços com deslocamento incluso</span>';
+
+  var pg='';
+  servicos.forEach(function(s){
+    var fea=s.featured?' featured':'';
+    var preco=s.min>0?fmtRange(m,s.min,s.max):'Sob consulta';
+    var textowpp=s.min>0?' ('+fmt(Math.round(s.min*m))+' a '+fmt(Math.round(s.max*m))+')':'';
+    var wpp='https://wa.me/5541997248338?text=Olá,%20quero%20instalar%20'+encodeURIComponent(s.nome)+'%20em%20'+encodeURIComponent(c.nome)+textowpp;
+    pg+='<div class="price-card'+fea+'">';
+    pg+='<div class="price-icon"><i class="fas '+s.icone+'"></i></div>';
+    pg+='<h3>'+s.nome+'</h3>';
+    pg+='<p>'+s.desc+'</p>';
+    pg+='<div class="price-range">'+preco+'</div>';
+    pg+='<p class="price-detail">'+s.detalhe+'</p>';
+    pg+='<a href="'+wpp+'" class="btn btn-wpp" target="_blank"><i class="fab fa-whatsapp"></i> Solicitar</a>';
+    pg+='</div>';
+  });
+  document.getElementById('priceGrid').innerHTML=pg;
+
+  var sg='';
+  outros.forEach(function(o){
+    var p=o.preco<0?'Sob consulta':fmt(Math.round(o.preco*m));
+    sg+='<div class="service-item">';
+    sg+='<i class="fas '+o.icone+'"></i>';
+    sg+='<h4>'+o.nome+'</h4>';
+    sg+='<div class="price">'+p+'</div>';
+    sg+='<p>'+o.desc+'</p>';
+    sg+='</div>';
+  });
+  document.getElementById('servicesGrid').innerHTML=sg;
+}
+
+montarSelect();
+</script>
 
 </body>
 </html>
