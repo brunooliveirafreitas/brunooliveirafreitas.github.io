@@ -402,6 +402,9 @@ font-weight:600;
 transition:.3s;
 cursor:pointer;
 }
+.city-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1000px;margin:auto}
+@media(max-width:768px){.city-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.city-grid{grid-template-columns:1fr}}
    
 .carousel-wrap{overflow:hidden;margin:0 -10px}
 .prod-carousel{
@@ -874,7 +877,7 @@ Guias e Ferramentas
     Atendimento em Curitiba e Região Metropolitana
 </h2>
 
-<div class="grid">
+<div class="city-grid">
 
 <a href="/instalacao-fechadura-inteligente-curitiba/" class="card city-card">
 Curitiba
@@ -906,6 +909,14 @@ Quatro Barras
 
 <a href="/instalacao-fechadura-inteligente-piraquara/" class="card city-card">
 Piraquara
+</a>
+
+<a href="/instalacao-fechadura-inteligente-almirante-tamandare/" class="card city-card">
+Almirante Tamandaré
+</a>
+
+<a href="/instalacao-fechadura-inteligente-campina-grande-sul/" class="card city-card">
+Campina Grande do Sul
 </a>
 
 </div>
