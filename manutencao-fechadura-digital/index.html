@@ -365,6 +365,14 @@ margin-bottom:20px;
 <i aria-hidden="true" class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+function toggleFAQ(btn){
+var item=btn.parentNode;
+var isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item.active').forEach(function(el){el.classList.remove('active')});
+if(!isActive)item.classList.add('active');
+}
+</script>
 <script src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
