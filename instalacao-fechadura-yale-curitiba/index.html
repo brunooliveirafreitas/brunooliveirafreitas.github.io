@@ -30,8 +30,15 @@ a.card:hover,.city-card:hover{background:#D4AF37;color:#0F172A;transform:transla
 .cta p{font-size:1.1rem;color:#ccc;margin-bottom:10px}
 .footer-copy a{color:#999;text-decoration:none;font-size:.75rem}
 .faq{max-width:900px;margin:auto}
-.faq-item{padding:20px;margin-bottom:20px;background:#f5f5f5;border-radius:15px}
-.faq-item strong{display:block;margin-bottom:5px}
+.faq-item{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:var(--gold)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;background:white;border:none;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:600;color:var(--dark);text-align:left;transition:.2s}
+.faq-q:hover{background:#fafafa}
+.faq-q i{font-size:.8rem;color:var(--gold-text);transition:.3s;flex-shrink:0}
+.faq-item.active .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;background:#fafafa}
+.faq-item.active .faq-a{max-height:600px;padding:18px 22px}
+.faq-a p{color:#555;font-size:.9rem;line-height:1.7}
 .filters{background:white;border-radius:20px;padding:25px 30px;box-shadow:0 5px 20px rgba(0,0,0,.06);margin-bottom:20px}
 .filter-row{display:flex;flex-wrap:wrap;gap:15px}
 .filter-group{flex:1;min-width:140px}
@@ -249,10 +256,36 @@ a.card:hover,.city-card:hover{background:#D4AF37;color:#0F172A;transform:transla
 <div class="container">
 <h2 class="section-title">Perguntas Frequentes</h2>
 <div class="faq">
-<div class="faq-item"><strong>Vocês vendem fechaduras Yale?</strong><br>Não. Realizamos apenas a instalação e configuração.</div>
-<div class="faq-item"><strong>Posso comprar minha Yale e contratar apenas a instalação?</strong><br>Sim. Instalamos equipamentos adquiridos pelo cliente.</div>
-<div class="faq-item"><strong>Vocês configuram biometria e senhas?</strong><br>Sim. A instalação inclui configuração inicial e orientação de uso.</div>
-<div class="faq-item"><strong>Atendem Curitiba inteira?</strong><br>Sim. Curitiba e toda a Região Metropolitana.</div>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span>Vocês vendem fechaduras Yale?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Não. Realizamos apenas a instalação e configuração.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span>Posso comprar minha Yale e contratar apenas a instalação?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Sim. Instalamos equipamentos adquiridos pelo cliente.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span>Vocês configuram biometria e senhas?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Sim. A instalação inclui configuração inicial e orientação de uso.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span>Atendem Curitiba inteira?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Sim. Curitiba e toda a Região Metropolitana.</p></div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -273,6 +306,14 @@ a.card:hover,.city-card:hover{background:#D4AF37;color:#0F172A;transform:transla
 <i aria-hidden="true" class="fab fa-whatsapp"></i>
 </a>
 
+<script>
+function toggleFAQ(btn){
+var item=btn.parentNode;
+var isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item.active').forEach(function(el){el.classList.remove('active')});
+if(!isActive)item.classList.add('active');
+}
+</script>
 <script src="../comparador-fechaduras/dados.js"></script>
 <script>
 

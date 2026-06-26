@@ -54,9 +54,15 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .step-item .step-content h4{font-size:.9rem;margin-bottom:3px;color:var(--dark)}
 .step-item .step-content p{font-size:.8rem;color:#555}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:40px}
-.faq-item{padding:20px 24px;margin-bottom:12px;background:white;border-radius:15px;box-shadow:0 3px 12px rgba(0,0,0,.05);border:1px solid #eee;max-width:800px;margin-left:auto;margin-right:auto}
-.faq-item strong{display:block;margin-bottom:5px;color:var(--dark);font-size:.9rem}
-.faq-item p{font-size:.83rem;color:#555;margin:0;line-height:1.5}
+.faq-item{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:var(--gold)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;background:white;border:none;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:600;color:var(--dark);text-align:left;transition:.2s}
+.faq-q:hover{background:#fafafa}
+.faq-q i{font-size:.8rem;color:var(--gold-text);transition:.3s;flex-shrink:0}
+.faq-item.active .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;background:#fafafa}
+.faq-item.active .faq-a{max-height:600px;padding:18px 22px}
+.faq-a p{color:#555;font-size:.9rem;line-height:1.7}
 .cta-section{background:var(--dark);color:white;text-align:center;padding:80px 20px}
 .cta-section h2{font-size:2rem;margin-bottom:15px}
 .cta-section p{color:#ccc;font-size:1rem;margin-bottom:25px}
@@ -296,26 +302,44 @@ margin-bottom:20px;
 <section class="section bg-gray">
 <div class="container">
 <h2 class="section-title">Perguntas Frequentes</h2>
+<div class="faq">
+<div class="faq-list">
 <div class="faq-item">
-<strong><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> A cada quanto tempo devo trocar as pilhas?</strong>
-
-<p>A maioria das fechaduras dura de 6 a 12 meses com 4 pilhas alcalinas AA. Quando começar a ouvir bipes de alerta, troque em até 7 dias para não correr o risco de ficar sem acesso.</p>
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> A cada quanto tempo devo trocar as pilhas?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>A maioria das fechaduras dura de 6 a 12 meses com 4 pilhas alcalinas AA. Quando começar a ouvir bipes de alerta, troque em até 7 dias para não correr o risco de ficar sem acesso.</p></div>
 </div>
 <div class="faq-item">
-<strong><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Posso instalar a fechadura em portas externas expostas à chuva?</strong>
-<p>Sim, desde que o modelo tenha classificação IP55 ou superior. Mesmo assim, recomendamos instalar em locais com alguma cobertura para prolongar a vida útil.</p>
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Posso instalar a fechadura em portas externas expostas à chuva?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Sim, desde que o modelo tenha classificação IP55 ou superior. Mesmo assim, recomendamos instalar em locais com alguma cobertura para prolongar a vida útil.</p></div>
 </div>
 <div class="faq-item">
-<strong><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Minha digital não está sendo reconhecida. O que fazer?</strong>
-<p>Primeiro, limpe o sensor com pano seco. Depois, cadastre novamente a digital — com o tempo, a pele muda e pode ser necessário refazer o cadastro. Cadastre sempre 2 dedos diferentes.</p>
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Minha digital não está sendo reconhecida. O que fazer?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Primeiro, limpe o sensor com pano seco. Depois, cadastre novamente a digital — com o tempo, a pele muda e pode ser necessário refazer o cadastro. Cadastre sempre 2 dedos diferentes.</p></div>
 </div>
 <div class="faq-item">
-<strong><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Perdi a chave mecânica de emergência. O que fazer?</strong>
-<p>Entre em contato com um chaveiro ou instalador especializado. Em muitos casos, é possível trocar o cilindro sem precisar substituir a fechadura inteira.</p>
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> Perdi a chave mecânica de emergência. O que fazer?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Entre em contato com um chaveiro ou instalador especializado. Em muitos casos, é possível trocar o cilindro sem precisar substituir a fechadura inteira.</p></div>
 </div>
 <div class="faq-item">
-<strong><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> A fechadura está rangendo ao travar. É normal?</strong>
-<p>Não — ruídos indicam falta de lubrificação ou desalinhamento. Aplique spray de silicone no mecanismo e verifique se a porta está alinhada. Se o ruído persistir, chame um técnico.</p>
+<button class="faq-q" onclick="toggleFAQ(this)">
+<span><i aria-hidden="true" class="fas fa-question-circle" style="color:var(--gold-text);margin-right:6px"></i> A fechadura está rangendo ao travar. É normal?</span>
+<i aria-hidden="true" class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-a"><p>Não — ruídos indicam falta de lubrificação ou desalinhamento. Aplique spray de silicone no mecanismo e verifique se a porta está alinhada. Se o ruído persistir, chame um técnico.</p></div>
+</div>
+</div>
 </div>
 </div>
 </section>

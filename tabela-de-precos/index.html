@@ -68,6 +68,8 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .service-item{background:rgba(255,255,255,.06);border-radius:14px;padding:22px 18px;text-align:center}
 .service-item i{font-size:26px;color:var(--gold-bright);margin-bottom:10px}
 .service-item h4{font-size:.9rem;margin-bottom:5px;color:white}
+.service-item:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.service-item{transition:.3s;cursor:default}
 .service-item .price{font-size:1.2rem;font-weight:700;color:var(--gold-bright)}
 .service-item p{font-size:.78rem;color:#aaa;margin-top:5px}
 .cta-section{background:var(--dark);color:white;text-align:center;padding:70px 20px}
@@ -120,7 +122,7 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 <div class="container">
 
 <div class="city-selector">
-<h3>🗺️ Selecione o local da instalação</h3>
+<h3><i aria-hidden="true" class="fas fa-map-marker-alt" style="margin-right:6px"></i> Selecione o local da instalação</h3>
 <p>Os preços são ajustados automaticamente conforme a distância.</p>
 <select id="citySelect" onchange="selecionar(this.value)">
 <option value="">— Escolha uma cidade ou bairro —</option>
@@ -244,7 +246,7 @@ function selecionar(val){
 
 function atualizarPrecos(){
   var c=cidadeAtual, m=c.mult;
-  document.getElementById('priceSummary').innerHTML='<strong>🗺️ '+c.nome+'</strong> &mdash; <span>Preços com deslocamento incluso</span>';
+  document.getElementById('priceSummary').innerHTML='<strong><i class="fas fa-map-marker-alt" style="margin-right:4px"></i> '+c.nome+'</strong> &mdash; <span>Preços com deslocamento incluso</span>';
 
   var pg='';
   servicos.forEach(function(s){
