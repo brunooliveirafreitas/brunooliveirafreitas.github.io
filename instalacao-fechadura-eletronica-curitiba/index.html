@@ -207,12 +207,15 @@ max-width:900px;
 margin:auto;
 }
 
-.faq-item{
-padding:20px;
-margin-bottom:20px;
-background:#f5f5f5;
-border-radius:15px;
-}
+.faq-item{border:1px solid #e5e7eb;border-radius:14px;margin-bottom:10px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:var(--gold)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;background:white;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--dark);text-align:left;transition:.2s}
+.faq-q:hover{background:#fafafa}
+.faq-q i{font-size:.8rem;color:var(--gold-text);transition:.3s;flex-shrink:0}
+.faq-item.active .faq-q i{transform:rotate(180deg)}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;background:#fafafa}
+.faq-item.active .faq-a{max-height:500px;padding:14px 20px}
+.faq-a p{color:#555;font-size:.85rem;line-height:1.6}
 
 .cta{
 background:#0F172A;
@@ -411,7 +414,7 @@ href="https://wa.me/5541997248338?text=olá,%20gostaria%20de%20um%20orçamento%2
 <div class="container">
 
 <h2 class="section-title">
-O que esté incluso na instalação?
+O que está incluso na instalação?
 </h2>
 
 <div class="grid">
@@ -430,7 +433,7 @@ O que esté incluso na instalação?
 
 <div class="icon-card">
 <div class="icon-circle"><i aria-hidden="true" class="fas fa-mobile-screen-button"></i></div>
-<h3>Orientac de Uso</h3>
+<h3>Orientação de Uso</h3>
 <p>Explicação detalhada sobre funcionamento e configurações.</p>
 </div>
 
@@ -494,16 +497,18 @@ Quem Atendemos
 Atendimento em Curitiba e Região Metropolitana
 </h2>
 
-<div class="grid">
+<div class="city-grid">
 
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-curitiba/" class="card card-link">Curitiba</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/" class="card card-link">São José dos Pinhais</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-pinhais/" class="card card-link">Pinhais</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-colombo/" class="card card-link">Colombo</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-araucaria/" class="card card-link">Araucária</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-campo-largo/" class="card card-link">Campo Largo</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-quatro-barras/" class="card card-link">Quatro Barras</a>
-<a href="https://acessocasa.com.br/instalacao-fechadura-inteligente-piraquara/" class="card card-link">Piraquara</a>
+<a href="/instalacao-fechadura-inteligente-curitiba/" class="card city-card">Curitiba</a>
+<a href="/instalacao-fechadura-inteligente-sao-jose-dos-pinhais/" class="card city-card">São José dos Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-pinhais/" class="card city-card">Pinhais</a>
+<a href="/instalacao-fechadura-inteligente-colombo/" class="card city-card">Colombo</a>
+<a href="/instalacao-fechadura-inteligente-araucaria/" class="card city-card">Araucária</a>
+<a href="/instalacao-fechadura-inteligente-campo-largo/" class="card city-card">Campo Largo</a>
+<a href="/instalacao-fechadura-inteligente-quatro-barras/" class="card city-card">Quatro Barras</a>
+<a href="/instalacao-fechadura-inteligente-piraquara/" class="card city-card">Piraquara</a>
+<a href="/instalacao-fechadura-inteligente-almirante-tamandare/" class="card city-card">Almirante Tamandaré</a>
+<a href="/instalacao-fechadura-inteligente-campina-grande-sul/" class="card city-card">Campina Grande do Sul</a>
 
 </div>
 
@@ -521,25 +526,46 @@ Perguntas Frequentes
 
 <div class="faq">
 
-<div class="faq-item"><strong>Quanto custa instalar uma fechadura eletrônica?</strong><br>O valor depende do modelo e do tipo da porta.</div>
-
-<div class="faq-item"><strong>Vocês vendem fechaduras?</strong><br>Não. Trabalhamos apenas com instalação.</div>
-
-<div class="faq-item"><strong>Posso comprar a fechadura por conta própria?</strong><br>Sim.</div>
-
-<div class="faq-item"><strong>Quanto tempo demora?</strong><br>Entre 30 e 90 minutos na maioria dos casos.</div>
-
-<div class="faq-item"><strong>Atendem apartamentos?</strong><br>Sim.</div>
-
-<div class="faq-item"><strong>Atendem condomínios?</strong><br>Sim.</div>
-
-<div class="faq-item"><strong>Minha porta é compatível?</strong><br>Avaliamos gratuitamente por foto.</div>
-
-<div class="faq-item"><strong>Instalam em portas de madeira?</strong><br>Sim.</div>
-
-<div class="faq-item"><strong>Configuram biometria e senha?</strong><br>Sim.</div>
-
-<div class="faq-item"><strong>Atendem toda Curitiba?</strong><br>Sim, além da Região Metropolitana.</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Quanto custa instalar uma fechadura eletrônica?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>O valor depende do modelo e do tipo da porta.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Vocês vendem fechaduras?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Não. Trabalhamos apenas com instalação.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Posso comprar a fechadura por conta própria?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Quanto tempo demora?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Entre 30 e 90 minutos na maioria dos casos.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Atendem apartamentos?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Atendem condomínios?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Minha porta é compatível?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Avaliamos gratuitamente por foto.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Instalam em portas de madeira?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Configuram biometria e senha?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q" onclick="toggleFAQ(this)"><span>Atendem toda Curitiba?</span><i aria-hidden="true" class="fas fa-chevron-down"></i></button>
+<div class="faq-a"><p>Sim, além da Região Metropolitana.</p></div>
+</div>
 
 </div>
 
@@ -600,6 +626,14 @@ href="https://wa.me/5541997248338?text=olá,%20gostaria%20de%20um%20orçamento%2
 
 </a>
 
+<script>
+function toggleFAQ(btn){
+var item=btn.parentNode;
+var isActive=item.classList.contains('active');
+document.querySelectorAll('.faq-item.active').forEach(function(el){el.classList.remove('active')});
+if(!isActive)item.classList.add('active');
+}
+</script>
 <script src="../footer.js"></script>
 <script>document.getElementById('footer').innerHTML=footerHtml;</script>
 </body>
