@@ -396,3 +396,21 @@ color:white;
 @media(max-width:768px){
 .footer-grid{grid-template-columns:repeat(3,1fr);gap:15px}
 }
+
+.faq-grid{max-width:800px;margin:auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.06);transition:.3s;cursor:pointer}
+.faq-item:hover{box-shadow:0 8px 25px rgba(0,0,0,.1)}
+.faq-item h3{font-size:1rem;color:var(--dark);font-weight:700;padding:20px 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-item h3 i{font-size:.8rem;color:var(--gold);transition:transform .3s;flex-shrink:0}
+.faq-item.open h3 i{transform:rotate(180deg)}
+.faq-item p{font-size:.9rem;color:#555;line-height:1.6;padding:0 28px 20px;display:none}
+.faq-item.open p{display:block}
+.faq-item a{color:var(--gold-text);text-decoration:underline}
+
+.carousel-grid{display:flex;gap:16px;overflow-x:auto;padding:8px 4px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.carousel-grid::-webkit-scrollbar{height:6px}
+.carousel-grid::-webkit-scrollbar-track{background:#f0f0f0;border-radius:10px}
+.carousel-grid::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+.carousel-grid .icon-card{flex:0 0 calc(20% - 13px);min-width:0;scroll-snap-align:start}
+@media(max-width:900px){.carousel-grid .icon-card{flex:0 0 calc(33.33% - 11px)}}
+@media(max-width:600px){.carousel-grid .icon-card{flex:0 0 calc(50% - 8px)}}
