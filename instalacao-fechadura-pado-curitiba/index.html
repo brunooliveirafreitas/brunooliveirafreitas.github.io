@@ -416,9 +416,11 @@ return
 var html="";
 for(var i=0;i<r.length;i++){
 html+=buildCard(r[i]);
-buscarPreco(r[i].sku);
 }
 prodGrid.innerHTML=html;
+for(var i=0;i<r.length;i++){
+buscarPreco(r[i].sku);
+}
 }
 
 buildFilters();
