@@ -49,7 +49,7 @@ header{position:fixed;width:100%;top:0;z-index:999;background:rgba(15,23,42,.95)
 .price-summary strong{font-size:1.2rem}
 .price-summary span{font-size:.85rem;opacity:.85}
 
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-bottom:50px}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-bottom:50px}
 .price-card{background:white;border-radius:20px;padding:30px 25px;box-shadow:0 8px 25px rgba(0,0,0,.06);border:1px solid #eef0f2;transition:.3s;text-align:center;display:flex;flex-direction:column;animation:fadeUp .4s ease}
 .price-card:hover{border-color:var(--gold);box-shadow:0 12px 35px rgba(212,175,55,.12);transform:translateY(-4px)}
 .price-card.featured{border:2px solid var(--gold);position:relative}
@@ -89,6 +89,9 @@ footer{background:#0F172A;color:#aaa;text-align:center;padding:30px 0 20px}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
+@media(max-width:1024px){
+.price-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:768px){
 .hero h1{font-size:1.6rem}
 .hero{min-height:300px;padding-top:100px;padding-bottom:30px}
@@ -200,19 +203,17 @@ var grupos = [
 ];
 
 var servicos = [
-  {id:"interna", nome:"Instalação Fechadura para Porta Interna", desc:"Banheiros, quartos, escritórios. Modelos compactos.", min:150, max:350, icone:"fa-door-closed", detalhe:"Instalação simples | Acabamento clean | Retirada da antiga incluso", featured:false},
-  {id:"biometrica", nome:"Instalação Fechadura Biométrica", desc:"Leitor de digital. Maior segurança sem chave.", min:180, max:400, icone:"fa-fingerprint", detalhe:"Cadastro de digitais | Teste de funcionamento | Orientações", featured:false},
-  {id:"smartlock", nome:"Instalação Smart Lock (Wi-Fi / Bluetooth)", desc:"Controle pelo celular. Alexa e Google Assistant.", min:280, max:550, icone:"fa-wifi", detalhe:"Configuração de app e rede Wi-Fi | Teste remoto | Treinamento", featured:true},
-  {id:"entrada", nome:"Instalação Fechadura de Entrada", desc:"Portas sociais e de garagem. Sobrepor ou embutir.", min:180, max:380, icone:"fa-door-open", detalhe:"Reforço de fixação | Alinhamento | Acabamento profissional", featured:false},
-  {id:"app", nome:"Instalação Fechadura com App", desc:"Ideal para Airbnb, escritórios e controle remoto.", min:200, max:420, icone:"fa-mobile-screen", detalhe:"Senhas temporárias | App | Histórico de acesso", featured:false},
+  {id:"sobrepor", nome:"Instalação Fechadura de Sobrepor", desc:"Fechaduras fixadas sobre a porta.", min:150, max:250, icone:"fa-door-closed", detalhe:"A variação é devida ao tipo da porta e outras variações", featured:false},
+  {id:"embutir", nome:"Instalação Fechadura de Embutir", desc:"Fechaduras encaixadas dentro da porta.", min:250, max:450, icone:"fa-door-open", detalhe:"A variação é devida ao tipo da porta e outras variações", featured:false},
+  {id:"vidro", nome:"Instalação Fechadura para Porta de Vidro e Correr", desc:"Portas de vidro temperado e correr.", min:200, max:350, icone:"fa-window-restore", detalhe:"A variação é devida ao tipo da porta e outras variações", featured:false},
   {id:"condominio", nome:"Instalação para Condomínios", desc:"Áreas comuns, halls e portarias.", min:0, max:0, icone:"fa-building", detalhe:"Projeto personalizado | Alto volume | Integração", featured:false}
 ];
 
 var outros = [
-  {nome:"Manutenção", preco:80, icone:"fa-screwdriver-wrench", desc:"Limpeza, lubrificação e ajustes"},
-  {nome:"Configuração", preco:60, icone:"fa-cog", desc:"App, senhas, biometria e Wi-Fi"},
-  {nome:"Instalação com Adequação", preco:180, icone:"fa-hammer", desc:"Ajustes na porta + retirada da antiga"},
-  {nome:"Instalação em Obra", preco:-1, icone:"fa-hard-hat", desc:"Para construtoras e grandes volumes"}
+  {nome:"Manutenção", min:100, max:150, icone:"fa-screwdriver-wrench", desc:"Pode variar por tipo de porta e outras variações"},
+  {nome:"Configuração", min:100, max:250, icone:"fa-cog", desc:"Pode variar por complexidade do projeto"},
+  {nome:"Instalação Corporativas", preco:-1, icone:"fa-hammer", desc:"Para empresas e grande volume"},
+  {nome:"Instalação em Condomínios", preco:-1, icone:"fa-hard-hat", desc:"Para condomínios e grandes volumes"}
 ];
 
 var cidadeAtual = null;
@@ -265,9 +266,11 @@ function atualizarPrecos(){
   });
   document.getElementById('priceGrid').innerHTML=pg;
 
-  var sg='';
+var sg='';
   outros.forEach(function(o){
-    var p=o.preco<0?'Sob consulta':fmt(Math.round(o.preco*m));
+    var p;
+    if(typeof o.min!=='undefined'){p=fmtRange(m,o.min,o.max)}
+    else{p=o.preco<0?'Sob consulta':fmt(Math.round(o.preco*m))}
     sg+='<div class="service-item">';
     sg+='<i aria-hidden="true" class="fas '+o.icone+'"></i>';
     sg+='<h4>'+o.nome+'</h4>';
